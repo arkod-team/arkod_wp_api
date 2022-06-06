@@ -1,0 +1,125 @@
+version: '3'
+
+services:
+  traefik:
+    container_name: arkod-wp-traefik
+    image: traefik:2.6.3
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config/traefik.yaml:/etc/traefik/traefik.yaml
+      - ./config/ssl.yaml:/etc/traefik/ssl.yaml
+      - ./certs:/etc/traefik/certs
+    networks:
+      - arkod-wp-network
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5432:5432"
+    labels:
+      - arkod-wp=traefik
+      - traefik.enable=true
+      - traefik.http.routers.arkod-wp-traefik.service=api@internal
+      - traefik.http.routers.arkod-wp-traefik.entrypoints=web_secure
+      - traefik.http.routers.arkod-wp-traefik.rule=Host(`traefik.arkod-wp.localhost`)
+      - traefik.http.routers.arkod-wp-traefik.tls=true
+
+  portainer:
+    depends_on:
+      - traefik
+    container_name: arkod-wp-portainer
+    image: portainer/portainer-ce:2.11.1-alpine
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-database:/data
+    networks:
+      - arkod-wp-network
+    labels:
+      - arkod-wp=portainer
+      - traefik.enable=true
+      - traefik.http.services.arkod-wp-portainer.loadbalancer.server.port=9000
+      - traefik.http.routers.arkod-wp-portainer.entrypoints=web_secure
+      - traefik.http.routers.arkod-wp-portainer.rule=Host(`portainer.arkod-wp.localhost`)
+      - traefik.http.routers.arkod-wp-portainer.tls=true
+
+  api:
+    depends_on:
+      - api-database
+    container_name: arkod-wp-api
+    hostname: arkod-wp.localhost
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - arkod-wp-network
+    environment:
+      POSTGRES_USER: ${API_DB_USER}
+      DB_HOST: db.arkod-wp.localhost
+      DB_USER: ${API_DB_USER}
+      DB_PASSWORD: ${API_DB_PASSWORD}
+      DB_NAME: ${API_DB_NAME}
+    labels:
+      - arkod-wp=api
+      - traefik.enable=true
+      - traefik.http.middlewares.arkod-wp-api-prefix.stripprefix.prefixes=/api
+      - traefik.http.services.arkod-wp-api.loadbalancer.server.port=8080
+      - traefik.http.routers.arkod-wp-api.entrypoints=web_secure
+      - traefik.http.routers.arkod-wp-api.middlewares=arkod-wp-api-prefix
+      - traefik.http.routers.arkod-wp-api.rule=(Host(`arkod-wp.localhost`) && PathPrefix(`/api`))
+      - traefik.http.routers.arkod-wp-api.tls=true
+
+  api-database:
+    container_name: arkod-wp-db
+    hostname: db.arkod-wp.localhost
+    image: postgres:14.2
+    restart: always
+    volumes:
+      - api-database:/var/lib/postgresql/data:rw
+      - ../initdb:/docker-entrypoint-initdb.d
+    networks:
+      - arkod-wp-network
+    environment:
+      POSTGRES_USER: ${API_DB_USER}
+      POSTGRES_PASSWORD: ${API_DB_PASSWORD}
+      POSTGRES_DB: ${API_DB_NAME}
+    labels:
+      - arkod-wp=database
+      - traefik.enable=true
+      - traefik.tcp.services.arkod-wp-db.loadbalancer.server.port=5432
+      - traefik.tct.routers.arkod-wp-db.entrypoints=database
+      - traefik.tcp.routers.arkod-wp-db.rule=HostSNI(`*`)
+
+  adminer:
+    container_name: arkod-wp-adminer
+    hostname: db.arkod-wp.localhost
+    image: adminer:4.8.1
+    restart: always
+    networks:
+      - arkod-wp-network
+    environment:
+      - ADMINER_DEFAULT_SERVER=arkod-wp-db
+    labels:
+      - arkod-wp=adminer
+      - traefik.enable=true
+      - traefik.http.services.arkod-wp-adminer.loadbalancer.server.port=8080
+      - traefik.http.routers.arkod-wp-adminer.entrypoints=web_secure
+      - traefik.http.routers.arkod-wp-adminer.rule=Host(`db.arkod-wp.localhost`)
+      - traefik.http.routers.arkod-wp-adminer.tls=true
+
+networks:
+  arkod-wp-network:
+    name: arkod-wp-network
+    labels:
+      - arkod-wp=arkod-wp_network
+
+volumes:
+  api-database:
+    name: arkod-wp-api-db
+    labels:
+      - arkod-wp=api_volume
+  portainer-database:
+    name: arkod-wp-portainer-db
+    labels:
+      - arkod-wp=portainer_volume

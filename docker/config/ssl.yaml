@@ -1,0 +1,11 @@
+# Generate certificates with
+# mkcert -cert-file certs/arkod-wp.cert.pem -key-file certs/arkod-wp.key.pem phpmyadmin.localhost arkod-wp.localhost "*.arkod-wp.localhost"
+tls:
+  certificates:
+    - certFile: /etc/traefik/certs/arkod-wp.cert.pem
+      keyFile: /etc/traefik/certs/arkod-wp.key.pem
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/traefik/certs/arkod-wp.cert.pem
+        keyFile: /etc/traefik/certs/arkod-wp.key.pem

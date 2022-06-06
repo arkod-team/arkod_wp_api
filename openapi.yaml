@@ -1,0 +1,187 @@
+openapi: '3.0.0'
+
+info:
+  contact:
+    email: dev@arkod.fr
+  description: |-
+    # ARKOD WordPress API
+
+    ARKOD WordPress API is an HTTP REST API consumed by ARKOD WordPress desktop application, website and mobile apps to manage WordPress websites.
+
+servers:
+- url: http://localhost:8080
+  description: Development server
+
+tags:
+- name: Engines
+
+paths:
+  /engines:
+    get:
+      operationId: EnginesList
+      summary: List engines
+      description: |-
+        List all engines.
+      tags:
+      - Engines
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Engines
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Engine'
+                type: array
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /engines/{id}:
+    get:
+      operationId: EnginesDetails
+      summary: Get engine
+      description: |-
+        Retrieve details about an engine.
+      tags:
+      - Engines
+      parameters:
+      - description: Engine ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: Engine
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Engine'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    Engine:
+      type: object
+      properties:
+        id:
+          description: Engine ID
+          type: integer
+        createdAt:
+          description: Engine creation date ISO8601 formatted
+          type: string
+        isInitialized:
+          description: Is the engine initialized ?
+          type: boolean
+        name:
+          description: Engine name
+          type: string
+        host:
+          description: Engine host
+          type: string
+        type:
+          description: Engine type
+          type: string
+          enum:
+          - portainer
+        endpoints:
+          description: Engine endpoints
+          type: array
+          items:
+            $ref: '#/components/schemas/Endpoint'
+        token:
+          description: Authenticated user JWT
+          type: string
+      required:
+      - id
+      - createdAt
+      - isInitialized
+      - name
+      - host
+      - type
+      example:
+        id: 1
+        createdAt: 2022-01-01T12:00:00.000000Z
+        isInitialized: true
+        name: local
+        host: arkod-wp.localhost
+        endpoints: portainer
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOjEsInNjb3BlIjoiZGVmYXVsdCIsImV4cCI6MTY0OTQ0MjU3NX0.MPQnemReGFs1MnyFIl89EAZ2gYiNx914R5Px0Rn1dt8
+    Endpoint:
+      type: object
+      properties:
+        id:
+          description: Endpoint ID
+          type: integer
+        name:
+          description: Endpoint name
+          type: string
+        url:
+          description: Endpoint Docker host URL
+          type: string
+        type:
+          description: Endpoint type
+          type: string
+          enum:
+          - up
+          - down
+        status:
+          description: Endpoint status
+          type: string
+          enum:
+          - docker
+          - agent
+          - azure
+      required:
+      - id
+      - name
+      - url
+      - type
+      - status
+      example:
+        id: 1
+        name: local
+        url: unix:///var/run/docker.sock
+        type: up
+        status: docker
+    Error:
+      type: object
+      properties:
+        message:
+          description: Error message
+          type: string
+        type:
+          description: Error type
+          type: string
+        origin:
+          description: Original exception
+          $ref: '#/components/schemas/Error'
+  responses:
+    NotFound:
+      description: Requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized operation, authentication is required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
