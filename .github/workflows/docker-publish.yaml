@@ -19,6 +19,8 @@ jobs:
 
       - name: List current directory
         run: ls -l
+      - name: List arkod_wp_api directory
+        run: ls -l arkod_wp_api
 
       - name: Checkout ARKOD WordPress core package source code
         uses: actions/checkout@v3
@@ -29,6 +31,8 @@ jobs:
 
       - name: List current directory
         run: ls -l
+      - name: List arkod_wp_core directory
+        run: ls -l arkod_wp_core
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
