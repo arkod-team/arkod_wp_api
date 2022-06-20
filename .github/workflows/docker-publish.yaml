@@ -21,8 +21,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Load git SSH key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          ssh: |
+            default=${{ env.SSH_AUTH_SOCK }}
           push: true
           tags: arkod/arkod-wp-api:latest
