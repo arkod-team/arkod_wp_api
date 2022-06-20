@@ -3,6 +3,7 @@ FROM dart:beta-sdk AS build
 
 # Resolve app dependencies.
 WORKDIR /app
+COPY arkod_wp_core/ ../
 COPY arkod_wp_api/pubspec.* ./
 
 RUN pwd
