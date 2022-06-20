@@ -9,13 +9,26 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
+      - name: List current directory
+        run: ls -l
 
-      - name: Load git SSH key
-        uses: webfactory/ssh-agent@v0.5.4
+      - name: Checkout API source code
+        uses: actions/checkout@v3
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          path: arkod_wp_api
+
+      - name: List current directory
+        run: ls -l
+
+      - name: Checkout ARKOD WordPress core package source code
+        uses: actions/checkout@v3
+        with:
+          repository: arkod-team/arkod_wp_core
+          path: arkod_wp_core
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: List current directory
+        run: ls -l
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -32,6 +45,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          ssh: default=${{ env.SSH_AUTH_SOCK }}
+          context: ./arkod_wp_api
           push: true
           tags: arkod/arkod-wp-api:latest
