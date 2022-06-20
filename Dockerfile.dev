@@ -3,13 +3,11 @@ FROM dart:beta-sdk AS build
 
 # Resolve app dependencies.
 WORKDIR /app
-COPY arkod_wp_core/ ../arkod_wp_core/
-COPY arkod_wp_api/pubspec.* ./
-
+COPY pubspec.* ./
 RUN dart pub get
 
 # Copy app source code (except anything in .dockerignore) and AOT compile app.
-COPY arkod_wp_api .
+COPY . .
 RUN dart compile exe bin/server.dart -o bin/server
 
 # Build minimal serving image from AOT-compiled `/server`
