@@ -21,6 +21,10 @@ jobs:
           path: arkod_wp_core
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Get the version to build and publish
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -39,4 +43,4 @@ jobs:
           context: .
           file: ./arkod_wp_api/Dockerfile.ci
           push: true
-          tags: arkod/arkod-wp-api:latest
+          tags: arkod/arkod-wp-api:latest,arkod/arkod-wp-api:${{ steps.get_version.outputs.VERSION }}
