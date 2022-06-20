@@ -4,6 +4,11 @@ FROM dart:beta-sdk AS build
 # Resolve app dependencies.
 WORKDIR /app
 COPY arkod_wp_api/pubspec.* ./
+
+RUN pwd
+RUN ls
+RUN ls ..
+
 RUN dart pub get
 
 # Copy app source code (except anything in .dockerignore) and AOT compile app.
