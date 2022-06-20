@@ -15,9 +15,7 @@ dependencies:
   postgres: ^2.4.3
   http: ^0.13.4
   arkod_wp_core:
-    git:
-      url: git@github.com:arkod-team/arkod_wp_core.git
-      ref: 0.0.1
+    path: ../arkod_wp_core
 
 dev_dependencies:
   lints: ^1.0.0
