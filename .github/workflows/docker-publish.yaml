@@ -9,18 +9,10 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: List current directory
-        run: ls -l
-
       - name: Checkout API source code
         uses: actions/checkout@v3
         with:
           path: arkod_wp_api
-
-      - name: List current directory
-        run: ls -l
-      - name: List arkod_wp_api directory
-        run: ls -l arkod_wp_api
 
       - name: Checkout ARKOD WordPress core package source code
         uses: actions/checkout@v3
@@ -28,11 +20,6 @@ jobs:
           repository: arkod-team/arkod_wp_core
           path: arkod_wp_core
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: List current directory
-        run: ls -l
-      - name: List arkod_wp_core directory
-        run: ls -l arkod_wp_core
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -50,6 +37,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./arkod_wp_api/Dockerfile
+          file: ./arkod_wp_api/Dockerfile.ci
           push: true
           tags: arkod/arkod-wp-api:latest
