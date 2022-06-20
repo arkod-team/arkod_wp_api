@@ -6,10 +6,6 @@ WORKDIR /app
 COPY arkod_wp_core/ ../arkod_wp_core/
 COPY arkod_wp_api/pubspec.* ./
 
-RUN pwd
-RUN ls
-RUN ls ..
-
 RUN dart pub get
 
 # Copy app source code (except anything in .dockerignore) and AOT compile app.
