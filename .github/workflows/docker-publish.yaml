@@ -32,7 +32,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          ssh: |
-            default=${{ env.SSH_AUTH_SOCK }}
+          ssh: default=${{ env.SSH_AUTH_SOCK }}
           push: true
           tags: arkod/arkod-wp-api:latest
