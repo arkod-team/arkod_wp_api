@@ -49,6 +49,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./arkod_wp_api
+          context: .
+          file: ./arkod_wp_api/Dockerfile
           push: true
           tags: arkod/arkod-wp-api:latest
