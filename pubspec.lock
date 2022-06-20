@@ -25,10 +25,12 @@ packages:
   arkod_wp_core:
     dependency: "direct main"
     description:
-      path: "../arkod_wp_core"
-      relative: true
-    source: path
-    version: "1.0.0"
+      path: "."
+      ref: "0.0.1"
+      resolved-ref: c983c7fb7d8b65ce02858388ce294087bee04d44
+      url: "git@github.com:arkod-team/arkod_wp_core.git"
+    source: git
+    version: "0.0.1"
   async:
     dependency: transitive
     description:
