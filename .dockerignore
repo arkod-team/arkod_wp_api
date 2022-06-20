@@ -7,3 +7,7 @@ build/
 .gitignore
 .idea/
 .packages
+
+# WordPress plugins sources
+wp_plugins/*
+!wp_plugins/*.tar.gz
