@@ -9,18 +9,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout API source code
-        uses: actions/checkout@v3
-        with:
-          path: arkod_wp_api
-
-      - name: Checkout ARKOD WordPress core package source code
-        uses: actions/checkout@v3
-        with:
-          repository: arkod-team/arkod_wp_core
-          path: arkod_wp_core
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Get the version to build and publish
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
@@ -40,7 +28,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./arkod_wp_api/Dockerfile
           push: true
           tags: arkod/arkod-wp-api:latest,arkod/arkod-wp-api:${{ steps.get_version.outputs.VERSION }}
