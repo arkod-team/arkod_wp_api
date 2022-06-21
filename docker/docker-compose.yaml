@@ -48,9 +48,7 @@ services:
       - api-database
     container_name: arkod-wp-api
     hostname: arkod-wp.localhost
-    build:
-      context: ..
-      dockerfile: Dockerfile
+    image: arkod/arkod-wp-api:latest
     restart: always
     networks:
       - arkod-wp-network
