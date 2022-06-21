@@ -14,8 +14,7 @@ dependencies:
   shelf_router: ^1.0.0
   postgres: ^2.4.3
   http: ^0.13.4
-  arkod_wp_core:
-    path: ../arkod_wp_core
+  arkod_wp_core: ^0.0.1
 
 dev_dependencies:
   lints: ^1.0.0
