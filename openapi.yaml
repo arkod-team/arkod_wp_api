@@ -1,6 +1,8 @@
-openapi: '3.0.0'
+openapi: "3.0.0"
 
 info:
+  title: ARKOD WordPress API
+  version: "0.0.1"
   contact:
     email: dev@arkod.fr
   description: |-
@@ -9,11 +11,13 @@ info:
     ARKOD WordPress API is an HTTP REST API consumed by ARKOD WordPress desktop application, website and mobile apps to manage WordPress websites.
 
 servers:
-- url: http://localhost:8080
-  description: Development server
+  - url: http://localhost:8080
+    description: Development server
+  - url: https://arkod-wp.localhost/api
+    description: Local server
 
 tags:
-- name: Engines
+  - name: Engines
 
 paths:
   /engines:
@@ -23,20 +27,20 @@ paths:
       description: |-
         List all engines.
       tags:
-      - Engines
+        - Engines
       produces:
-      - application/json
+        - application/json
       responses:
-        '200':
+        "200":
           description: Engines
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/Engine'
                 type: array
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                items:
+                  $ref: "#/components/schemas/Engine"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
   /engines/{id}:
     get:
       operationId: EnginesDetails
@@ -44,24 +48,173 @@ paths:
       description: |-
         Retrieve details about an engine.
       tags:
-      - Engines
+        - Engines
       parameters:
-      - description: Engine ID
-        in: path
-        name: id
-        required: true
-        type: integer
+        - description: Engine ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
       responses:
-        '200':
+        "200":
           description: Engine
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Engine'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                $ref: "#/components/schemas/Engine"
+        "400":
+          description: Invalid engine ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /engines/{id}/init:
+    post:
+      operationId: EnginesInit
+      summary: Initialize engine
+      description: |-
+        Initialize engine.
+      tags:
+        - Engines
+      parameters:
+        - description: Engine ID
+          in: path
+          name: id
+          required: true
+          type: integer
+        - description: Admin username
+          in: body
+          name: username
+          required: true
+          type: string
+        - description: Admin password
+          in: body
+          name: password
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Initialized engine
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Engine"
+        "400":
+          description: Invalid engine ID or required body parameters missing
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Engine already initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /engines/{id}/signin:
+    post:
+      operationId: EnginesSignin
+      summary: Sign in to engine
+      description: |-
+        Sign in to engine.
+      tags:
+        - Engines
+      parameters:
+        - description: Engine ID
+          in: path
+          name: id
+          required: true
+          type: integer
+        - description: Admin username
+          in: body
+          name: username
+          required: true
+          type: string
+        - description: Admin password
+          in: body
+          name: password
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Authenticated engine
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Engine"
+        "400":
+          description: Invalid engine ID or required body parameters missing
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /engines/{id}/endpoints:
+    get:
+      operationId: EnginesEndpointsList
+      summary: List engine's endpoints
+      description: |-
+        List all endpoints of an engine.
+      tags:
+        - Engines
+      parameters:
+        - description: Engine ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Endpoints
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Endpoint"
+        "400":
+          description: Invalid engine ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
 components:
   schemas:
@@ -87,30 +240,36 @@ components:
           description: Engine type
           type: string
           enum:
-          - portainer
+            - portainer
         endpoints:
           description: Engine endpoints
           type: array
           items:
-            $ref: '#/components/schemas/Endpoint'
-        token:
-          description: Authenticated user JWT
+            $ref: "#/components/schemas/Endpoint"
+        apiKey:
+          description: Portainer API key generated by engine initialization
           type: string
       required:
-      - id
-      - createdAt
-      - isInitialized
-      - name
-      - host
-      - type
+        - id
+        - createdAt
+        - isInitialized
+        - name
+        - host
+        - type
       example:
         id: 1
         createdAt: 2022-01-01T12:00:00.000000Z
         isInitialized: true
         name: local
         host: arkod-wp.localhost
-        endpoints: portainer
-        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOjEsInNjb3BlIjoiZGVmYXVsdCIsImV4cCI6MTY0OTQ0MjU3NX0.MPQnemReGFs1MnyFIl89EAZ2gYiNx914R5Px0Rn1dt8
+        type: portainer
+        endpoints:
+          - id: 1
+            name: local
+            url: unix:///var/run/docker.sock
+            type: docker
+            status: up
+        apiKey: secret-api-key-generated-by-initialization
     Endpoint:
       type: object
       properties:
@@ -127,27 +286,27 @@ components:
           description: Endpoint type
           type: string
           enum:
-          - up
-          - down
+            - docker
+            - agent
+            - azure
         status:
           description: Endpoint status
           type: string
           enum:
-          - docker
-          - agent
-          - azure
+            - up
+            - down
       required:
-      - id
-      - name
-      - url
-      - type
-      - status
+        - id
+        - name
+        - url
+        - type
+        - status
       example:
         id: 1
         name: local
         url: unix:///var/run/docker.sock
-        type: up
-        status: docker
+        type: docker
+        status: up
     Error:
       type: object
       properties:
@@ -159,29 +318,23 @@ components:
           type: string
         origin:
           description: Original exception
-          $ref: '#/components/schemas/Error'
+          $ref: "#/components/schemas/Error"
   responses:
     NotFound:
-      description: Requested resource was not found
+      description: Resource not found
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Unauthorized:
       description: Unauthorized operation, authentication is required
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     InternalServerError:
       description: Internal server error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
