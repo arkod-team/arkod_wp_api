@@ -3,6 +3,7 @@ version: '3'
 services:
   traefik:
     container_name: arkod-wp-traefik
+    hostname: traefik.arkod-wp.localhost
     image: traefik:2.6.3
     restart: always
     volumes:
@@ -28,6 +29,7 @@ services:
     depends_on:
       - traefik
     container_name: arkod-wp-portainer
+    hostname: portainer.arkod-wp.localhost
     image: portainer/portainer-ce:2.11.1-alpine
     restart: always
     volumes:
