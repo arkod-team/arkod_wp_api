@@ -12,5 +12,24 @@
         "dart run build_runner build"
       ]
     },
+    {
+      "type": "shell",
+      "group": "build",
+      "options": { "cwd": "wp_plugins", },
+      "label": "Archive WordPress plugins",
+      "detail": "rm -f plugins.tar.gz && tar -czvf plugins.tar.gz *",
+      "command": [
+        "rm -f plugins.tar.gz && tar -czvf plugins.tar.gz *"
+      ]
+    },
+    {
+      "type": "shell",
+      "group": "build",
+      "label": "Build documentation",
+      "detail": "redoc-cli build openapi.yaml -o lib/src/static/documentation.html --title=\"ARKOD WordPress API\"",
+      "command": [
+        "redoc-cli build openapi.yaml -o lib/src/static/documentation.html --title=\"ARKOD WordPress API\""
+      ]
+    },
   ]
 }
