@@ -25,6 +25,15 @@
     {
       "type": "shell",
       "group": "build",
+      "label": "Serve documentation",
+      "detail": "redoc-cli serve openapi.yaml --watch",
+      "command": [
+        "redoc-cli serve openapi.yaml --watch"
+      ]
+    },
+    {
+      "type": "shell",
+      "group": "build",
       "label": "Build documentation",
       "detail": "redoc-cli build openapi.yaml -o lib/src/static/documentation.html --title=\"ARKOD WordPress API\"",
       "command": [
