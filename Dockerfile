@@ -16,6 +16,7 @@ FROM scratch
 COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 
+COPY --from=build /app/public/ /app/public/
 COPY --from=build /app/docker/ /app/docker/
 COPY --from=build /app/initdb/ /app/initdb/
 
