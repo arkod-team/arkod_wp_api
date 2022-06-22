@@ -33,8 +33,8 @@ class PortainerAPI {
   final String? token;
 
   const PortainerAPI({
-    this.host = 'arkod-wp.localhost',
-    this.path = '/engine/api',
+    this.host = 'portainer.arkod-wp.localhost',
+    this.path = '/api',
     this.apiKey,
     this.token,
   });

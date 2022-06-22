@@ -14,7 +14,7 @@ CREATE TABLE engines (
 
 -- local engine creation
 
-INSERT INTO engines (name, host) VALUES ('local', 'arkod-wp.localhost');
+INSERT INTO engines (name, host) VALUES ('local', 'portainer.arkod-wp.localhost');
 
 -- websites table definition
 
