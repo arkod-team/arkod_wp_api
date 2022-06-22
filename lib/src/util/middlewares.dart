@@ -19,6 +19,10 @@ Middleware addResponseHeaders() => (Handler handler) =>
 /// Middleware to catch exceptions
 Middleware catchExceptions() => (Handler handler) => (Request request) =>
     Future.sync(() => handler(request)).then((response) => response).catchError((error, stackTrace) {
+      print('Error catched :');
+      print(error);
+      print(stackTrace?.toString());
+
       if (error is! ArkodWPException) error = ArkodWPException(origin: error, stackTrace: stackTrace);
 
       final body = error.toJson();
