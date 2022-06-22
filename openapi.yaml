@@ -18,6 +18,7 @@ servers:
 
 tags:
   - name: Engines
+  - name: Websites
 
 paths:
   /engines:
@@ -233,6 +234,323 @@ paths:
                 $ref: "#/components/schemas/Error"
         "500":
           $ref: "#/components/responses/InternalServerError"
+  /websites:
+    get:
+      operationId: WebsitesList
+      summary: List websites
+      description: |-
+        List all websites.
+      tags:
+        - Websites
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Websites
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Website"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /websites/{id}:
+    get:
+      operationId: WebsitesDetails
+      summary: Get website
+      description: |-
+        Retrieve details about a website.
+      tags:
+        - Websites
+      parameters:
+        - description: Website ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Website
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        "400":
+          description: Invalid website ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+    post:
+      operationId: WebsitesAdd
+      summary: Add website
+      description: |-
+        Create a new website.
+      tags:
+        - Websites
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                engineId:
+                  description: Website initial environment's engine ID
+                  type: int
+                endpointId:
+                  description: Website initial environment's endpoint ID
+                  type: int
+                name:
+                  description: Website name
+                  type: string
+                title:
+                  description: Website title
+                  type: string
+                adminUsername:
+                  description: Website administrator username
+                  type: string
+                adminPassword:
+                  description: Website administrator password
+                  type: string
+                adminEmail:
+                  description: Website administrator email address
+                  type: string
+                postsUrlStructure:
+                  description: Website posts URL structure
+                  type: string
+                dbRootPassword:
+                  description: Website database root password
+                  type: string
+                dbUser:
+                  description: Website database user
+                  type: string
+                dbPassword:
+                  description: Website database password
+                  type: string
+                dbTablesPrefix:
+                  description: Website database tables prefix
+                  type: string
+              required:
+                - engineId
+                - endpointId
+                - name
+              example:
+                engineId: 1
+                endpointId: 1
+                name: my-website
+                title: My website
+                adminUsername: admin
+                adminPassword: password
+                adminEmail: admin@my-website.com
+                postsUrlStructure: /blog/%postname
+                dbRootPassword: password
+                dbUser: admin
+                dbPassword: password
+                dbTablesPrefix: wp_
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Created website engine
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        "400":
+          description: Invalid engine ID or endpoint ID or required body parameters missing
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          description: Website name unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+    delete:
+      operationId: WebsitesDelete
+      summary: Delete website
+      description: |-
+        Delete a website.
+      tags:
+        - Websites
+      parameters:
+        - description: Website ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Deleted resources
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  website:
+                    $ref: "#/components/schemas/Website"
+                  environments:
+                    description: Deleted environments
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Environment"
+        "400":
+          description: Invalid website ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /websites/{id}/environments:
+    get:
+      operationId: WebsitesEnvironmensList
+      summary: List a website's environments
+      description: |-
+        List all environments of a website.
+      tags:
+        - Websites
+      parameters:
+        - description: Website ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Environments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Website"
+        "400":
+          description: Invalid website ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /websites/{id}/environments/{eId}/start:
+    post:
+      operationId: WebsitesEnvironmentsStart
+      summary: Start a website
+      description: |-
+        Start a website in specific environment.
+      tags:
+        - Websites
+      parameters:
+        - description: Website ID
+          in: path
+          name: id
+          required: true
+          type: integer
+        - description: Environment ID
+          in: path
+          name: eId
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Started website
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        "400":
+          description: Invalid website ID or environment ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
+  /websites/{id}/environments/{eId}/stop:
+    post:
+      operationId: WebsitesEnvironmentsStop
+      summary: Stop a website
+      description: |-
+        Stop a website in specific environment.
+      tags:
+        - Websites
+      parameters:
+        - description: Website ID
+          in: path
+          name: id
+          required: true
+          type: integer
+        - description: Environment ID
+          in: path
+          name: eId
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Stopped website
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Website"
+        "400":
+          description: Invalid website ID or environment ID
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
 components:
   schemas:
@@ -325,6 +643,133 @@ components:
         url: unix:///var/run/docker.sock
         type: docker
         status: up
+    Website:
+      type: object
+      properties:
+        id:
+          description: Website ID
+          type: integer
+        createdAt:
+          description: Website creation date ISO8601 formatted
+          type: string
+        name:
+          description: Website name
+          type: string
+        title:
+          description: Website title
+          type: string
+        adminUsername:
+          description: Website administrator username
+          type: string
+        adminPassword:
+          description: Website administrator password
+          type: string
+        adminEmail:
+          description: Website administrator email address
+          type: string
+        postsUrlStructure:
+          description: Website posts URL structure
+          type: string
+        dbRootPassword:
+          description: Website database root password
+          type: string
+        dbUser:
+          description: Website database user
+          type: string
+        dbPassword:
+          description: Website database password
+          type: string
+        dbTablesPrefix:
+          description: Website database tables prefix
+          type: string
+        environments:
+          description: Website environments
+          type: array
+          items:
+            $ref: "#/components/schemas/Environment"
+      required:
+        - id
+        - createdAt
+        - name
+        - title
+        - adminUsername
+        - adminPassword
+        - adminEmail
+        - postsUrlStructure
+        - dbRootPassword
+        - dbUser
+        - dbPassword
+        - dbTablesPrefix
+      example:
+        id: 1
+        createdAt: 2022-01-01T12:00:00.000000Z
+        name: my-website
+        title: My website
+        adminUsername: admin
+        adminPassword: password
+        adminEmail: admin@my-website.com
+        postsUrlStructure: /blog/%postname
+        dbRootPassword: password
+        dbUser: admin
+        dbPassword: password
+        dbTablesPrefix: wp_
+        environments:
+          - id: 1
+            createdAt: 2022-01-01T12:00:00.000000Z
+            websiteId: 1
+            engineId: 1
+            endpointId: 1
+            stackId: 123
+            websiteUrl: https://my-website.arkod-wp.localhost
+            status: running
+    Environment:
+      type: object
+      properties:
+        id:
+          description: Environment ID
+          type: integer
+        createdAt:
+          description: Environment creation date ISO8601 formatted
+          type: string
+        websiteId:
+          description: Environment's website ID
+          type: int
+        engineId:
+          description: Environment's engine ID
+          type: int
+        endpointId:
+          description: Environment's endpoint ID
+          type: int
+        stackId:
+          description: Environment's stack ID
+          type: int
+        websiteUrl:
+          description: Environment's website URL
+          type: string
+        status:
+          description: Environment status
+          type: string
+          enum:
+            - running
+            - stopped
+      required:
+        - id
+        - createdAt
+        - websiteId
+        - engineId
+        - endpointId
+        - stackId
+        - websiteUrl
+        - status
+      example:
+        id: 1
+        createdAt: 2022-01-01T12:00:00.000000Z
+        websiteId: 1
+        engineId: 1
+        endpointId: 1
+        stackId: 123
+        websiteUrl: https://my-website.arkod-wp.localhost
+        status: running
     Error:
       type: object
       properties:
