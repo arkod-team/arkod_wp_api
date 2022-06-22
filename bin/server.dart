@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
+import 'package:shelf_static/shelf_static.dart';
 
 import 'package:arkod_wp_api/arkod_wp_api.dart';
 
@@ -15,7 +17,10 @@ void main(List<String> args) async {
 
   // HTTP server
   final server = await serve(
-    api.pipeline.addHandler(api.router),
+    Cascade()
+        .add(createStaticHandler('public', defaultDocument: 'documentation.html'))
+        .add(api.pipeline.addHandler(api.router))
+        .handler,
     InternetAddress.anyIPv4, // Use any available host or container IP (usually `0.0.0.0`)
     int.parse(Platform.environment['PORT'] ?? '8080'), // Respect the PORT environment variable for running in container
   );
