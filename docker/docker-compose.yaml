@@ -77,7 +77,7 @@ services:
     restart: always
     volumes:
       - api-database:/var/lib/postgresql/data:rw
-      - ../initdb:/docker-entrypoint-initdb.d
+      - ./initdb:/docker-entrypoint-initdb.d
     networks:
       - arkod-wp-network
     environment:
