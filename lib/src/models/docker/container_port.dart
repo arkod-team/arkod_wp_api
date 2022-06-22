@@ -30,5 +30,5 @@ class DockerContainerPort with _$DockerContainerPort {
 enum DockerContainerPortType { tcp, udp, sctp }
 
 DockerContainerPortType _containerPortTypeFromJson(String type) =>
-    DockerContainerPortType.values.firstWhereOrNull((t) => t.name == type) ?? DockerContainerPortType.tcp;
+    DockerContainerPortType.values.firstWhere((t) => t.name == type);
 String _containerPortTypeToJson(DockerContainerPortType type) => type.name;

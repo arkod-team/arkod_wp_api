@@ -47,13 +47,13 @@ class DockerContainerMount with _$DockerContainerMount {
 enum DockerContainerMountType { bind, volume, tmpfs, npipe }
 
 DockerContainerMountType _containerMountTypeFromJson(String type) =>
-    DockerContainerMountType.values.firstWhereOrNull((t) => t.name == type) ?? DockerContainerMountType.bind;
+    DockerContainerMountType.values.firstWhere((t) => t.name == type);
 String _containerMountTypeToJson(DockerContainerMountType type) => type.name;
 
 /// Container mount consistency
 enum DockerContainerMountConsistency { consistent, cached, delegated }
 
 DockerContainerMountConsistency? _containerMountConsistencyFromJson(String consistency) =>
-    DockerContainerMountConsistency.values.firstWhereOrNull((c) => c.name == consistency);
+    DockerContainerMountConsistency.values.firstWhere((c) => c.name == consistency);
 String _containerMountConsistencyToJson(DockerContainerMountConsistency? consistency) =>
     consistency != null ? consistency.name : 'default';

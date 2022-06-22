@@ -25,6 +25,5 @@ class DockerContainerMountBindOptions with _$DockerContainerMountBindOptions {
 enum DockerContainerMountBindPropagation { private, rprivate, shared, rshared, slave, rslave }
 
 DockerContainerMountBindPropagation _containerMountBindPropagationFromJson(String propagation) =>
-    DockerContainerMountBindPropagation.values.firstWhereOrNull((t) => t.name == propagation) ??
-    DockerContainerMountBindPropagation.private;
+    DockerContainerMountBindPropagation.values.firstWhere((t) => t.name == propagation);
 String _containerMountBindPropagationToJson(DockerContainerMountBindPropagation propagation) => propagation.name;

@@ -46,6 +46,5 @@ class DockerVolume with _$DockerVolume {
 /// Volume scope
 enum DockerVolumeScope { local, global }
 
-DockerVolumeScope _volumeScopeFromJson(String scope) =>
-    DockerVolumeScope.values.firstWhereOrNull((s) => s.name == scope) ?? DockerVolumeScope.local;
+DockerVolumeScope _volumeScopeFromJson(String scope) => DockerVolumeScope.values.firstWhere((s) => s.name == scope);
 String _volumeScopeToJson(DockerVolumeScope scope) => scope.name;

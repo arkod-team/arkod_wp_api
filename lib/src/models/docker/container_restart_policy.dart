@@ -28,7 +28,7 @@ DockerContainerRestartPolicyName? _containerRestartPolicyNameFromJson(String nam
     ? DockerContainerRestartPolicyName.unlessStopped
     : name == 'on-failure'
         ? DockerContainerRestartPolicyName.onFailure
-        : DockerContainerRestartPolicyName.values.firstWhereOrNull((n) => n.name == name);
+        : DockerContainerRestartPolicyName.values.firstWhere((n) => n.name == name);
 String _containerRestartPolicyNameToJson(DockerContainerRestartPolicyName? name) => name != null
     ? name == DockerContainerRestartPolicyName.unlessStopped
         ? 'unless-stopped'

@@ -42,5 +42,5 @@ class DockerContainerMountPoint with _$DockerContainerMountPoint {
 enum DockerContainerMountPointType { bind, volume, tmpfs, npipe }
 
 DockerContainerMountPointType _containerMountPointTypeFromJson(String type) =>
-    DockerContainerMountPointType.values.firstWhereOrNull((t) => t.name == type) ?? DockerContainerMountPointType.bind;
+    DockerContainerMountPointType.values.firstWhere((t) => t.name == type);
 String _containerMountPointTypeToJson(DockerContainerMountPointType type) => type.name;
