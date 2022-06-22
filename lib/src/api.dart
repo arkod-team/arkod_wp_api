@@ -7,7 +7,6 @@ import 'package:postgres/postgres.dart';
 
 import 'package:arkod_wp_core/models.dart';
 
-import 'package:arkod_wp_api/src/util/http_response.dart';
 import 'package:arkod_wp_api/src/util/middlewares.dart';
 import 'package:arkod_wp_api/src/models/database_config.dart';
 import 'package:arkod_wp_api/src/database/repository.dart';
@@ -41,19 +40,8 @@ class API {
 
   /// API router
   Router get router => Router(notFoundHandler: _notFoundHandler)
-    ..get('/', _rootHandler)
     ..mount('/engines', EnginesService(databaseRepository: _dbRepository).router)
     ..mount('/websites', WebsitesService(databaseRepository: _dbRepository).router);
-
-  /// GET /
-  Future<Response> _rootHandler(Request request) async {
-    final Map<String, dynamic> result = {
-      'date': DateTime.now().toIso8601String(),
-      'title': 'ARKOD WordPress API',
-    };
-
-    return HttpResponse.ok(result);
-  }
 
   /// Route not found
   Future<Response> _notFoundHandler(Request request) async {
