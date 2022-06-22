@@ -18,7 +18,7 @@ void main(List<String> args) async {
   // HTTP server
   final server = await serve(
     Cascade()
-        .add(createStaticHandler('public', defaultDocument: 'documentation.html'))
+        .add(createStaticHandler('public', defaultDocument: 'index.html'))
         .add(api.pipeline.addHandler(api.router))
         .handler,
     InternetAddress.anyIPv4, // Use any available host or container IP (usually `0.0.0.0`)
