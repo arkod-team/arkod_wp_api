@@ -35,9 +35,9 @@
       "type": "shell",
       "group": "build",
       "label": "Build documentation",
-      "detail": "redoc-cli build openapi.yaml -o public/documentation.html --title=\"ARKOD WordPress API\"",
+      "detail": "redoc-cli build openapi.yaml -o public/index.html --title=\"ARKOD WordPress API\"",
       "command": [
-        "redoc-cli build openapi.yaml -o public/documentation.html --title=\"ARKOD WordPress API\""
+        "redoc-cli build openapi.yaml -o public/index.html --title=\"ARKOD WordPress API\""
       ]
     },
   ]
