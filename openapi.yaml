@@ -79,7 +79,7 @@ paths:
       operationId: EnginesInit
       summary: Initialize engine
       description: |-
-        Initialize engine.
+        Initialize a new engine.
       tags:
         - Engines
       parameters:
@@ -88,16 +88,25 @@ paths:
           name: id
           required: true
           type: integer
-        - description: Admin username
-          in: body
-          name: username
-          required: true
-          type: string
-        - description: Admin password
-          in: body
-          name: password
-          required: true
-          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: Administrator username
+                  type: string
+                password:
+                  description: Administrator password
+                  type: string
+              required:
+                - username
+                - password
+              example:
+                username: admin
+                password: password
       produces:
         - application/json
       responses:
@@ -128,7 +137,7 @@ paths:
       operationId: EnginesSignin
       summary: Sign in to engine
       description: |-
-        Sign in to engine.
+        Sign in to an existing engine.
       tags:
         - Engines
       parameters:
@@ -137,16 +146,25 @@ paths:
           name: id
           required: true
           type: integer
-        - description: Admin username
-          in: body
-          name: username
-          required: true
-          type: string
-        - description: Admin password
-          in: body
-          name: password
-          required: true
-          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: Administrator username
+                  type: string
+                password:
+                  description: Administrator password
+                  type: string
+              required:
+                - username
+                - password
+              example:
+                username: admin
+                password: password
       produces:
         - application/json
       responses:
