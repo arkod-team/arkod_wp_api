@@ -19,6 +19,7 @@ COPY --from=build /app/bin/server /app/bin/
 COPY --from=build /app/public/ /app/public/
 COPY --from=build /app/docker/ /app/docker/
 COPY --from=build /app/initdb/ /app/initdb/
+COPY --from=build /app/wp_plugins/ /app/wp_plugins/
 
 # Start server.
 EXPOSE 8080
