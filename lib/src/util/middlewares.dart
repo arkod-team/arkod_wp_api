@@ -19,7 +19,7 @@ Middleware addResponseHeaders() => (Handler handler) =>
 /// Middleware to catch exceptions
 Middleware catchExceptions() => (Handler handler) => (Request request) =>
     Future.sync(() => handler(request)).then((response) => response).catchError((error, stackTrace) {
-      print('Error catched :');
+      print('[ERROR]');
       print(error);
       print(stackTrace?.toString());
 

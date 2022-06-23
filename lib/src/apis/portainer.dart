@@ -106,12 +106,13 @@ class PortainerAPI {
     bool authenticatedRequest = true,
   }) async {
     Map<String, String> headers = authenticatedRequest ? _authenticatedHeaders : _defaultHeaders;
+    print('[GET] ${url.toString()}');
     return _performHttpRequest(http.get(url, headers: headers));
   }
 
   /// Perform a POST request to engine API
   Future<http.Response> _post(
-    Uri endpointUrl, {
+    Uri url, {
     Map<String, dynamic>? requestBody,
     Uint8List? inputStream,
     bool authenticatedRequest = true,
@@ -132,8 +133,9 @@ class PortainerAPI {
     Map<String, String> headers = authenticatedRequest ? _authenticatedHeaders : _defaultHeaders;
     if (sendAsFormData || inputStream != null) headers.remove('content-type');
 
+    print('[POST] ${url.toString()}');
     return _performHttpRequest(http.post(
-      endpointUrl,
+      url,
       headers: headers,
       body: inputStream ??
           (body.isNotEmpty
@@ -146,7 +148,7 @@ class PortainerAPI {
 
   /// Perform a PUT request to engine API
   Future<http.Response> _put(
-    Uri endpointUrl, {
+    Uri url, {
     Map<String, dynamic>? requestBody,
     Uint8List? inputStream,
     bool authenticatedRequest = true,
@@ -167,8 +169,9 @@ class PortainerAPI {
     Map<String, String> headers = authenticatedRequest ? _authenticatedHeaders : _defaultHeaders;
     if (sendAsFormData || inputStream != null) headers.remove('content-type');
 
+    print('[PUT] ${url.toString()}');
     return _performHttpRequest(http.put(
-      endpointUrl,
+      url,
       headers: headers,
       body: inputStream ??
           (body.isNotEmpty
@@ -185,6 +188,8 @@ class PortainerAPI {
     bool authenticatedRequest = true,
   }) async {
     Map<String, String> headers = authenticatedRequest ? _authenticatedHeaders : _defaultHeaders;
+
+    print('[DELETE] ${url.toString()}');
     return _performHttpRequest(http.delete(url, headers: headers));
   }
 
