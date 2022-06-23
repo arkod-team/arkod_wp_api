@@ -254,6 +254,10 @@ class EnginesService {
       }
     }
 
+    await _repository.updateEngine(engine.copyWith(
+      apiKey: null,
+    ));
+
     throw NotFoundException(message: 'User not found');
   }
 
