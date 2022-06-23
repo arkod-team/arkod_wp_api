@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:arkod_wp_api/src/models/docker/container_exit_condition.dart';
-import 'package:arkod_wp_api/src/models/docker/container_exit_result.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:arkod_wp_core/models.dart';
@@ -10,12 +8,15 @@ import 'package:arkod_wp_core/models.dart';
 import 'package:arkod_wp_api/src/models/portainer_exception.dart';
 import 'package:arkod_wp_api/src/models/portainer/endpoint.dart';
 import 'package:arkod_wp_api/src/models/portainer/user.dart';
+import 'package:arkod_wp_api/src/models/portainer/api_key.dart';
 import 'package:arkod_wp_api/src/models/portainer/stack.dart';
 import 'package:arkod_wp_api/src/models/portainer/stack_environment_variable.dart';
 import 'package:arkod_wp_api/src/models/docker/container.dart';
 import 'package:arkod_wp_api/src/models/docker/container_healthcheck_config.dart';
 import 'package:arkod_wp_api/src/models/docker/container_host_config.dart';
 import 'package:arkod_wp_api/src/models/docker/container_networking_config.dart';
+import 'package:arkod_wp_api/src/models/docker/container_exit_condition.dart';
+import 'package:arkod_wp_api/src/models/docker/container_exit_result.dart';
 import 'package:arkod_wp_api/src/models/docker/volume.dart';
 
 /// Portainer API
@@ -275,11 +276,33 @@ class PortainerAPI {
         }
       });
 
+  /// Get all user API keys
+  /// [GET /users/{id}/tokens](https://app.swaggerhub.com/apis/portainer/portainer-ce/2.11.1#/users/UserGetAPIKeys)
+  Future<List<PortainerApiKey>> apiKeys({
+    required int userId,
+  }) =>
+      _get(
+        _apiEndpointURL('/users/$userId/tokens'),
+      ).then((response) {
+        switch (response.statusCode) {
+          case 200:
+            return jsonDecode(response.body).map<PortainerApiKey>((json) => PortainerApiKey.fromJson(json)).toList();
+          case 400:
+            throw BadRequestException(origin: PortainerException.fromHttpResponse(response));
+          case 404:
+            throw NotFoundException(message: 'User not found', origin: PortainerException.fromHttpResponse(response));
+          case 500:
+            throw PortainerException.fromHttpResponse(response);
+          default:
+            throw EngineApiKeysFetchFailedException(origin: PortainerException.fromHttpResponse(response));
+        }
+      });
+
   /// Generate user API key
   /// [POST /users/{id}/tokens](https://app.swaggerhub.com/apis/portainer/portainer-ce/2.11.1#/users/UserGenerateAPIKey)
   ///
   /// Returns the authenticated user JWT
-  Future<String> generateApiKey({
+  Future<String> apiKeyGenerate({
     required int userId,
     required String description,
   }) =>
@@ -307,6 +330,28 @@ class PortainerAPI {
             throw EngineApiKeyGenerateException(origin: PortainerException.fromHttpResponse(response));
         }
       });
+
+  /// Delete an API key
+  /// [DELETE /users/{id}/tokens/{keyId}}](https://app.swaggerhub.com/apis/portainer/portainer-ce/2.11.1#/users/UserRemoveAPIKey)
+  Future<void> apiKeyDelete({
+    required int userId,
+    required int keyId,
+  }) {
+    return _delete(_apiEndpointURL('/users/$userId/tokens/$keyId')).then((response) {
+      switch (response.statusCode) {
+        case 204:
+          return;
+        case 400:
+          throw BadRequestException(origin: PortainerException.fromHttpResponse(response));
+        case 404:
+          throw NotFoundException(message: 'User not found', origin: PortainerException.fromHttpResponse(response));
+        case 500:
+          throw PortainerException.fromHttpResponse(response);
+        default:
+          throw EngineApiKeyDeleteFailedException(origin: PortainerException.fromHttpResponse(response));
+      }
+    });
+  }
 
   /// Logout user
   /// [POST /auth/logout](https://app.swaggerhub.com/apis/portainer/portainer-ce/2.11.1#/auth/Logout)
