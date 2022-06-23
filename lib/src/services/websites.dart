@@ -76,13 +76,13 @@ class WebsitesService {
 
     late final int engineId;
     try {
-      engineId = int.parse(body['engineId']);
+      engineId = body['engineId'] is int ? body['engineId'] : int.parse(body['engineId']);
     } catch (_) {
       throw BadRequestException(message: 'Given engine ID should be an integer');
     }
     late final int endpointId;
     try {
-      endpointId = int.parse(body['endpointId']);
+      endpointId = body['endpointId'] is int ? body['endpointId'] : int.parse(body['endpointId']);
     } catch (_) {
       throw BadRequestException(message: 'Given endpoint ID should be an integer');
     }
