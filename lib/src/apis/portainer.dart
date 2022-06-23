@@ -63,10 +63,13 @@ class PortainerAPI {
       }
     }
 
+    final isProductionMode = bool.fromEnvironment('dart.vm.product');
+
     return Uri(
-      scheme: 'https',
+      scheme: isProductionMode ? 'http' : 'https',
       host: host,
       path: path + endpoint,
+      port: isProductionMode ? 9000 : null,
       queryParameters: queryParams.isNotEmpty ? queryParams : null,
     );
   }
