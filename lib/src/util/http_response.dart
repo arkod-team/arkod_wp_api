@@ -65,6 +65,22 @@ abstract class HttpResponse {
     );
   }
 
+  /// 403 - Forbidden
+  static forbidden(
+    Object? body, {
+    Map<String, Object>? headers,
+    Encoding? encoding,
+    Map<String, Object>? context,
+  }) {
+    return Response(
+      403,
+      body: jsonEncode(body ?? 'Forbidden'),
+      headers: headers,
+      encoding: encoding,
+      context: context,
+    );
+  }
+
   /// 404 - Not found
   static notFound(
     Object? body, {

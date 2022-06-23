@@ -34,8 +34,9 @@ Middleware catchExceptions() => (Handler handler) => (Request request) =>
         case EmptyRequestBodyException:
         case RequestBodyFormatException:
         case RequestBodyMissingFieldException:
-        case InvalidCredentialsException:
           return HttpResponse.badRequest(body, headers: _headers);
+        case InvalidCredentialsException:
+          return HttpResponse.forbidden(body, headers: _headers);
         case NotAuthorizedException:
           return HttpResponse.unauthorized(body, headers: _headers);
         case EngineNotInitilizedException:
