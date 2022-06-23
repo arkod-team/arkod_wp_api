@@ -9,14 +9,14 @@ import 'package:arkod_wp_api/src/models/wordpress_exception.dart';
 
 /// WordPress API
 class WordpressAPI {
-  /// WordPress website url
-  final String url;
+  /// WordPress website name
+  final String websiteName;
 
   /// WordPress API base path
   final String path;
 
   const WordpressAPI({
-    this.url = 'https://website.arkod-wp.localhost',
+    this.websiteName = 'my-website',
     this.path = '/wp-json',
   });
 
@@ -44,11 +44,11 @@ class WordpressAPI {
       }
     }
 
-    final urlComponents = url.split('://');
+    final isProductionMode = bool.fromEnvironment('dart.vm.product');
 
     return Uri(
-      scheme: urlComponents.first,
-      host: urlComponents.last,
+      scheme: isProductionMode ? 'http' : 'https',
+      host: isProductionMode ? websiteName : '$websiteName.arkod-wp.localhost',
       path: path + endpoint,
       queryParameters: queryParams.isNotEmpty ? queryParams : null,
     );

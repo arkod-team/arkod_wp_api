@@ -239,7 +239,7 @@ class WebsitesService {
       throw WebsiteLanguageInstallFailedException(origin: result);
     }
 
-    await WordpressAPI(url: environment.websiteUrl).oxygenInit();
+    await WordpressAPI(websiteName: website.name).oxygenInit();
 
     // TODO: manage website templates
     // await WordpressAPI(
