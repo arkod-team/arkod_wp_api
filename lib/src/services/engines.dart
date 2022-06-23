@@ -218,6 +218,45 @@ class EnginesService {
     return HttpResponse.ok(authenticatedEngine);
   }
 
+  /// GET /engines/<id>/users/active
+  @Route.get('/<id>/users/active')
+  Future<Response> activeUser(Request request, String id) async {
+    late final int engineId;
+    try {
+      engineId = int.parse(id);
+    } catch (_) {
+      throw BadRequestException(message: 'Given engine ID should be an integer');
+    }
+
+    final engine = await checkInitialization(
+      engine: await _repository.getEngine(engineId),
+      databaseRepository: _repository,
+    );
+
+    if (engine.apiKey == null) throw NotAuthorizedException();
+
+    final api = PortainerAPI(host: engine.host, apiKey: engine.apiKey);
+
+    final adminUsers = (await api.users()).where((user) => user.role == PortainerUserRole.administrator).toList();
+    for (final user in adminUsers) {
+      final apiKeyPrefixes = (await api.apiKeys(userId: user.id))
+          .where((key) => key.description == 'arkod-wp-api-key')
+          .map((key) => key.prefix)
+          .toList();
+      for (final prefix in apiKeyPrefixes) {
+        if (engine.apiKey!.startsWith(prefix)) {
+          return HttpResponse.ok({
+            'id': user.id,
+            'username': user.username,
+            'role': user.role.name,
+          });
+        }
+      }
+    }
+
+    throw NotFoundException(message: 'User not found');
+  }
+
   /// GET /engines/<id>/endpoints
   @Route.get('/<id>/endpoints')
   Future<Response> getEngineEndpoints(Request request, String id) async {

@@ -191,6 +191,48 @@ paths:
                 $ref: "#/components/schemas/Error"
         "500":
           $ref: "#/components/responses/InternalServerError"
+  /engines/{id}/users/active:
+    get:
+      operationId: EnginesUsersActive
+      summary: Get active user
+      description: |-
+        Retrieve details about engine user associated to active API key.
+        This endpoint can be used to check engine authentication status.
+      tags:
+        - Engines
+      parameters:
+        - description: Engine ID
+          in: path
+          name: id
+          required: true
+          type: integer
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Authenticated engine's user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EngineUser"
+        "400":
+          description: Invalid engine ID or required body parameters missing
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          description: Engine not initialized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
   /engines/{id}/endpoints:
     get:
       operationId: EnginesEndpointsList
@@ -643,6 +685,29 @@ components:
         url: unix:///var/run/docker.sock
         type: docker
         status: up
+    EngineUser:
+      type: object
+      properties:
+        id:
+          description: User ID
+          type: integer
+        username:
+          description: User username
+          type: string
+        role:
+          description: User role
+          type: string
+          enum:
+            - administrator
+            - user
+      required:
+        - id
+        - username
+        - role
+      example:
+        id: 1
+        username: admin
+        role: administrator
     Website:
       type: object
       properties:
