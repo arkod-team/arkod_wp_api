@@ -48,7 +48,7 @@ class WordpressAPI {
 
     return Uri(
       scheme: isProductionMode ? 'http' : 'https',
-      host: isProductionMode ? websiteName : '$websiteName.arkod-wp.localhost',
+      host: isProductionMode ? '$websiteName-wp' : '$websiteName.arkod-wp.localhost',
       path: path + endpoint,
       queryParameters: queryParams.isNotEmpty ? queryParams : null,
     );
