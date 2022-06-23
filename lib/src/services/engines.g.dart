@@ -12,6 +12,7 @@ Router _$EnginesServiceRouter(EnginesService service) {
   router.add('GET', r'/<id>', service.get);
   router.add('POST', r'/<id>/init', service.init);
   router.add('POST', r'/<id>/signin', service.signIn);
+  router.add('GET', r'/<id>/users/active', service.activeUser);
   router.add('GET', r'/<id>/endpoints', service.getEngineEndpoints);
   return router;
 }
