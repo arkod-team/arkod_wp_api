@@ -34,11 +34,11 @@ class PortainerAPI {
   final String? token;
 
   const PortainerAPI({
-    this.host = 'portainer.arkod-wp.localhost',
+    String host = 'arkod-wp.localhost',
     this.path = '/api',
     this.apiKey,
     this.token,
-  });
+  }) : host = 'portainer.$host';
 
   /// Construct an engine API endpoint URL to request based on given [endpoint]
   Uri _apiEndpointURL(
