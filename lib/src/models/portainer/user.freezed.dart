@@ -12,46 +12,11 @@ part of 'user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerUser _$PortainerUserFromJson(Map<String, dynamic> json) {
   return _PortainerUser.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerUserTearOff {
-  const _$PortainerUserTearOff();
-
-  _PortainerUser call(
-      {@JsonKey(name: 'Id')
-          required int id,
-      @JsonKey(name: 'Username')
-          required String username,
-      @JsonKey(name: 'Role', fromJson: _userRoleFromJson, toJson: _userRoleToJson)
-          required PortainerUserRole role,
-      @JsonKey(name: 'UserTheme')
-          required String theme,
-      @JsonKey(name: 'PortainerAuthorizations')
-          Map<String, bool>? authorizations,
-      @JsonKey(name: 'EndpointAuthorizations')
-          Map<String, Map<String, bool>>? endpointAuthorizations}) {
-    return _PortainerUser(
-      id: id,
-      username: username,
-      role: role,
-      theme: theme,
-      authorizations: authorizations,
-      endpointAuthorizations: endpointAuthorizations,
-    );
-  }
-
-  PortainerUser fromJson(Map<String, Object?> json) {
-    return PortainerUser.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerUser = _$PortainerUserTearOff();
 
 /// @nodoc
 mixin _$PortainerUser {
@@ -154,11 +119,11 @@ class _$PortainerUserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerUserCopyWith<$Res>
+abstract class _$$_PortainerUserCopyWith<$Res>
     implements $PortainerUserCopyWith<$Res> {
-  factory _$PortainerUserCopyWith(
-          _PortainerUser value, $Res Function(_PortainerUser) then) =
-      __$PortainerUserCopyWithImpl<$Res>;
+  factory _$$_PortainerUserCopyWith(
+          _$_PortainerUser value, $Res Function(_$_PortainerUser) then) =
+      __$$_PortainerUserCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Id')
@@ -176,15 +141,15 @@ abstract class _$PortainerUserCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerUserCopyWithImpl<$Res>
+class __$$_PortainerUserCopyWithImpl<$Res>
     extends _$PortainerUserCopyWithImpl<$Res>
-    implements _$PortainerUserCopyWith<$Res> {
-  __$PortainerUserCopyWithImpl(
-      _PortainerUser _value, $Res Function(_PortainerUser) _then)
-      : super(_value, (v) => _then(v as _PortainerUser));
+    implements _$$_PortainerUserCopyWith<$Res> {
+  __$$_PortainerUserCopyWithImpl(
+      _$_PortainerUser _value, $Res Function(_$_PortainerUser) _then)
+      : super(_value, (v) => _then(v as _$_PortainerUser));
 
   @override
-  _PortainerUser get _value => super._value as _PortainerUser;
+  _$_PortainerUser get _value => super._value as _$_PortainerUser;
 
   @override
   $Res call({
@@ -195,7 +160,7 @@ class __$PortainerUserCopyWithImpl<$Res>
     Object? authorizations = freezed,
     Object? endpointAuthorizations = freezed,
   }) {
-    return _then(_PortainerUser(
+    return _then(_$_PortainerUser(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -213,11 +178,11 @@ class __$PortainerUserCopyWithImpl<$Res>
           : theme // ignore: cast_nullable_to_non_nullable
               as String,
       authorizations: authorizations == freezed
-          ? _value.authorizations
+          ? _value._authorizations
           : authorizations // ignore: cast_nullable_to_non_nullable
               as Map<String, bool>?,
       endpointAuthorizations: endpointAuthorizations == freezed
-          ? _value.endpointAuthorizations
+          ? _value._endpointAuthorizations
           : endpointAuthorizations // ignore: cast_nullable_to_non_nullable
               as Map<String, Map<String, bool>>?,
     ));
@@ -237,43 +202,60 @@ class _$_PortainerUser implements _PortainerUser {
       @JsonKey(name: 'UserTheme')
           required this.theme,
       @JsonKey(name: 'PortainerAuthorizations')
-          this.authorizations,
+          final Map<String, bool>? authorizations,
       @JsonKey(name: 'EndpointAuthorizations')
-          this.endpointAuthorizations});
+          final Map<String, Map<String, bool>>? endpointAuthorizations})
+      : _authorizations = authorizations,
+        _endpointAuthorizations = endpointAuthorizations;
 
   factory _$_PortainerUser.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerUserFromJson(json);
 
-  @override
-
   /// User ID
+  @override
   @JsonKey(name: 'Id')
   final int id;
-  @override
 
   /// User username
+  @override
   @JsonKey(name: 'Username')
   final String username;
-  @override
 
   /// User role
+  @override
   @JsonKey(name: 'Role', fromJson: _userRoleFromJson, toJson: _userRoleToJson)
   final PortainerUserRole role;
-  @override
 
   /// User theme
+  @override
   @JsonKey(name: 'UserTheme')
   final String theme;
-  @override
 
   /// User authorizations
-  @JsonKey(name: 'PortainerAuthorizations')
-  final Map<String, bool>? authorizations;
+  final Map<String, bool>? _authorizations;
+
+  /// User authorizations
   @override
+  @JsonKey(name: 'PortainerAuthorizations')
+  Map<String, bool>? get authorizations {
+    final value = _authorizations;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// User authorizations for endpoints
+  final Map<String, Map<String, bool>>? _endpointAuthorizations;
+
+  /// User authorizations for endpoints
+  @override
   @JsonKey(name: 'EndpointAuthorizations')
-  final Map<String, Map<String, bool>>? endpointAuthorizations;
+  Map<String, Map<String, bool>>? get endpointAuthorizations {
+    final value = _endpointAuthorizations;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -284,17 +266,18 @@ class _$_PortainerUser implements _PortainerUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerUser &&
+            other is _$_PortainerUser &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.role, role) &&
             const DeepCollectionEquality().equals(other.theme, theme) &&
             const DeepCollectionEquality()
-                .equals(other.authorizations, authorizations) &&
-            const DeepCollectionEquality()
-                .equals(other.endpointAuthorizations, endpointAuthorizations));
+                .equals(other._authorizations, _authorizations) &&
+            const DeepCollectionEquality().equals(
+                other._endpointAuthorizations, _endpointAuthorizations));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -302,13 +285,13 @@ class _$_PortainerUser implements _PortainerUser {
       const DeepCollectionEquality().hash(username),
       const DeepCollectionEquality().hash(role),
       const DeepCollectionEquality().hash(theme),
-      const DeepCollectionEquality().hash(authorizations),
-      const DeepCollectionEquality().hash(endpointAuthorizations));
+      const DeepCollectionEquality().hash(_authorizations),
+      const DeepCollectionEquality().hash(_endpointAuthorizations));
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerUserCopyWith<_PortainerUser> get copyWith =>
-      __$PortainerUserCopyWithImpl<_PortainerUser>(this, _$identity);
+  _$$_PortainerUserCopyWith<_$_PortainerUser> get copyWith =>
+      __$$_PortainerUserCopyWithImpl<_$_PortainerUser>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -319,17 +302,17 @@ class _$_PortainerUser implements _PortainerUser {
 abstract class _PortainerUser implements PortainerUser {
   const factory _PortainerUser(
       {@JsonKey(name: 'Id')
-          required int id,
+          required final int id,
       @JsonKey(name: 'Username')
-          required String username,
+          required final String username,
       @JsonKey(name: 'Role', fromJson: _userRoleFromJson, toJson: _userRoleToJson)
-          required PortainerUserRole role,
+          required final PortainerUserRole role,
       @JsonKey(name: 'UserTheme')
-          required String theme,
+          required final String theme,
       @JsonKey(name: 'PortainerAuthorizations')
-          Map<String, bool>? authorizations,
+          final Map<String, bool>? authorizations,
       @JsonKey(name: 'EndpointAuthorizations')
-          Map<String, Map<String, bool>>? endpointAuthorizations}) = _$_PortainerUser;
+          final Map<String, Map<String, bool>>? endpointAuthorizations}) = _$_PortainerUser;
 
   factory _PortainerUser.fromJson(Map<String, dynamic> json) =
       _$_PortainerUser.fromJson;
@@ -338,34 +321,35 @@ abstract class _PortainerUser implements PortainerUser {
 
   /// User ID
   @JsonKey(name: 'Id')
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// User username
   @JsonKey(name: 'Username')
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
 
   /// User role
   @JsonKey(name: 'Role', fromJson: _userRoleFromJson, toJson: _userRoleToJson)
-  PortainerUserRole get role;
+  PortainerUserRole get role => throw _privateConstructorUsedError;
   @override
 
   /// User theme
   @JsonKey(name: 'UserTheme')
-  String get theme;
+  String get theme => throw _privateConstructorUsedError;
   @override
 
   /// User authorizations
   @JsonKey(name: 'PortainerAuthorizations')
-  Map<String, bool>? get authorizations;
+  Map<String, bool>? get authorizations => throw _privateConstructorUsedError;
   @override
 
   /// User authorizations for endpoints
   @JsonKey(name: 'EndpointAuthorizations')
-  Map<String, Map<String, bool>>? get endpointAuthorizations;
+  Map<String, Map<String, bool>>? get endpointAuthorizations =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerUserCopyWith<_PortainerUser> get copyWith =>
+  _$$_PortainerUserCopyWith<_$_PortainerUser> get copyWith =>
       throw _privateConstructorUsedError;
 }

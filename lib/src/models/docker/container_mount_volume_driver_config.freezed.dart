@@ -12,35 +12,13 @@ part of 'container_mount_volume_driver_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMountVolumeDriverConfig
     _$DockerContainerMountVolumeDriverConfigFromJson(
         Map<String, dynamic> json) {
   return _DockerContainerMountVolumeDriverConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountVolumeDriverConfigTearOff {
-  const _$DockerContainerMountVolumeDriverConfigTearOff();
-
-  _DockerContainerMountVolumeDriverConfig call(
-      {@JsonKey(name: 'Name') required String name,
-      @JsonKey(name: 'Options') Map<String, String>? options}) {
-    return _DockerContainerMountVolumeDriverConfig(
-      name: name,
-      options: options,
-    );
-  }
-
-  DockerContainerMountVolumeDriverConfig fromJson(Map<String, Object?> json) {
-    return DockerContainerMountVolumeDriverConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMountVolumeDriverConfig =
-    _$DockerContainerMountVolumeDriverConfigTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMountVolumeDriverConfig {
@@ -98,12 +76,12 @@ class _$DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountVolumeDriverConfigCopyWith<$Res>
+abstract class _$$_DockerContainerMountVolumeDriverConfigCopyWith<$Res>
     implements $DockerContainerMountVolumeDriverConfigCopyWith<$Res> {
-  factory _$DockerContainerMountVolumeDriverConfigCopyWith(
-          _DockerContainerMountVolumeDriverConfig value,
-          $Res Function(_DockerContainerMountVolumeDriverConfig) then) =
-      __$DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountVolumeDriverConfigCopyWith(
+          _$_DockerContainerMountVolumeDriverConfig value,
+          $Res Function(_$_DockerContainerMountVolumeDriverConfig) then) =
+      __$$_DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Name') String name,
@@ -111,31 +89,31 @@ abstract class _$DockerContainerMountVolumeDriverConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>
+class __$$_DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>
     extends _$DockerContainerMountVolumeDriverConfigCopyWithImpl<$Res>
-    implements _$DockerContainerMountVolumeDriverConfigCopyWith<$Res> {
-  __$DockerContainerMountVolumeDriverConfigCopyWithImpl(
-      _DockerContainerMountVolumeDriverConfig _value,
-      $Res Function(_DockerContainerMountVolumeDriverConfig) _then)
-      : super(
-            _value, (v) => _then(v as _DockerContainerMountVolumeDriverConfig));
+    implements _$$_DockerContainerMountVolumeDriverConfigCopyWith<$Res> {
+  __$$_DockerContainerMountVolumeDriverConfigCopyWithImpl(
+      _$_DockerContainerMountVolumeDriverConfig _value,
+      $Res Function(_$_DockerContainerMountVolumeDriverConfig) _then)
+      : super(_value,
+            (v) => _then(v as _$_DockerContainerMountVolumeDriverConfig));
 
   @override
-  _DockerContainerMountVolumeDriverConfig get _value =>
-      super._value as _DockerContainerMountVolumeDriverConfig;
+  _$_DockerContainerMountVolumeDriverConfig get _value =>
+      super._value as _$_DockerContainerMountVolumeDriverConfig;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? options = freezed,
   }) {
-    return _then(_DockerContainerMountVolumeDriverConfig(
+    return _then(_$_DockerContainerMountVolumeDriverConfig(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       options: options == freezed
-          ? _value.options
+          ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
     ));
@@ -148,22 +126,30 @@ class _$_DockerContainerMountVolumeDriverConfig
     implements _DockerContainerMountVolumeDriverConfig {
   const _$_DockerContainerMountVolumeDriverConfig(
       {@JsonKey(name: 'Name') required this.name,
-      @JsonKey(name: 'Options') this.options});
+      @JsonKey(name: 'Options') final Map<String, String>? options})
+      : _options = options;
 
   factory _$_DockerContainerMountVolumeDriverConfig.fromJson(
           Map<String, dynamic> json) =>
       _$$_DockerContainerMountVolumeDriverConfigFromJson(json);
 
-  @override
-
   /// Driver name
+  @override
   @JsonKey(name: 'Name')
   final String name;
-  @override
 
   /// Driver options
+  final Map<String, String>? _options;
+
+  /// Driver options
+  @override
   @JsonKey(name: 'Options')
-  final Map<String, String>? options;
+  Map<String, String>? get options {
+    final value = _options;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -174,23 +160,24 @@ class _$_DockerContainerMountVolumeDriverConfig
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMountVolumeDriverConfig &&
+            other is _$_DockerContainerMountVolumeDriverConfig &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.options, options));
+            const DeepCollectionEquality().equals(other._options, _options));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(options));
+      const DeepCollectionEquality().hash(_options));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountVolumeDriverConfigCopyWith<
-          _DockerContainerMountVolumeDriverConfig>
-      get copyWith => __$DockerContainerMountVolumeDriverConfigCopyWithImpl<
-          _DockerContainerMountVolumeDriverConfig>(this, _$identity);
+  _$$_DockerContainerMountVolumeDriverConfigCopyWith<
+          _$_DockerContainerMountVolumeDriverConfig>
+      get copyWith => __$$_DockerContainerMountVolumeDriverConfigCopyWithImpl<
+          _$_DockerContainerMountVolumeDriverConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -201,8 +188,8 @@ class _$_DockerContainerMountVolumeDriverConfig
 abstract class _DockerContainerMountVolumeDriverConfig
     implements DockerContainerMountVolumeDriverConfig {
   const factory _DockerContainerMountVolumeDriverConfig(
-          {@JsonKey(name: 'Name') required String name,
-          @JsonKey(name: 'Options') Map<String, String>? options}) =
+          {@JsonKey(name: 'Name') required final String name,
+          @JsonKey(name: 'Options') final Map<String, String>? options}) =
       _$_DockerContainerMountVolumeDriverConfig;
 
   factory _DockerContainerMountVolumeDriverConfig.fromJson(
@@ -213,15 +200,15 @@ abstract class _DockerContainerMountVolumeDriverConfig
 
   /// Driver name
   @JsonKey(name: 'Name')
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Driver options
   @JsonKey(name: 'Options')
-  Map<String, String>? get options;
+  Map<String, String>? get options => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountVolumeDriverConfigCopyWith<
-          _DockerContainerMountVolumeDriverConfig>
+  _$$_DockerContainerMountVolumeDriverConfigCopyWith<
+          _$_DockerContainerMountVolumeDriverConfig>
       get copyWith => throw _privateConstructorUsedError;
 }

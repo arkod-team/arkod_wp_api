@@ -12,52 +12,11 @@ part of 'container_mount.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMount _$DockerContainerMountFromJson(Map<String, dynamic> json) {
   return _DockerContainerMount.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountTearOff {
-  const _$DockerContainerMountTearOff();
-
-  _DockerContainerMount call(
-      {@JsonKey(name: 'Target')
-          String? target,
-      @JsonKey(name: 'Source')
-          String? source,
-      @JsonKey(name: 'Type', fromJson: _containerMountTypeFromJson, toJson: _containerMountTypeToJson)
-          required DockerContainerMountType type,
-      @JsonKey(name: 'ReadOnly')
-          bool readOnly = false,
-      @JsonKey(name: 'Consistency', fromJson: _containerMountConsistencyFromJson, toJson: _containerMountConsistencyToJson)
-          DockerContainerMountConsistency? consistency,
-      @JsonKey(name: 'BindOptions')
-          DockerContainerMountBindOptions? bindOptions,
-      @JsonKey(name: 'VolumeOptions')
-          DockerContainerMountVolumeOptions? volumeOptions,
-      @JsonKey(name: 'TmpfsOptions')
-          DockerContainerMountTmpfsOptions? tmpfsOptions}) {
-    return _DockerContainerMount(
-      target: target,
-      source: source,
-      type: type,
-      readOnly: readOnly,
-      consistency: consistency,
-      bindOptions: bindOptions,
-      volumeOptions: volumeOptions,
-      tmpfsOptions: tmpfsOptions,
-    );
-  }
-
-  DockerContainerMount fromJson(Map<String, Object?> json) {
-    return DockerContainerMount.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMount = _$DockerContainerMountTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMount {
@@ -231,11 +190,11 @@ class _$DockerContainerMountCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountCopyWith<$Res>
+abstract class _$$_DockerContainerMountCopyWith<$Res>
     implements $DockerContainerMountCopyWith<$Res> {
-  factory _$DockerContainerMountCopyWith(_DockerContainerMount value,
-          $Res Function(_DockerContainerMount) then) =
-      __$DockerContainerMountCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountCopyWith(_$_DockerContainerMount value,
+          $Res Function(_$_DockerContainerMount) then) =
+      __$$_DockerContainerMountCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Target')
@@ -264,15 +223,15 @@ abstract class _$DockerContainerMountCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountCopyWithImpl<$Res>
+class __$$_DockerContainerMountCopyWithImpl<$Res>
     extends _$DockerContainerMountCopyWithImpl<$Res>
-    implements _$DockerContainerMountCopyWith<$Res> {
-  __$DockerContainerMountCopyWithImpl(
-      _DockerContainerMount _value, $Res Function(_DockerContainerMount) _then)
-      : super(_value, (v) => _then(v as _DockerContainerMount));
+    implements _$$_DockerContainerMountCopyWith<$Res> {
+  __$$_DockerContainerMountCopyWithImpl(_$_DockerContainerMount _value,
+      $Res Function(_$_DockerContainerMount) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerMount));
 
   @override
-  _DockerContainerMount get _value => super._value as _DockerContainerMount;
+  _$_DockerContainerMount get _value => super._value as _$_DockerContainerMount;
 
   @override
   $Res call({
@@ -285,7 +244,7 @@ class __$DockerContainerMountCopyWithImpl<$Res>
     Object? volumeOptions = freezed,
     Object? tmpfsOptions = freezed,
   }) {
-    return _then(_DockerContainerMount(
+    return _then(_$_DockerContainerMount(
       target: target == freezed
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
@@ -346,50 +305,49 @@ class _$_DockerContainerMount implements _DockerContainerMount {
   factory _$_DockerContainerMount.fromJson(Map<String, dynamic> json) =>
       _$$_DockerContainerMountFromJson(json);
 
-  @override
-
   /// Mount source, container path
+  @override
   @JsonKey(name: 'Target')
   final String? target;
-  @override
 
   /// Mount source, e.g. volume name or host path
+  @override
   @JsonKey(name: 'Source')
   final String? source;
-  @override
 
   /// Mount type
+  @override
   @JsonKey(
       name: 'Type',
       fromJson: _containerMountTypeFromJson,
       toJson: _containerMountTypeToJson)
   final DockerContainerMountType type;
-  @override
 
   /// Is the mount read-only ?
+  @override
   @JsonKey(name: 'ReadOnly')
   final bool readOnly;
-  @override
 
   /// Mount consistency requirement
+  @override
   @JsonKey(
       name: 'Consistency',
       fromJson: _containerMountConsistencyFromJson,
       toJson: _containerMountConsistencyToJson)
   final DockerContainerMountConsistency? consistency;
-  @override
 
   /// Mount bind configuration
+  @override
   @JsonKey(name: 'BindOptions')
   final DockerContainerMountBindOptions? bindOptions;
-  @override
 
   /// Mount volume configuration
+  @override
   @JsonKey(name: 'VolumeOptions')
   final DockerContainerMountVolumeOptions? volumeOptions;
-  @override
 
   /// Mount tmpfs configuration
+  @override
   @JsonKey(name: 'TmpfsOptions')
   final DockerContainerMountTmpfsOptions? tmpfsOptions;
 
@@ -402,7 +360,7 @@ class _$_DockerContainerMount implements _DockerContainerMount {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMount &&
+            other is _$_DockerContainerMount &&
             const DeepCollectionEquality().equals(other.target, target) &&
             const DeepCollectionEquality().equals(other.source, source) &&
             const DeepCollectionEquality().equals(other.type, type) &&
@@ -417,6 +375,7 @@ class _$_DockerContainerMount implements _DockerContainerMount {
                 .equals(other.tmpfsOptions, tmpfsOptions));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -431,8 +390,8 @@ class _$_DockerContainerMount implements _DockerContainerMount {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountCopyWith<_DockerContainerMount> get copyWith =>
-      __$DockerContainerMountCopyWithImpl<_DockerContainerMount>(
+  _$$_DockerContainerMountCopyWith<_$_DockerContainerMount> get copyWith =>
+      __$$_DockerContainerMountCopyWithImpl<_$_DockerContainerMount>(
           this, _$identity);
 
   @override
@@ -444,21 +403,21 @@ class _$_DockerContainerMount implements _DockerContainerMount {
 abstract class _DockerContainerMount implements DockerContainerMount {
   const factory _DockerContainerMount(
       {@JsonKey(name: 'Target')
-          String? target,
+          final String? target,
       @JsonKey(name: 'Source')
-          String? source,
+          final String? source,
       @JsonKey(name: 'Type', fromJson: _containerMountTypeFromJson, toJson: _containerMountTypeToJson)
-          required DockerContainerMountType type,
+          required final DockerContainerMountType type,
       @JsonKey(name: 'ReadOnly')
-          bool readOnly,
+          final bool readOnly,
       @JsonKey(name: 'Consistency', fromJson: _containerMountConsistencyFromJson, toJson: _containerMountConsistencyToJson)
-          DockerContainerMountConsistency? consistency,
+          final DockerContainerMountConsistency? consistency,
       @JsonKey(name: 'BindOptions')
-          DockerContainerMountBindOptions? bindOptions,
+          final DockerContainerMountBindOptions? bindOptions,
       @JsonKey(name: 'VolumeOptions')
-          DockerContainerMountVolumeOptions? volumeOptions,
+          final DockerContainerMountVolumeOptions? volumeOptions,
       @JsonKey(name: 'TmpfsOptions')
-          DockerContainerMountTmpfsOptions? tmpfsOptions}) = _$_DockerContainerMount;
+          final DockerContainerMountTmpfsOptions? tmpfsOptions}) = _$_DockerContainerMount;
 
   factory _DockerContainerMount.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerMount.fromJson;
@@ -467,12 +426,12 @@ abstract class _DockerContainerMount implements DockerContainerMount {
 
   /// Mount source, container path
   @JsonKey(name: 'Target')
-  String? get target;
+  String? get target => throw _privateConstructorUsedError;
   @override
 
   /// Mount source, e.g. volume name or host path
   @JsonKey(name: 'Source')
-  String? get source;
+  String? get source => throw _privateConstructorUsedError;
   @override
 
   /// Mount type
@@ -480,12 +439,12 @@ abstract class _DockerContainerMount implements DockerContainerMount {
       name: 'Type',
       fromJson: _containerMountTypeFromJson,
       toJson: _containerMountTypeToJson)
-  DockerContainerMountType get type;
+  DockerContainerMountType get type => throw _privateConstructorUsedError;
   @override
 
   /// Is the mount read-only ?
   @JsonKey(name: 'ReadOnly')
-  bool get readOnly;
+  bool get readOnly => throw _privateConstructorUsedError;
   @override
 
   /// Mount consistency requirement
@@ -493,24 +452,28 @@ abstract class _DockerContainerMount implements DockerContainerMount {
       name: 'Consistency',
       fromJson: _containerMountConsistencyFromJson,
       toJson: _containerMountConsistencyToJson)
-  DockerContainerMountConsistency? get consistency;
+  DockerContainerMountConsistency? get consistency =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Mount bind configuration
   @JsonKey(name: 'BindOptions')
-  DockerContainerMountBindOptions? get bindOptions;
+  DockerContainerMountBindOptions? get bindOptions =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Mount volume configuration
   @JsonKey(name: 'VolumeOptions')
-  DockerContainerMountVolumeOptions? get volumeOptions;
+  DockerContainerMountVolumeOptions? get volumeOptions =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Mount tmpfs configuration
   @JsonKey(name: 'TmpfsOptions')
-  DockerContainerMountTmpfsOptions? get tmpfsOptions;
+  DockerContainerMountTmpfsOptions? get tmpfsOptions =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountCopyWith<_DockerContainerMount> get copyWith =>
+  _$$_DockerContainerMountCopyWith<_$_DockerContainerMount> get copyWith =>
       throw _privateConstructorUsedError;
 }

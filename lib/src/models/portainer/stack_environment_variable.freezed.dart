@@ -12,33 +12,12 @@ part of 'stack_environment_variable.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerStackEnvironmentVariable _$PortainerStackEnvironmentVariableFromJson(
     Map<String, dynamic> json) {
   return _PortainerStackEnvironmentVariable.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerStackEnvironmentVariableTearOff {
-  const _$PortainerStackEnvironmentVariableTearOff();
-
-  _PortainerStackEnvironmentVariable call(
-      {required String name, required String value}) {
-    return _PortainerStackEnvironmentVariable(
-      name: name,
-      value: value,
-    );
-  }
-
-  PortainerStackEnvironmentVariable fromJson(Map<String, Object?> json) {
-    return PortainerStackEnvironmentVariable.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerStackEnvironmentVariable =
-    _$PortainerStackEnvironmentVariableTearOff();
 
 /// @nodoc
 mixin _$PortainerStackEnvironmentVariable {
@@ -91,35 +70,35 @@ class _$PortainerStackEnvironmentVariableCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerStackEnvironmentVariableCopyWith<$Res>
+abstract class _$$_PortainerStackEnvironmentVariableCopyWith<$Res>
     implements $PortainerStackEnvironmentVariableCopyWith<$Res> {
-  factory _$PortainerStackEnvironmentVariableCopyWith(
-          _PortainerStackEnvironmentVariable value,
-          $Res Function(_PortainerStackEnvironmentVariable) then) =
-      __$PortainerStackEnvironmentVariableCopyWithImpl<$Res>;
+  factory _$$_PortainerStackEnvironmentVariableCopyWith(
+          _$_PortainerStackEnvironmentVariable value,
+          $Res Function(_$_PortainerStackEnvironmentVariable) then) =
+      __$$_PortainerStackEnvironmentVariableCopyWithImpl<$Res>;
   @override
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class __$PortainerStackEnvironmentVariableCopyWithImpl<$Res>
+class __$$_PortainerStackEnvironmentVariableCopyWithImpl<$Res>
     extends _$PortainerStackEnvironmentVariableCopyWithImpl<$Res>
-    implements _$PortainerStackEnvironmentVariableCopyWith<$Res> {
-  __$PortainerStackEnvironmentVariableCopyWithImpl(
-      _PortainerStackEnvironmentVariable _value,
-      $Res Function(_PortainerStackEnvironmentVariable) _then)
-      : super(_value, (v) => _then(v as _PortainerStackEnvironmentVariable));
+    implements _$$_PortainerStackEnvironmentVariableCopyWith<$Res> {
+  __$$_PortainerStackEnvironmentVariableCopyWithImpl(
+      _$_PortainerStackEnvironmentVariable _value,
+      $Res Function(_$_PortainerStackEnvironmentVariable) _then)
+      : super(_value, (v) => _then(v as _$_PortainerStackEnvironmentVariable));
 
   @override
-  _PortainerStackEnvironmentVariable get _value =>
-      super._value as _PortainerStackEnvironmentVariable;
+  _$_PortainerStackEnvironmentVariable get _value =>
+      super._value as _$_PortainerStackEnvironmentVariable;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? value = freezed,
   }) {
-    return _then(_PortainerStackEnvironmentVariable(
+    return _then(_$_PortainerStackEnvironmentVariable(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -143,13 +122,12 @@ class _$_PortainerStackEnvironmentVariable
           Map<String, dynamic> json) =>
       _$$_PortainerStackEnvironmentVariableFromJson(json);
 
-  @override
-
   /// Environment variable name
-  final String name;
   @override
+  final String name;
 
   /// Environment variable value
+  @override
   final String value;
 
   @override
@@ -161,11 +139,12 @@ class _$_PortainerStackEnvironmentVariable
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerStackEnvironmentVariable &&
+            other is _$_PortainerStackEnvironmentVariable &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.value, value));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -174,10 +153,10 @@ class _$_PortainerStackEnvironmentVariable
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerStackEnvironmentVariableCopyWith<
-          _PortainerStackEnvironmentVariable>
-      get copyWith => __$PortainerStackEnvironmentVariableCopyWithImpl<
-          _PortainerStackEnvironmentVariable>(this, _$identity);
+  _$$_PortainerStackEnvironmentVariableCopyWith<
+          _$_PortainerStackEnvironmentVariable>
+      get copyWith => __$$_PortainerStackEnvironmentVariableCopyWithImpl<
+          _$_PortainerStackEnvironmentVariable>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -188,8 +167,8 @@ class _$_PortainerStackEnvironmentVariable
 abstract class _PortainerStackEnvironmentVariable
     implements PortainerStackEnvironmentVariable {
   const factory _PortainerStackEnvironmentVariable(
-      {required String name,
-      required String value}) = _$_PortainerStackEnvironmentVariable;
+      {required final String name,
+      required final String value}) = _$_PortainerStackEnvironmentVariable;
 
   factory _PortainerStackEnvironmentVariable.fromJson(
           Map<String, dynamic> json) =
@@ -198,14 +177,14 @@ abstract class _PortainerStackEnvironmentVariable
   @override
 
   /// Environment variable name
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Environment variable value
-  String get value;
+  String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerStackEnvironmentVariableCopyWith<
-          _PortainerStackEnvironmentVariable>
+  _$$_PortainerStackEnvironmentVariableCopyWith<
+          _$_PortainerStackEnvironmentVariable>
       get copyWith => throw _privateConstructorUsedError;
 }

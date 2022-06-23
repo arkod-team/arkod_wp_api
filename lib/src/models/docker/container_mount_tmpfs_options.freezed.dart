@@ -12,34 +12,12 @@ part of 'container_mount_tmpfs_options.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMountTmpfsOptions _$DockerContainerMountTmpfsOptionsFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerMountTmpfsOptions.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountTmpfsOptionsTearOff {
-  const _$DockerContainerMountTmpfsOptionsTearOff();
-
-  _DockerContainerMountTmpfsOptions call(
-      {@JsonKey(name: 'SizeBytes') int? sizeBytes,
-      @JsonKey(name: 'Mode') int? mode}) {
-    return _DockerContainerMountTmpfsOptions(
-      sizeBytes: sizeBytes,
-      mode: mode,
-    );
-  }
-
-  DockerContainerMountTmpfsOptions fromJson(Map<String, Object?> json) {
-    return DockerContainerMountTmpfsOptions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMountTmpfsOptions =
-    _$DockerContainerMountTmpfsOptionsTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMountTmpfsOptions {
@@ -96,12 +74,12 @@ class _$DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountTmpfsOptionsCopyWith<$Res>
+abstract class _$$_DockerContainerMountTmpfsOptionsCopyWith<$Res>
     implements $DockerContainerMountTmpfsOptionsCopyWith<$Res> {
-  factory _$DockerContainerMountTmpfsOptionsCopyWith(
-          _DockerContainerMountTmpfsOptions value,
-          $Res Function(_DockerContainerMountTmpfsOptions) then) =
-      __$DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountTmpfsOptionsCopyWith(
+          _$_DockerContainerMountTmpfsOptions value,
+          $Res Function(_$_DockerContainerMountTmpfsOptions) then) =
+      __$$_DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'SizeBytes') int? sizeBytes,
@@ -109,24 +87,24 @@ abstract class _$DockerContainerMountTmpfsOptionsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>
+class __$$_DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>
     extends _$DockerContainerMountTmpfsOptionsCopyWithImpl<$Res>
-    implements _$DockerContainerMountTmpfsOptionsCopyWith<$Res> {
-  __$DockerContainerMountTmpfsOptionsCopyWithImpl(
-      _DockerContainerMountTmpfsOptions _value,
-      $Res Function(_DockerContainerMountTmpfsOptions) _then)
-      : super(_value, (v) => _then(v as _DockerContainerMountTmpfsOptions));
+    implements _$$_DockerContainerMountTmpfsOptionsCopyWith<$Res> {
+  __$$_DockerContainerMountTmpfsOptionsCopyWithImpl(
+      _$_DockerContainerMountTmpfsOptions _value,
+      $Res Function(_$_DockerContainerMountTmpfsOptions) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerMountTmpfsOptions));
 
   @override
-  _DockerContainerMountTmpfsOptions get _value =>
-      super._value as _DockerContainerMountTmpfsOptions;
+  _$_DockerContainerMountTmpfsOptions get _value =>
+      super._value as _$_DockerContainerMountTmpfsOptions;
 
   @override
   $Res call({
     Object? sizeBytes = freezed,
     Object? mode = freezed,
   }) {
-    return _then(_DockerContainerMountTmpfsOptions(
+    return _then(_$_DockerContainerMountTmpfsOptions(
       sizeBytes: sizeBytes == freezed
           ? _value.sizeBytes
           : sizeBytes // ignore: cast_nullable_to_non_nullable
@@ -151,14 +129,13 @@ class _$_DockerContainerMountTmpfsOptions
           Map<String, dynamic> json) =>
       _$$_DockerContainerMountTmpfsOptionsFromJson(json);
 
-  @override
-
   /// Mount tmpfs size (in bytes)
+  @override
   @JsonKey(name: 'SizeBytes')
   final int? sizeBytes;
-  @override
 
   /// Mount tmpfs permission mode
+  @override
   @JsonKey(name: 'Mode')
   final int? mode;
 
@@ -171,11 +148,12 @@ class _$_DockerContainerMountTmpfsOptions
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMountTmpfsOptions &&
+            other is _$_DockerContainerMountTmpfsOptions &&
             const DeepCollectionEquality().equals(other.sizeBytes, sizeBytes) &&
             const DeepCollectionEquality().equals(other.mode, mode));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -184,9 +162,10 @@ class _$_DockerContainerMountTmpfsOptions
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountTmpfsOptionsCopyWith<_DockerContainerMountTmpfsOptions>
-      get copyWith => __$DockerContainerMountTmpfsOptionsCopyWithImpl<
-          _DockerContainerMountTmpfsOptions>(this, _$identity);
+  _$$_DockerContainerMountTmpfsOptionsCopyWith<
+          _$_DockerContainerMountTmpfsOptions>
+      get copyWith => __$$_DockerContainerMountTmpfsOptionsCopyWithImpl<
+          _$_DockerContainerMountTmpfsOptions>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -197,8 +176,9 @@ class _$_DockerContainerMountTmpfsOptions
 abstract class _DockerContainerMountTmpfsOptions
     implements DockerContainerMountTmpfsOptions {
   const factory _DockerContainerMountTmpfsOptions(
-      {@JsonKey(name: 'SizeBytes') int? sizeBytes,
-      @JsonKey(name: 'Mode') int? mode}) = _$_DockerContainerMountTmpfsOptions;
+          {@JsonKey(name: 'SizeBytes') final int? sizeBytes,
+          @JsonKey(name: 'Mode') final int? mode}) =
+      _$_DockerContainerMountTmpfsOptions;
 
   factory _DockerContainerMountTmpfsOptions.fromJson(
       Map<String, dynamic> json) = _$_DockerContainerMountTmpfsOptions.fromJson;
@@ -207,14 +187,15 @@ abstract class _DockerContainerMountTmpfsOptions
 
   /// Mount tmpfs size (in bytes)
   @JsonKey(name: 'SizeBytes')
-  int? get sizeBytes;
+  int? get sizeBytes => throw _privateConstructorUsedError;
   @override
 
   /// Mount tmpfs permission mode
   @JsonKey(name: 'Mode')
-  int? get mode;
+  int? get mode => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountTmpfsOptionsCopyWith<_DockerContainerMountTmpfsOptions>
+  _$$_DockerContainerMountTmpfsOptionsCopyWith<
+          _$_DockerContainerMountTmpfsOptions>
       get copyWith => throw _privateConstructorUsedError;
 }

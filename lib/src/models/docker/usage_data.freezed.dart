@@ -12,32 +12,11 @@ part of 'usage_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerUsageData _$DockerUsageDataFromJson(Map<String, dynamic> json) {
   return _DockerUsageData.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerUsageDataTearOff {
-  const _$DockerUsageDataTearOff();
-
-  _DockerUsageData call(
-      {@JsonKey(name: 'Size') required int size,
-      @JsonKey(name: 'RefCount') required int refCount}) {
-    return _DockerUsageData(
-      size: size,
-      refCount: refCount,
-    );
-  }
-
-  DockerUsageData fromJson(Map<String, Object?> json) {
-    return DockerUsageData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerUsageData = _$DockerUsageDataTearOff();
 
 /// @nodoc
 mixin _$DockerUsageData {
@@ -93,11 +72,11 @@ class _$DockerUsageDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerUsageDataCopyWith<$Res>
+abstract class _$$_DockerUsageDataCopyWith<$Res>
     implements $DockerUsageDataCopyWith<$Res> {
-  factory _$DockerUsageDataCopyWith(
-          _DockerUsageData value, $Res Function(_DockerUsageData) then) =
-      __$DockerUsageDataCopyWithImpl<$Res>;
+  factory _$$_DockerUsageDataCopyWith(
+          _$_DockerUsageData value, $Res Function(_$_DockerUsageData) then) =
+      __$$_DockerUsageDataCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Size') int size,
@@ -105,22 +84,22 @@ abstract class _$DockerUsageDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerUsageDataCopyWithImpl<$Res>
+class __$$_DockerUsageDataCopyWithImpl<$Res>
     extends _$DockerUsageDataCopyWithImpl<$Res>
-    implements _$DockerUsageDataCopyWith<$Res> {
-  __$DockerUsageDataCopyWithImpl(
-      _DockerUsageData _value, $Res Function(_DockerUsageData) _then)
-      : super(_value, (v) => _then(v as _DockerUsageData));
+    implements _$$_DockerUsageDataCopyWith<$Res> {
+  __$$_DockerUsageDataCopyWithImpl(
+      _$_DockerUsageData _value, $Res Function(_$_DockerUsageData) _then)
+      : super(_value, (v) => _then(v as _$_DockerUsageData));
 
   @override
-  _DockerUsageData get _value => super._value as _DockerUsageData;
+  _$_DockerUsageData get _value => super._value as _$_DockerUsageData;
 
   @override
   $Res call({
     Object? size = freezed,
     Object? refCount = freezed,
   }) {
-    return _then(_DockerUsageData(
+    return _then(_$_DockerUsageData(
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -143,14 +122,13 @@ class _$_DockerUsageData implements _DockerUsageData {
   factory _$_DockerUsageData.fromJson(Map<String, dynamic> json) =>
       _$$_DockerUsageDataFromJson(json);
 
-  @override
-
   /// Data size (in bytes)
+  @override
   @JsonKey(name: 'Size')
   final int size;
-  @override
 
   /// Number of containers referencing this data
+  @override
   @JsonKey(name: 'RefCount')
   final int refCount;
 
@@ -163,11 +141,12 @@ class _$_DockerUsageData implements _DockerUsageData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerUsageData &&
+            other is _$_DockerUsageData &&
             const DeepCollectionEquality().equals(other.size, size) &&
             const DeepCollectionEquality().equals(other.refCount, refCount));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -176,8 +155,8 @@ class _$_DockerUsageData implements _DockerUsageData {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerUsageDataCopyWith<_DockerUsageData> get copyWith =>
-      __$DockerUsageDataCopyWithImpl<_DockerUsageData>(this, _$identity);
+  _$$_DockerUsageDataCopyWith<_$_DockerUsageData> get copyWith =>
+      __$$_DockerUsageDataCopyWithImpl<_$_DockerUsageData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -187,8 +166,9 @@ class _$_DockerUsageData implements _DockerUsageData {
 
 abstract class _DockerUsageData implements DockerUsageData {
   const factory _DockerUsageData(
-      {@JsonKey(name: 'Size') required int size,
-      @JsonKey(name: 'RefCount') required int refCount}) = _$_DockerUsageData;
+          {@JsonKey(name: 'Size') required final int size,
+          @JsonKey(name: 'RefCount') required final int refCount}) =
+      _$_DockerUsageData;
 
   factory _DockerUsageData.fromJson(Map<String, dynamic> json) =
       _$_DockerUsageData.fromJson;
@@ -197,14 +177,14 @@ abstract class _DockerUsageData implements DockerUsageData {
 
   /// Data size (in bytes)
   @JsonKey(name: 'Size')
-  int get size;
+  int get size => throw _privateConstructorUsedError;
   @override
 
   /// Number of containers referencing this data
   @JsonKey(name: 'RefCount')
-  int get refCount;
+  int get refCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerUsageDataCopyWith<_DockerUsageData> get copyWith =>
+  _$$_DockerUsageDataCopyWith<_$_DockerUsageData> get copyWith =>
       throw _privateConstructorUsedError;
 }

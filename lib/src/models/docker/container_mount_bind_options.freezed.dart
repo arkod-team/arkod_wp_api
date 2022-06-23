@@ -12,36 +12,12 @@ part of 'container_mount_bind_options.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMountBindOptions _$DockerContainerMountBindOptionsFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerMountBindOptions.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountBindOptionsTearOff {
-  const _$DockerContainerMountBindOptionsTearOff();
-
-  _DockerContainerMountBindOptions call(
-      {@JsonKey(name: 'Propagation', fromJson: _containerMountBindPropagationFromJson, toJson: _containerMountBindPropagationToJson)
-          required DockerContainerMountBindPropagation propagation,
-      @JsonKey(name: 'NonRecursive')
-          bool recursive = false}) {
-    return _DockerContainerMountBindOptions(
-      propagation: propagation,
-      recursive: recursive,
-    );
-  }
-
-  DockerContainerMountBindOptions fromJson(Map<String, Object?> json) {
-    return DockerContainerMountBindOptions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMountBindOptions =
-    _$DockerContainerMountBindOptionsTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMountBindOptions {
@@ -104,12 +80,12 @@ class _$DockerContainerMountBindOptionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountBindOptionsCopyWith<$Res>
+abstract class _$$_DockerContainerMountBindOptionsCopyWith<$Res>
     implements $DockerContainerMountBindOptionsCopyWith<$Res> {
-  factory _$DockerContainerMountBindOptionsCopyWith(
-          _DockerContainerMountBindOptions value,
-          $Res Function(_DockerContainerMountBindOptions) then) =
-      __$DockerContainerMountBindOptionsCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountBindOptionsCopyWith(
+          _$_DockerContainerMountBindOptions value,
+          $Res Function(_$_DockerContainerMountBindOptions) then) =
+      __$$_DockerContainerMountBindOptionsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Propagation', fromJson: _containerMountBindPropagationFromJson, toJson: _containerMountBindPropagationToJson)
@@ -119,24 +95,24 @@ abstract class _$DockerContainerMountBindOptionsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountBindOptionsCopyWithImpl<$Res>
+class __$$_DockerContainerMountBindOptionsCopyWithImpl<$Res>
     extends _$DockerContainerMountBindOptionsCopyWithImpl<$Res>
-    implements _$DockerContainerMountBindOptionsCopyWith<$Res> {
-  __$DockerContainerMountBindOptionsCopyWithImpl(
-      _DockerContainerMountBindOptions _value,
-      $Res Function(_DockerContainerMountBindOptions) _then)
-      : super(_value, (v) => _then(v as _DockerContainerMountBindOptions));
+    implements _$$_DockerContainerMountBindOptionsCopyWith<$Res> {
+  __$$_DockerContainerMountBindOptionsCopyWithImpl(
+      _$_DockerContainerMountBindOptions _value,
+      $Res Function(_$_DockerContainerMountBindOptions) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerMountBindOptions));
 
   @override
-  _DockerContainerMountBindOptions get _value =>
-      super._value as _DockerContainerMountBindOptions;
+  _$_DockerContainerMountBindOptions get _value =>
+      super._value as _$_DockerContainerMountBindOptions;
 
   @override
   $Res call({
     Object? propagation = freezed,
     Object? recursive = freezed,
   }) {
-    return _then(_DockerContainerMountBindOptions(
+    return _then(_$_DockerContainerMountBindOptions(
       propagation: propagation == freezed
           ? _value.propagation
           : propagation // ignore: cast_nullable_to_non_nullable
@@ -163,17 +139,16 @@ class _$_DockerContainerMountBindOptions
           Map<String, dynamic> json) =>
       _$$_DockerContainerMountBindOptionsFromJson(json);
 
-  @override
-
   /// Mount bind propagation mode
+  @override
   @JsonKey(
       name: 'Propagation',
       fromJson: _containerMountBindPropagationFromJson,
       toJson: _containerMountBindPropagationToJson)
   final DockerContainerMountBindPropagation propagation;
-  @override
 
   /// Is the mount bind recursive disabled ?
+  @override
   @JsonKey(name: 'NonRecursive')
   final bool recursive;
 
@@ -186,12 +161,13 @@ class _$_DockerContainerMountBindOptions
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMountBindOptions &&
+            other is _$_DockerContainerMountBindOptions &&
             const DeepCollectionEquality()
                 .equals(other.propagation, propagation) &&
             const DeepCollectionEquality().equals(other.recursive, recursive));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -200,9 +176,10 @@ class _$_DockerContainerMountBindOptions
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountBindOptionsCopyWith<_DockerContainerMountBindOptions>
-      get copyWith => __$DockerContainerMountBindOptionsCopyWithImpl<
-          _DockerContainerMountBindOptions>(this, _$identity);
+  _$$_DockerContainerMountBindOptionsCopyWith<
+          _$_DockerContainerMountBindOptions>
+      get copyWith => __$$_DockerContainerMountBindOptionsCopyWithImpl<
+          _$_DockerContainerMountBindOptions>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -214,9 +191,9 @@ abstract class _DockerContainerMountBindOptions
     implements DockerContainerMountBindOptions {
   const factory _DockerContainerMountBindOptions(
       {@JsonKey(name: 'Propagation', fromJson: _containerMountBindPropagationFromJson, toJson: _containerMountBindPropagationToJson)
-          required DockerContainerMountBindPropagation propagation,
+          required final DockerContainerMountBindPropagation propagation,
       @JsonKey(name: 'NonRecursive')
-          bool recursive}) = _$_DockerContainerMountBindOptions;
+          final bool recursive}) = _$_DockerContainerMountBindOptions;
 
   factory _DockerContainerMountBindOptions.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerMountBindOptions.fromJson;
@@ -228,14 +205,16 @@ abstract class _DockerContainerMountBindOptions
       name: 'Propagation',
       fromJson: _containerMountBindPropagationFromJson,
       toJson: _containerMountBindPropagationToJson)
-  DockerContainerMountBindPropagation get propagation;
+  DockerContainerMountBindPropagation get propagation =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Is the mount bind recursive disabled ?
   @JsonKey(name: 'NonRecursive')
-  bool get recursive;
+  bool get recursive => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountBindOptionsCopyWith<_DockerContainerMountBindOptions>
+  _$$_DockerContainerMountBindOptionsCopyWith<
+          _$_DockerContainerMountBindOptions>
       get copyWith => throw _privateConstructorUsedError;
 }

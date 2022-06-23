@@ -12,96 +12,11 @@ part of 'endpoint.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerEndpoint _$PortainerEndpointFromJson(Map<String, dynamic> json) {
   return _Endpoint.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerEndpointTearOff {
-  const _$PortainerEndpointTearOff();
-
-  _Endpoint call(
-      {@JsonKey(name: 'Id')
-          required int id,
-      @JsonKey(name: 'AMTDeviceGUID')
-          String? amtDeviceId,
-      @JsonKey(name: 'AuthorizedTeams')
-          List<int>? authorizedTeams,
-      @JsonKey(name: 'AzureCredentials')
-          PortainerEndpointAzureCredentials? azureCredentials,
-      @JsonKey(name: 'ComposeSyntaxMaxVersion')
-          required String composeSyntaxMaxVersion,
-      @JsonKey(name: 'EdgeCheckinInterval')
-          int? edgeCheckInterval,
-      @JsonKey(name: 'EdgeID')
-          String? edgeId,
-      @JsonKey(name: 'EdgeKey')
-          String? edgeKey,
-      @JsonKey(name: 'Kubernetes')
-          Map<String, dynamic>? kubernetes,
-      @JsonKey(name: 'Name')
-          required String name,
-      @JsonKey(name: 'PublicURL')
-          required String publicUrl,
-      @JsonKey(name: 'URL')
-          required String url,
-      @JsonKey(name: 'Snapshots')
-          required List<PortainerDockerSnapshot> snapshots,
-      @JsonKey(name: 'Type', fromJson: _endpointTypeFromJson, toJson: _endpointTypeToJson)
-          required PortainerEndpointType type,
-      @JsonKey(name: 'Status', fromJson: _endpointStatusFromJson, toJson: _endpointStatusToJson)
-          required PortainerEndpointStatus status,
-      @JsonKey(name: 'TLSConfig')
-          required PortainerEndpointTLSConfig tlsCACert,
-      @JsonKey(name: 'TagIds')
-          List<int>? tags,
-      @JsonKey(name: 'TeamAccessPolicies')
-          required Map<String, PortainerAccessPolicy> teamsAccessPolicies,
-      @JsonKey(name: 'UserAccessPolicies')
-          required Map<String, PortainerAccessPolicy> usersAccessPolicies,
-      @JsonKey(name: 'IsEdgeDevice')
-          bool isEdgeDevice = false,
-      @JsonKey(name: 'LastCheckInDate')
-          int? lastCheckTimestamp,
-      @JsonKey(name: 'UserTrusted')
-          bool isTrusted = false,
-      PortainerEndpointSecuritySettings? securitySettings}) {
-    return _Endpoint(
-      id: id,
-      amtDeviceId: amtDeviceId,
-      authorizedTeams: authorizedTeams,
-      azureCredentials: azureCredentials,
-      composeSyntaxMaxVersion: composeSyntaxMaxVersion,
-      edgeCheckInterval: edgeCheckInterval,
-      edgeId: edgeId,
-      edgeKey: edgeKey,
-      kubernetes: kubernetes,
-      name: name,
-      publicUrl: publicUrl,
-      url: url,
-      snapshots: snapshots,
-      type: type,
-      status: status,
-      tlsCACert: tlsCACert,
-      tags: tags,
-      teamsAccessPolicies: teamsAccessPolicies,
-      usersAccessPolicies: usersAccessPolicies,
-      isEdgeDevice: isEdgeDevice,
-      lastCheckTimestamp: lastCheckTimestamp,
-      isTrusted: isTrusted,
-      securitySettings: securitySettings,
-    );
-  }
-
-  PortainerEndpoint fromJson(Map<String, Object?> json) {
-    return PortainerEndpoint.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerEndpoint = _$PortainerEndpointTearOff();
 
 /// @nodoc
 mixin _$PortainerEndpoint {
@@ -435,10 +350,11 @@ class _$PortainerEndpointCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EndpointCopyWith<$Res>
+abstract class _$$_EndpointCopyWith<$Res>
     implements $PortainerEndpointCopyWith<$Res> {
-  factory _$EndpointCopyWith(_Endpoint value, $Res Function(_Endpoint) then) =
-      __$EndpointCopyWithImpl<$Res>;
+  factory _$$_EndpointCopyWith(
+          _$_Endpoint value, $Res Function(_$_Endpoint) then) =
+      __$$_EndpointCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Id')
@@ -496,14 +412,15 @@ abstract class _$EndpointCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EndpointCopyWithImpl<$Res>
+class __$$_EndpointCopyWithImpl<$Res>
     extends _$PortainerEndpointCopyWithImpl<$Res>
-    implements _$EndpointCopyWith<$Res> {
-  __$EndpointCopyWithImpl(_Endpoint _value, $Res Function(_Endpoint) _then)
-      : super(_value, (v) => _then(v as _Endpoint));
+    implements _$$_EndpointCopyWith<$Res> {
+  __$$_EndpointCopyWithImpl(
+      _$_Endpoint _value, $Res Function(_$_Endpoint) _then)
+      : super(_value, (v) => _then(v as _$_Endpoint));
 
   @override
-  _Endpoint get _value => super._value as _Endpoint;
+  _$_Endpoint get _value => super._value as _$_Endpoint;
 
   @override
   $Res call({
@@ -531,7 +448,7 @@ class __$EndpointCopyWithImpl<$Res>
     Object? isTrusted = freezed,
     Object? securitySettings = freezed,
   }) {
-    return _then(_Endpoint(
+    return _then(_$_Endpoint(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -541,7 +458,7 @@ class __$EndpointCopyWithImpl<$Res>
           : amtDeviceId // ignore: cast_nullable_to_non_nullable
               as String?,
       authorizedTeams: authorizedTeams == freezed
-          ? _value.authorizedTeams
+          ? _value._authorizedTeams
           : authorizedTeams // ignore: cast_nullable_to_non_nullable
               as List<int>?,
       azureCredentials: azureCredentials == freezed
@@ -565,7 +482,7 @@ class __$EndpointCopyWithImpl<$Res>
           : edgeKey // ignore: cast_nullable_to_non_nullable
               as String?,
       kubernetes: kubernetes == freezed
-          ? _value.kubernetes
+          ? _value._kubernetes
           : kubernetes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       name: name == freezed
@@ -581,7 +498,7 @@ class __$EndpointCopyWithImpl<$Res>
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       snapshots: snapshots == freezed
-          ? _value.snapshots
+          ? _value._snapshots
           : snapshots // ignore: cast_nullable_to_non_nullable
               as List<PortainerDockerSnapshot>,
       type: type == freezed
@@ -597,15 +514,15 @@ class __$EndpointCopyWithImpl<$Res>
           : tlsCACert // ignore: cast_nullable_to_non_nullable
               as PortainerEndpointTLSConfig,
       tags: tags == freezed
-          ? _value.tags
+          ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<int>?,
       teamsAccessPolicies: teamsAccessPolicies == freezed
-          ? _value.teamsAccessPolicies
+          ? _value._teamsAccessPolicies
           : teamsAccessPolicies // ignore: cast_nullable_to_non_nullable
               as Map<String, PortainerAccessPolicy>,
       usersAccessPolicies: usersAccessPolicies == freezed
-          ? _value.usersAccessPolicies
+          ? _value._usersAccessPolicies
           : usersAccessPolicies // ignore: cast_nullable_to_non_nullable
               as Map<String, PortainerAccessPolicy>,
       isEdgeDevice: isEdgeDevice == freezed
@@ -637,7 +554,7 @@ class _$_Endpoint extends _Endpoint {
       @JsonKey(name: 'AMTDeviceGUID')
           this.amtDeviceId,
       @JsonKey(name: 'AuthorizedTeams')
-          this.authorizedTeams,
+          final List<int>? authorizedTeams,
       @JsonKey(name: 'AzureCredentials')
           this.azureCredentials,
       @JsonKey(name: 'ComposeSyntaxMaxVersion')
@@ -649,7 +566,7 @@ class _$_Endpoint extends _Endpoint {
       @JsonKey(name: 'EdgeKey')
           this.edgeKey,
       @JsonKey(name: 'Kubernetes')
-          this.kubernetes,
+          final Map<String, dynamic>? kubernetes,
       @JsonKey(name: 'Name')
           required this.name,
       @JsonKey(name: 'PublicURL')
@@ -657,7 +574,7 @@ class _$_Endpoint extends _Endpoint {
       @JsonKey(name: 'URL')
           required this.url,
       @JsonKey(name: 'Snapshots')
-          required this.snapshots,
+          required final List<PortainerDockerSnapshot> snapshots,
       @JsonKey(name: 'Type', fromJson: _endpointTypeFromJson, toJson: _endpointTypeToJson)
           required this.type,
       @JsonKey(name: 'Status', fromJson: _endpointStatusFromJson, toJson: _endpointStatusToJson)
@@ -665,11 +582,11 @@ class _$_Endpoint extends _Endpoint {
       @JsonKey(name: 'TLSConfig')
           required this.tlsCACert,
       @JsonKey(name: 'TagIds')
-          this.tags,
+          final List<int>? tags,
       @JsonKey(name: 'TeamAccessPolicies')
-          required this.teamsAccessPolicies,
+          required final Map<String, PortainerAccessPolicy> teamsAccessPolicies,
       @JsonKey(name: 'UserAccessPolicies')
-          required this.usersAccessPolicies,
+          required final Map<String, PortainerAccessPolicy> usersAccessPolicies,
       @JsonKey(name: 'IsEdgeDevice')
           this.isEdgeDevice = false,
       @JsonKey(name: 'LastCheckInDate')
@@ -677,130 +594,177 @@ class _$_Endpoint extends _Endpoint {
       @JsonKey(name: 'UserTrusted')
           this.isTrusted = false,
       this.securitySettings})
-      : super._();
+      : _authorizedTeams = authorizedTeams,
+        _kubernetes = kubernetes,
+        _snapshots = snapshots,
+        _tags = tags,
+        _teamsAccessPolicies = teamsAccessPolicies,
+        _usersAccessPolicies = usersAccessPolicies,
+        super._();
 
   factory _$_Endpoint.fromJson(Map<String, dynamic> json) =>
       _$$_EndpointFromJson(json);
 
-  @override
-
   /// Endpoint ID
+  @override
   @JsonKey(name: 'Id')
   final int id;
-  @override
 
   /// AMT device ID associated to the endpoint
+  @override
   @JsonKey(name: 'AMTDeviceGUID')
   final String? amtDeviceId;
-  @override
 
   /// Authorized teams IDs
-  @JsonKey(name: 'AuthorizedTeams')
-  final List<int>? authorizedTeams;
+  final List<int>? _authorizedTeams;
+
+  /// Authorized teams IDs
   @override
+  @JsonKey(name: 'AuthorizedTeams')
+  List<int>? get authorizedTeams {
+    final value = _authorizedTeams;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Azure credentials
+  @override
   @JsonKey(name: 'AzureCredentials')
   final PortainerEndpointAzureCredentials? azureCredentials;
-  @override
 
   /// Docker Compose maximum version
+  @override
   @JsonKey(name: 'ComposeSyntaxMaxVersion')
   final String composeSyntaxMaxVersion;
-  @override
 
   /// Check interval for edge agent (in seconds)
+  @override
   @JsonKey(name: 'EdgeCheckinInterval')
   final int? edgeCheckInterval;
-  @override
 
   /// Edge agent ID associated to the endpoint
+  @override
   @JsonKey(name: 'EdgeID')
   final String? edgeId;
-  @override
 
   /// Edge agent key to map the agent to the engine
+  @override
   @JsonKey(name: 'EdgeKey')
   final String? edgeKey;
-  @override
 
   /// Kubernetes configuration and snapshots
-  @JsonKey(name: 'Kubernetes')
-  final Map<String, dynamic>? kubernetes;
+  final Map<String, dynamic>? _kubernetes;
+
+  /// Kubernetes configuration and snapshots
   @override
+  @JsonKey(name: 'Kubernetes')
+  Map<String, dynamic>? get kubernetes {
+    final value = _kubernetes;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Endpoint name
+  @override
   @JsonKey(name: 'Name')
   final String name;
-  @override
 
   /// Endpoint containers URL
+  @override
   @JsonKey(name: 'PublicURL')
   final String publicUrl;
-  @override
 
   /// Endpoint Docker host URL
+  @override
   @JsonKey(name: 'URL')
   final String url;
-  @override
 
   /// Docker snapshots
-  @JsonKey(name: 'Snapshots')
-  final List<PortainerDockerSnapshot> snapshots;
+  final List<PortainerDockerSnapshot> _snapshots;
+
+  /// Docker snapshots
   @override
+  @JsonKey(name: 'Snapshots')
+  List<PortainerDockerSnapshot> get snapshots {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_snapshots);
+  }
 
   /// Endpoint type
+  @override
   @JsonKey(
       name: 'Type',
       fromJson: _endpointTypeFromJson,
       toJson: _endpointTypeToJson)
   final PortainerEndpointType type;
-  @override
 
   /// Endpoint status
+  @override
   @JsonKey(
       name: 'Status',
       fromJson: _endpointStatusFromJson,
       toJson: _endpointStatusToJson)
   final PortainerEndpointStatus status;
-  @override
 
   /// Endpoint TLS configuration
+  @override
   @JsonKey(name: 'TLSConfig')
   final PortainerEndpointTLSConfig tlsCACert;
-  @override
 
   /// Endpoint tags IDs
-  @JsonKey(name: 'TagIds')
-  final List<int>? tags;
+  final List<int>? _tags;
+
+  /// Endpoint tags IDs
   @override
+  @JsonKey(name: 'TagIds')
+  List<int>? get tags {
+    final value = _tags;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Endpoint access policy for engine teams
-  @JsonKey(name: 'TeamAccessPolicies')
-  final Map<String, PortainerAccessPolicy> teamsAccessPolicies;
+  final Map<String, PortainerAccessPolicy> _teamsAccessPolicies;
+
+  /// Endpoint access policy for engine teams
   @override
+  @JsonKey(name: 'TeamAccessPolicies')
+  Map<String, PortainerAccessPolicy> get teamsAccessPolicies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_teamsAccessPolicies);
+  }
 
   /// Endpoint access policy for engine users
-  @JsonKey(name: 'UserAccessPolicies')
-  final Map<String, PortainerAccessPolicy> usersAccessPolicies;
+  final Map<String, PortainerAccessPolicy> _usersAccessPolicies;
+
+  /// Endpoint access policy for engine users
   @override
+  @JsonKey(name: 'UserAccessPolicies')
+  Map<String, PortainerAccessPolicy> get usersAccessPolicies {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_usersAccessPolicies);
+  }
 
   /// Is an edge endpoint ?
+  @override
   @JsonKey(name: 'IsEdgeDevice')
   final bool isEdgeDevice;
-  @override
 
   /// Last check timestamp for edge agent
+  @override
   @JsonKey(name: 'LastCheckInDate')
   final int? lastCheckTimestamp;
-  @override
 
   /// Is the endpoint trusted by the user ?
+  @override
   @JsonKey(name: 'UserTrusted')
   final bool isTrusted;
-  @override
 
   /// Endpoint security settings
+  @override
   final PortainerEndpointSecuritySettings? securitySettings;
 
   @override
@@ -812,12 +776,12 @@ class _$_Endpoint extends _Endpoint {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Endpoint &&
+            other is _$_Endpoint &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.amtDeviceId, amtDeviceId) &&
             const DeepCollectionEquality()
-                .equals(other.authorizedTeams, authorizedTeams) &&
+                .equals(other._authorizedTeams, _authorizedTeams) &&
             const DeepCollectionEquality()
                 .equals(other.azureCredentials, azureCredentials) &&
             const DeepCollectionEquality().equals(
@@ -827,19 +791,20 @@ class _$_Endpoint extends _Endpoint {
             const DeepCollectionEquality().equals(other.edgeId, edgeId) &&
             const DeepCollectionEquality().equals(other.edgeKey, edgeKey) &&
             const DeepCollectionEquality()
-                .equals(other.kubernetes, kubernetes) &&
+                .equals(other._kubernetes, _kubernetes) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.publicUrl, publicUrl) &&
             const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.snapshots, snapshots) &&
+            const DeepCollectionEquality()
+                .equals(other._snapshots, _snapshots) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality().equals(other.tlsCACert, tlsCACert) &&
-            const DeepCollectionEquality().equals(other.tags, tags) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality()
-                .equals(other.teamsAccessPolicies, teamsAccessPolicies) &&
+                .equals(other._teamsAccessPolicies, _teamsAccessPolicies) &&
             const DeepCollectionEquality()
-                .equals(other.usersAccessPolicies, usersAccessPolicies) &&
+                .equals(other._usersAccessPolicies, _usersAccessPolicies) &&
             const DeepCollectionEquality()
                 .equals(other.isEdgeDevice, isEdgeDevice) &&
             const DeepCollectionEquality()
@@ -849,28 +814,29 @@ class _$_Endpoint extends _Endpoint {
                 .equals(other.securitySettings, securitySettings));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(amtDeviceId),
-        const DeepCollectionEquality().hash(authorizedTeams),
+        const DeepCollectionEquality().hash(_authorizedTeams),
         const DeepCollectionEquality().hash(azureCredentials),
         const DeepCollectionEquality().hash(composeSyntaxMaxVersion),
         const DeepCollectionEquality().hash(edgeCheckInterval),
         const DeepCollectionEquality().hash(edgeId),
         const DeepCollectionEquality().hash(edgeKey),
-        const DeepCollectionEquality().hash(kubernetes),
+        const DeepCollectionEquality().hash(_kubernetes),
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(publicUrl),
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(snapshots),
+        const DeepCollectionEquality().hash(_snapshots),
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(status),
         const DeepCollectionEquality().hash(tlsCACert),
-        const DeepCollectionEquality().hash(tags),
-        const DeepCollectionEquality().hash(teamsAccessPolicies),
-        const DeepCollectionEquality().hash(usersAccessPolicies),
+        const DeepCollectionEquality().hash(_tags),
+        const DeepCollectionEquality().hash(_teamsAccessPolicies),
+        const DeepCollectionEquality().hash(_usersAccessPolicies),
         const DeepCollectionEquality().hash(isEdgeDevice),
         const DeepCollectionEquality().hash(lastCheckTimestamp),
         const DeepCollectionEquality().hash(isTrusted),
@@ -879,8 +845,8 @@ class _$_Endpoint extends _Endpoint {
 
   @JsonKey(ignore: true)
   @override
-  _$EndpointCopyWith<_Endpoint> get copyWith =>
-      __$EndpointCopyWithImpl<_Endpoint>(this, _$identity);
+  _$$_EndpointCopyWith<_$_Endpoint> get copyWith =>
+      __$$_EndpointCopyWithImpl<_$_Endpoint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -891,50 +857,50 @@ class _$_Endpoint extends _Endpoint {
 abstract class _Endpoint extends PortainerEndpoint {
   const factory _Endpoint(
       {@JsonKey(name: 'Id')
-          required int id,
+          required final int id,
       @JsonKey(name: 'AMTDeviceGUID')
-          String? amtDeviceId,
+          final String? amtDeviceId,
       @JsonKey(name: 'AuthorizedTeams')
-          List<int>? authorizedTeams,
+          final List<int>? authorizedTeams,
       @JsonKey(name: 'AzureCredentials')
-          PortainerEndpointAzureCredentials? azureCredentials,
+          final PortainerEndpointAzureCredentials? azureCredentials,
       @JsonKey(name: 'ComposeSyntaxMaxVersion')
-          required String composeSyntaxMaxVersion,
+          required final String composeSyntaxMaxVersion,
       @JsonKey(name: 'EdgeCheckinInterval')
-          int? edgeCheckInterval,
+          final int? edgeCheckInterval,
       @JsonKey(name: 'EdgeID')
-          String? edgeId,
+          final String? edgeId,
       @JsonKey(name: 'EdgeKey')
-          String? edgeKey,
+          final String? edgeKey,
       @JsonKey(name: 'Kubernetes')
-          Map<String, dynamic>? kubernetes,
+          final Map<String, dynamic>? kubernetes,
       @JsonKey(name: 'Name')
-          required String name,
+          required final String name,
       @JsonKey(name: 'PublicURL')
-          required String publicUrl,
+          required final String publicUrl,
       @JsonKey(name: 'URL')
-          required String url,
+          required final String url,
       @JsonKey(name: 'Snapshots')
-          required List<PortainerDockerSnapshot> snapshots,
+          required final List<PortainerDockerSnapshot> snapshots,
       @JsonKey(name: 'Type', fromJson: _endpointTypeFromJson, toJson: _endpointTypeToJson)
-          required PortainerEndpointType type,
+          required final PortainerEndpointType type,
       @JsonKey(name: 'Status', fromJson: _endpointStatusFromJson, toJson: _endpointStatusToJson)
-          required PortainerEndpointStatus status,
+          required final PortainerEndpointStatus status,
       @JsonKey(name: 'TLSConfig')
-          required PortainerEndpointTLSConfig tlsCACert,
+          required final PortainerEndpointTLSConfig tlsCACert,
       @JsonKey(name: 'TagIds')
-          List<int>? tags,
+          final List<int>? tags,
       @JsonKey(name: 'TeamAccessPolicies')
-          required Map<String, PortainerAccessPolicy> teamsAccessPolicies,
+          required final Map<String, PortainerAccessPolicy> teamsAccessPolicies,
       @JsonKey(name: 'UserAccessPolicies')
-          required Map<String, PortainerAccessPolicy> usersAccessPolicies,
+          required final Map<String, PortainerAccessPolicy> usersAccessPolicies,
       @JsonKey(name: 'IsEdgeDevice')
-          bool isEdgeDevice,
+          final bool isEdgeDevice,
       @JsonKey(name: 'LastCheckInDate')
-          int? lastCheckTimestamp,
+          final int? lastCheckTimestamp,
       @JsonKey(name: 'UserTrusted')
-          bool isTrusted,
-      PortainerEndpointSecuritySettings? securitySettings}) = _$_Endpoint;
+          final bool isTrusted,
+      final PortainerEndpointSecuritySettings? securitySettings}) = _$_Endpoint;
   const _Endpoint._() : super._();
 
   factory _Endpoint.fromJson(Map<String, dynamic> json) = _$_Endpoint.fromJson;
@@ -943,67 +909,69 @@ abstract class _Endpoint extends PortainerEndpoint {
 
   /// Endpoint ID
   @JsonKey(name: 'Id')
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// AMT device ID associated to the endpoint
   @JsonKey(name: 'AMTDeviceGUID')
-  String? get amtDeviceId;
+  String? get amtDeviceId => throw _privateConstructorUsedError;
   @override
 
   /// Authorized teams IDs
   @JsonKey(name: 'AuthorizedTeams')
-  List<int>? get authorizedTeams;
+  List<int>? get authorizedTeams => throw _privateConstructorUsedError;
   @override
 
   /// Azure credentials
   @JsonKey(name: 'AzureCredentials')
-  PortainerEndpointAzureCredentials? get azureCredentials;
+  PortainerEndpointAzureCredentials? get azureCredentials =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Docker Compose maximum version
   @JsonKey(name: 'ComposeSyntaxMaxVersion')
-  String get composeSyntaxMaxVersion;
+  String get composeSyntaxMaxVersion => throw _privateConstructorUsedError;
   @override
 
   /// Check interval for edge agent (in seconds)
   @JsonKey(name: 'EdgeCheckinInterval')
-  int? get edgeCheckInterval;
+  int? get edgeCheckInterval => throw _privateConstructorUsedError;
   @override
 
   /// Edge agent ID associated to the endpoint
   @JsonKey(name: 'EdgeID')
-  String? get edgeId;
+  String? get edgeId => throw _privateConstructorUsedError;
   @override
 
   /// Edge agent key to map the agent to the engine
   @JsonKey(name: 'EdgeKey')
-  String? get edgeKey;
+  String? get edgeKey => throw _privateConstructorUsedError;
   @override
 
   /// Kubernetes configuration and snapshots
   @JsonKey(name: 'Kubernetes')
-  Map<String, dynamic>? get kubernetes;
+  Map<String, dynamic>? get kubernetes => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint name
   @JsonKey(name: 'Name')
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint containers URL
   @JsonKey(name: 'PublicURL')
-  String get publicUrl;
+  String get publicUrl => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint Docker host URL
   @JsonKey(name: 'URL')
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
 
   /// Docker snapshots
   @JsonKey(name: 'Snapshots')
-  List<PortainerDockerSnapshot> get snapshots;
+  List<PortainerDockerSnapshot> get snapshots =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Endpoint type
@@ -1011,7 +979,7 @@ abstract class _Endpoint extends PortainerEndpoint {
       name: 'Type',
       fromJson: _endpointTypeFromJson,
       toJson: _endpointTypeToJson)
-  PortainerEndpointType get type;
+  PortainerEndpointType get type => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint status
@@ -1019,48 +987,52 @@ abstract class _Endpoint extends PortainerEndpoint {
       name: 'Status',
       fromJson: _endpointStatusFromJson,
       toJson: _endpointStatusToJson)
-  PortainerEndpointStatus get status;
+  PortainerEndpointStatus get status => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint TLS configuration
   @JsonKey(name: 'TLSConfig')
-  PortainerEndpointTLSConfig get tlsCACert;
+  PortainerEndpointTLSConfig get tlsCACert =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Endpoint tags IDs
   @JsonKey(name: 'TagIds')
-  List<int>? get tags;
+  List<int>? get tags => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint access policy for engine teams
   @JsonKey(name: 'TeamAccessPolicies')
-  Map<String, PortainerAccessPolicy> get teamsAccessPolicies;
+  Map<String, PortainerAccessPolicy> get teamsAccessPolicies =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Endpoint access policy for engine users
   @JsonKey(name: 'UserAccessPolicies')
-  Map<String, PortainerAccessPolicy> get usersAccessPolicies;
+  Map<String, PortainerAccessPolicy> get usersAccessPolicies =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Is an edge endpoint ?
   @JsonKey(name: 'IsEdgeDevice')
-  bool get isEdgeDevice;
+  bool get isEdgeDevice => throw _privateConstructorUsedError;
   @override
 
   /// Last check timestamp for edge agent
   @JsonKey(name: 'LastCheckInDate')
-  int? get lastCheckTimestamp;
+  int? get lastCheckTimestamp => throw _privateConstructorUsedError;
   @override
 
   /// Is the endpoint trusted by the user ?
   @JsonKey(name: 'UserTrusted')
-  bool get isTrusted;
+  bool get isTrusted => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint security settings
-  PortainerEndpointSecuritySettings? get securitySettings;
+  PortainerEndpointSecuritySettings? get securitySettings =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EndpointCopyWith<_Endpoint> get copyWith =>
+  _$$_EndpointCopyWith<_$_Endpoint> get copyWith =>
       throw _privateConstructorUsedError;
 }

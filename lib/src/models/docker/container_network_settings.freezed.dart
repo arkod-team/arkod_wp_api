@@ -12,33 +12,12 @@ part of 'container_network_settings.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerNetworkSettings _$DockerContainerNetworkSettingsFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerNetworkSettings.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerNetworkSettingsTearOff {
-  const _$DockerContainerNetworkSettingsTearOff();
-
-  _DockerContainerNetworkSettings call(
-      {@JsonKey(name: 'Networks')
-          required Map<String, DockerEndpointSettings> networks}) {
-    return _DockerContainerNetworkSettings(
-      networks: networks,
-    );
-  }
-
-  DockerContainerNetworkSettings fromJson(Map<String, Object?> json) {
-    return DockerContainerNetworkSettings.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerNetworkSettings =
-    _$DockerContainerNetworkSettingsTearOff();
 
 /// @nodoc
 mixin _$DockerContainerNetworkSettings {
@@ -87,12 +66,12 @@ class _$DockerContainerNetworkSettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerNetworkSettingsCopyWith<$Res>
+abstract class _$$_DockerContainerNetworkSettingsCopyWith<$Res>
     implements $DockerContainerNetworkSettingsCopyWith<$Res> {
-  factory _$DockerContainerNetworkSettingsCopyWith(
-          _DockerContainerNetworkSettings value,
-          $Res Function(_DockerContainerNetworkSettings) then) =
-      __$DockerContainerNetworkSettingsCopyWithImpl<$Res>;
+  factory _$$_DockerContainerNetworkSettingsCopyWith(
+          _$_DockerContainerNetworkSettings value,
+          $Res Function(_$_DockerContainerNetworkSettings) then) =
+      __$$_DockerContainerNetworkSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Networks')
@@ -100,25 +79,25 @@ abstract class _$DockerContainerNetworkSettingsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerNetworkSettingsCopyWithImpl<$Res>
+class __$$_DockerContainerNetworkSettingsCopyWithImpl<$Res>
     extends _$DockerContainerNetworkSettingsCopyWithImpl<$Res>
-    implements _$DockerContainerNetworkSettingsCopyWith<$Res> {
-  __$DockerContainerNetworkSettingsCopyWithImpl(
-      _DockerContainerNetworkSettings _value,
-      $Res Function(_DockerContainerNetworkSettings) _then)
-      : super(_value, (v) => _then(v as _DockerContainerNetworkSettings));
+    implements _$$_DockerContainerNetworkSettingsCopyWith<$Res> {
+  __$$_DockerContainerNetworkSettingsCopyWithImpl(
+      _$_DockerContainerNetworkSettings _value,
+      $Res Function(_$_DockerContainerNetworkSettings) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerNetworkSettings));
 
   @override
-  _DockerContainerNetworkSettings get _value =>
-      super._value as _DockerContainerNetworkSettings;
+  _$_DockerContainerNetworkSettings get _value =>
+      super._value as _$_DockerContainerNetworkSettings;
 
   @override
   $Res call({
     Object? networks = freezed,
   }) {
-    return _then(_DockerContainerNetworkSettings(
+    return _then(_$_DockerContainerNetworkSettings(
       networks: networks == freezed
-          ? _value.networks
+          ? _value._networks
           : networks // ignore: cast_nullable_to_non_nullable
               as Map<String, DockerEndpointSettings>,
     ));
@@ -130,17 +109,24 @@ class __$DockerContainerNetworkSettingsCopyWithImpl<$Res>
 class _$_DockerContainerNetworkSettings
     implements _DockerContainerNetworkSettings {
   const _$_DockerContainerNetworkSettings(
-      {@JsonKey(name: 'Networks') required this.networks});
+      {@JsonKey(name: 'Networks')
+          required final Map<String, DockerEndpointSettings> networks})
+      : _networks = networks;
 
   factory _$_DockerContainerNetworkSettings.fromJson(
           Map<String, dynamic> json) =>
       _$$_DockerContainerNetworkSettingsFromJson(json);
 
-  @override
+  /// Container networks
+  final Map<String, DockerEndpointSettings> _networks;
 
   /// Container networks
+  @override
   @JsonKey(name: 'Networks')
-  final Map<String, DockerEndpointSettings> networks;
+  Map<String, DockerEndpointSettings> get networks {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_networks);
+  }
 
   @override
   String toString() {
@@ -151,19 +137,20 @@ class _$_DockerContainerNetworkSettings
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerNetworkSettings &&
-            const DeepCollectionEquality().equals(other.networks, networks));
+            other is _$_DockerContainerNetworkSettings &&
+            const DeepCollectionEquality().equals(other._networks, _networks));
   }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(networks));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerNetworkSettingsCopyWith<_DockerContainerNetworkSettings>
-      get copyWith => __$DockerContainerNetworkSettingsCopyWithImpl<
-          _DockerContainerNetworkSettings>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_networks));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DockerContainerNetworkSettingsCopyWith<_$_DockerContainerNetworkSettings>
+      get copyWith => __$$_DockerContainerNetworkSettingsCopyWithImpl<
+          _$_DockerContainerNetworkSettings>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -175,7 +162,7 @@ abstract class _DockerContainerNetworkSettings
     implements DockerContainerNetworkSettings {
   const factory _DockerContainerNetworkSettings(
           {@JsonKey(name: 'Networks')
-              required Map<String, DockerEndpointSettings> networks}) =
+              required final Map<String, DockerEndpointSettings> networks}) =
       _$_DockerContainerNetworkSettings;
 
   factory _DockerContainerNetworkSettings.fromJson(Map<String, dynamic> json) =
@@ -185,9 +172,10 @@ abstract class _DockerContainerNetworkSettings
 
   /// Container networks
   @JsonKey(name: 'Networks')
-  Map<String, DockerEndpointSettings> get networks;
+  Map<String, DockerEndpointSettings> get networks =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerNetworkSettingsCopyWith<_DockerContainerNetworkSettings>
+  _$$_DockerContainerNetworkSettingsCopyWith<_$_DockerContainerNetworkSettings>
       get copyWith => throw _privateConstructorUsedError;
 }

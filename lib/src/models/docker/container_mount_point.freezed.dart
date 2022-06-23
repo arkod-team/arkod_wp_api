@@ -12,53 +12,12 @@ part of 'container_mount_point.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMountPoint _$DockerContainerMountPointFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerMountPoint.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountPointTearOff {
-  const _$DockerContainerMountPointTearOff();
-
-  _DockerContainerMountPoint call(
-      {@JsonKey(name: 'Type', fromJson: _containerMountPointTypeFromJson, toJson: _containerMountPointTypeToJson)
-          required DockerContainerMountPointType type,
-      @JsonKey(name: 'Name')
-          String? name,
-      @JsonKey(name: 'Source')
-          required String source,
-      @JsonKey(name: 'Destination')
-          required String destination,
-      @JsonKey(name: 'Driver')
-          String? driver,
-      @JsonKey(name: 'Mode')
-          required String mode,
-      @JsonKey(name: 'RW')
-          required bool rw,
-      @JsonKey(name: 'Propagation')
-          String? propagation}) {
-    return _DockerContainerMountPoint(
-      type: type,
-      name: name,
-      source: source,
-      destination: destination,
-      driver: driver,
-      mode: mode,
-      rw: rw,
-      propagation: propagation,
-    );
-  }
-
-  DockerContainerMountPoint fromJson(Map<String, Object?> json) {
-    return DockerContainerMountPoint.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMountPoint = _$DockerContainerMountPointTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMountPoint {
@@ -185,11 +144,12 @@ class _$DockerContainerMountPointCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountPointCopyWith<$Res>
+abstract class _$$_DockerContainerMountPointCopyWith<$Res>
     implements $DockerContainerMountPointCopyWith<$Res> {
-  factory _$DockerContainerMountPointCopyWith(_DockerContainerMountPoint value,
-          $Res Function(_DockerContainerMountPoint) then) =
-      __$DockerContainerMountPointCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountPointCopyWith(
+          _$_DockerContainerMountPoint value,
+          $Res Function(_$_DockerContainerMountPoint) then) =
+      __$$_DockerContainerMountPointCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Type', fromJson: _containerMountPointTypeFromJson, toJson: _containerMountPointTypeToJson)
@@ -211,16 +171,17 @@ abstract class _$DockerContainerMountPointCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountPointCopyWithImpl<$Res>
+class __$$_DockerContainerMountPointCopyWithImpl<$Res>
     extends _$DockerContainerMountPointCopyWithImpl<$Res>
-    implements _$DockerContainerMountPointCopyWith<$Res> {
-  __$DockerContainerMountPointCopyWithImpl(_DockerContainerMountPoint _value,
-      $Res Function(_DockerContainerMountPoint) _then)
-      : super(_value, (v) => _then(v as _DockerContainerMountPoint));
+    implements _$$_DockerContainerMountPointCopyWith<$Res> {
+  __$$_DockerContainerMountPointCopyWithImpl(
+      _$_DockerContainerMountPoint _value,
+      $Res Function(_$_DockerContainerMountPoint) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerMountPoint));
 
   @override
-  _DockerContainerMountPoint get _value =>
-      super._value as _DockerContainerMountPoint;
+  _$_DockerContainerMountPoint get _value =>
+      super._value as _$_DockerContainerMountPoint;
 
   @override
   $Res call({
@@ -233,7 +194,7 @@ class __$DockerContainerMountPointCopyWithImpl<$Res>
     Object? rw = freezed,
     Object? propagation = freezed,
   }) {
-    return _then(_DockerContainerMountPoint(
+    return _then(_$_DockerContainerMountPoint(
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -294,47 +255,46 @@ class _$_DockerContainerMountPoint implements _DockerContainerMountPoint {
   factory _$_DockerContainerMountPoint.fromJson(Map<String, dynamic> json) =>
       _$$_DockerContainerMountPointFromJson(json);
 
-  @override
-
   /// Mount type
+  @override
   @JsonKey(
       name: 'Type',
       fromJson: _containerMountPointTypeFromJson,
       toJson: _containerMountPointTypeToJson)
   final DockerContainerMountPointType type;
-  @override
 
   /// Volume name
+  @override
   @JsonKey(name: 'Name')
   final String? name;
-  @override
 
   /// Mount point source path
+  @override
   @JsonKey(name: 'Source')
   final String source;
-  @override
 
   /// Mount point destination path
+  @override
   @JsonKey(name: 'Destination')
   final String destination;
-  @override
 
   /// Volume driver
+  @override
   @JsonKey(name: 'Driver')
   final String? driver;
-  @override
 
   /// Mount options list
+  @override
   @JsonKey(name: 'Mode')
   final String mode;
-  @override
 
   /// Is the mount writable ?
+  @override
   @JsonKey(name: 'RW')
   final bool rw;
-  @override
 
   /// Mount propagation description
+  @override
   @JsonKey(name: 'Propagation')
   final String? propagation;
 
@@ -347,7 +307,7 @@ class _$_DockerContainerMountPoint implements _DockerContainerMountPoint {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMountPoint &&
+            other is _$_DockerContainerMountPoint &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.source, source) &&
@@ -360,6 +320,7 @@ class _$_DockerContainerMountPoint implements _DockerContainerMountPoint {
                 .equals(other.propagation, propagation));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -374,10 +335,9 @@ class _$_DockerContainerMountPoint implements _DockerContainerMountPoint {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountPointCopyWith<_DockerContainerMountPoint>
-      get copyWith =>
-          __$DockerContainerMountPointCopyWithImpl<_DockerContainerMountPoint>(
-              this, _$identity);
+  _$$_DockerContainerMountPointCopyWith<_$_DockerContainerMountPoint>
+      get copyWith => __$$_DockerContainerMountPointCopyWithImpl<
+          _$_DockerContainerMountPoint>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -388,21 +348,21 @@ class _$_DockerContainerMountPoint implements _DockerContainerMountPoint {
 abstract class _DockerContainerMountPoint implements DockerContainerMountPoint {
   const factory _DockerContainerMountPoint(
       {@JsonKey(name: 'Type', fromJson: _containerMountPointTypeFromJson, toJson: _containerMountPointTypeToJson)
-          required DockerContainerMountPointType type,
+          required final DockerContainerMountPointType type,
       @JsonKey(name: 'Name')
-          String? name,
+          final String? name,
       @JsonKey(name: 'Source')
-          required String source,
+          required final String source,
       @JsonKey(name: 'Destination')
-          required String destination,
+          required final String destination,
       @JsonKey(name: 'Driver')
-          String? driver,
+          final String? driver,
       @JsonKey(name: 'Mode')
-          required String mode,
+          required final String mode,
       @JsonKey(name: 'RW')
-          required bool rw,
+          required final bool rw,
       @JsonKey(name: 'Propagation')
-          String? propagation}) = _$_DockerContainerMountPoint;
+          final String? propagation}) = _$_DockerContainerMountPoint;
 
   factory _DockerContainerMountPoint.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerMountPoint.fromJson;
@@ -414,44 +374,44 @@ abstract class _DockerContainerMountPoint implements DockerContainerMountPoint {
       name: 'Type',
       fromJson: _containerMountPointTypeFromJson,
       toJson: _containerMountPointTypeToJson)
-  DockerContainerMountPointType get type;
+  DockerContainerMountPointType get type => throw _privateConstructorUsedError;
   @override
 
   /// Volume name
   @JsonKey(name: 'Name')
-  String? get name;
+  String? get name => throw _privateConstructorUsedError;
   @override
 
   /// Mount point source path
   @JsonKey(name: 'Source')
-  String get source;
+  String get source => throw _privateConstructorUsedError;
   @override
 
   /// Mount point destination path
   @JsonKey(name: 'Destination')
-  String get destination;
+  String get destination => throw _privateConstructorUsedError;
   @override
 
   /// Volume driver
   @JsonKey(name: 'Driver')
-  String? get driver;
+  String? get driver => throw _privateConstructorUsedError;
   @override
 
   /// Mount options list
   @JsonKey(name: 'Mode')
-  String get mode;
+  String get mode => throw _privateConstructorUsedError;
   @override
 
   /// Is the mount writable ?
   @JsonKey(name: 'RW')
-  bool get rw;
+  bool get rw => throw _privateConstructorUsedError;
   @override
 
   /// Mount propagation description
   @JsonKey(name: 'Propagation')
-  String? get propagation;
+  String? get propagation => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountPointCopyWith<_DockerContainerMountPoint>
+  _$$_DockerContainerMountPointCopyWith<_$_DockerContainerMountPoint>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,33 +12,12 @@ part of 'stack_git_authentication.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerStackGitAuthentication _$PortainerStackGitAuthenticationFromJson(
     Map<String, dynamic> json) {
   return _PortainerStackGitAuthentication.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerStackGitAuthenticationTearOff {
-  const _$PortainerStackGitAuthenticationTearOff();
-
-  _PortainerStackGitAuthentication call(
-      {required String username, required String password}) {
-    return _PortainerStackGitAuthentication(
-      username: username,
-      password: password,
-    );
-  }
-
-  PortainerStackGitAuthentication fromJson(Map<String, Object?> json) {
-    return PortainerStackGitAuthentication.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerStackGitAuthentication =
-    _$PortainerStackGitAuthenticationTearOff();
 
 /// @nodoc
 mixin _$PortainerStackGitAuthentication {
@@ -91,35 +70,35 @@ class _$PortainerStackGitAuthenticationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerStackGitAuthenticationCopyWith<$Res>
+abstract class _$$_PortainerStackGitAuthenticationCopyWith<$Res>
     implements $PortainerStackGitAuthenticationCopyWith<$Res> {
-  factory _$PortainerStackGitAuthenticationCopyWith(
-          _PortainerStackGitAuthentication value,
-          $Res Function(_PortainerStackGitAuthentication) then) =
-      __$PortainerStackGitAuthenticationCopyWithImpl<$Res>;
+  factory _$$_PortainerStackGitAuthenticationCopyWith(
+          _$_PortainerStackGitAuthentication value,
+          $Res Function(_$_PortainerStackGitAuthentication) then) =
+      __$$_PortainerStackGitAuthenticationCopyWithImpl<$Res>;
   @override
   $Res call({String username, String password});
 }
 
 /// @nodoc
-class __$PortainerStackGitAuthenticationCopyWithImpl<$Res>
+class __$$_PortainerStackGitAuthenticationCopyWithImpl<$Res>
     extends _$PortainerStackGitAuthenticationCopyWithImpl<$Res>
-    implements _$PortainerStackGitAuthenticationCopyWith<$Res> {
-  __$PortainerStackGitAuthenticationCopyWithImpl(
-      _PortainerStackGitAuthentication _value,
-      $Res Function(_PortainerStackGitAuthentication) _then)
-      : super(_value, (v) => _then(v as _PortainerStackGitAuthentication));
+    implements _$$_PortainerStackGitAuthenticationCopyWith<$Res> {
+  __$$_PortainerStackGitAuthenticationCopyWithImpl(
+      _$_PortainerStackGitAuthentication _value,
+      $Res Function(_$_PortainerStackGitAuthentication) _then)
+      : super(_value, (v) => _then(v as _$_PortainerStackGitAuthentication));
 
   @override
-  _PortainerStackGitAuthentication get _value =>
-      super._value as _PortainerStackGitAuthentication;
+  _$_PortainerStackGitAuthentication get _value =>
+      super._value as _$_PortainerStackGitAuthentication;
 
   @override
   $Res call({
     Object? username = freezed,
     Object? password = freezed,
   }) {
-    return _then(_PortainerStackGitAuthentication(
+    return _then(_$_PortainerStackGitAuthentication(
       username: username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -143,13 +122,12 @@ class _$_PortainerStackGitAuthentication
           Map<String, dynamic> json) =>
       _$$_PortainerStackGitAuthenticationFromJson(json);
 
-  @override
-
   /// Git username
-  final String username;
   @override
+  final String username;
 
   /// Git password
+  @override
   final String password;
 
   @override
@@ -161,11 +139,12 @@ class _$_PortainerStackGitAuthentication
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerStackGitAuthentication &&
+            other is _$_PortainerStackGitAuthentication &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -174,9 +153,10 @@ class _$_PortainerStackGitAuthentication
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerStackGitAuthenticationCopyWith<_PortainerStackGitAuthentication>
-      get copyWith => __$PortainerStackGitAuthenticationCopyWithImpl<
-          _PortainerStackGitAuthentication>(this, _$identity);
+  _$$_PortainerStackGitAuthenticationCopyWith<
+          _$_PortainerStackGitAuthentication>
+      get copyWith => __$$_PortainerStackGitAuthenticationCopyWithImpl<
+          _$_PortainerStackGitAuthentication>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -187,8 +167,8 @@ class _$_PortainerStackGitAuthentication
 abstract class _PortainerStackGitAuthentication
     implements PortainerStackGitAuthentication {
   const factory _PortainerStackGitAuthentication(
-      {required String username,
-      required String password}) = _$_PortainerStackGitAuthentication;
+      {required final String username,
+      required final String password}) = _$_PortainerStackGitAuthentication;
 
   factory _PortainerStackGitAuthentication.fromJson(Map<String, dynamic> json) =
       _$_PortainerStackGitAuthentication.fromJson;
@@ -196,13 +176,14 @@ abstract class _PortainerStackGitAuthentication
   @override
 
   /// Git username
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
 
   /// Git password
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerStackGitAuthenticationCopyWith<_PortainerStackGitAuthentication>
+  _$$_PortainerStackGitAuthenticationCopyWith<
+          _$_PortainerStackGitAuthentication>
       get copyWith => throw _privateConstructorUsedError;
 }

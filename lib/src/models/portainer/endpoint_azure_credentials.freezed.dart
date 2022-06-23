@@ -12,36 +12,12 @@ part of 'endpoint_azure_credentials.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerEndpointAzureCredentials _$PortainerEndpointAzureCredentialsFromJson(
     Map<String, dynamic> json) {
   return _PortainerEndpointAzureCredentials.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerEndpointAzureCredentialsTearOff {
-  const _$PortainerEndpointAzureCredentialsTearOff();
-
-  _PortainerEndpointAzureCredentials call(
-      {@JsonKey(name: 'ApplicationID') required String applicationId,
-      @JsonKey(name: 'AuthenticationKey') required String authenticationKey,
-      @JsonKey(name: 'TenantID') required String tenantId}) {
-    return _PortainerEndpointAzureCredentials(
-      applicationId: applicationId,
-      authenticationKey: authenticationKey,
-      tenantId: tenantId,
-    );
-  }
-
-  PortainerEndpointAzureCredentials fromJson(Map<String, Object?> json) {
-    return PortainerEndpointAzureCredentials.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerEndpointAzureCredentials =
-    _$PortainerEndpointAzureCredentialsTearOff();
 
 /// @nodoc
 mixin _$PortainerEndpointAzureCredentials {
@@ -108,12 +84,12 @@ class _$PortainerEndpointAzureCredentialsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerEndpointAzureCredentialsCopyWith<$Res>
+abstract class _$$_PortainerEndpointAzureCredentialsCopyWith<$Res>
     implements $PortainerEndpointAzureCredentialsCopyWith<$Res> {
-  factory _$PortainerEndpointAzureCredentialsCopyWith(
-          _PortainerEndpointAzureCredentials value,
-          $Res Function(_PortainerEndpointAzureCredentials) then) =
-      __$PortainerEndpointAzureCredentialsCopyWithImpl<$Res>;
+  factory _$$_PortainerEndpointAzureCredentialsCopyWith(
+          _$_PortainerEndpointAzureCredentials value,
+          $Res Function(_$_PortainerEndpointAzureCredentials) then) =
+      __$$_PortainerEndpointAzureCredentialsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ApplicationID') String applicationId,
@@ -122,17 +98,17 @@ abstract class _$PortainerEndpointAzureCredentialsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerEndpointAzureCredentialsCopyWithImpl<$Res>
+class __$$_PortainerEndpointAzureCredentialsCopyWithImpl<$Res>
     extends _$PortainerEndpointAzureCredentialsCopyWithImpl<$Res>
-    implements _$PortainerEndpointAzureCredentialsCopyWith<$Res> {
-  __$PortainerEndpointAzureCredentialsCopyWithImpl(
-      _PortainerEndpointAzureCredentials _value,
-      $Res Function(_PortainerEndpointAzureCredentials) _then)
-      : super(_value, (v) => _then(v as _PortainerEndpointAzureCredentials));
+    implements _$$_PortainerEndpointAzureCredentialsCopyWith<$Res> {
+  __$$_PortainerEndpointAzureCredentialsCopyWithImpl(
+      _$_PortainerEndpointAzureCredentials _value,
+      $Res Function(_$_PortainerEndpointAzureCredentials) _then)
+      : super(_value, (v) => _then(v as _$_PortainerEndpointAzureCredentials));
 
   @override
-  _PortainerEndpointAzureCredentials get _value =>
-      super._value as _PortainerEndpointAzureCredentials;
+  _$_PortainerEndpointAzureCredentials get _value =>
+      super._value as _$_PortainerEndpointAzureCredentials;
 
   @override
   $Res call({
@@ -140,7 +116,7 @@ class __$PortainerEndpointAzureCredentialsCopyWithImpl<$Res>
     Object? authenticationKey = freezed,
     Object? tenantId = freezed,
   }) {
-    return _then(_PortainerEndpointAzureCredentials(
+    return _then(_$_PortainerEndpointAzureCredentials(
       applicationId: applicationId == freezed
           ? _value.applicationId
           : applicationId // ignore: cast_nullable_to_non_nullable
@@ -170,19 +146,18 @@ class _$_PortainerEndpointAzureCredentials
           Map<String, dynamic> json) =>
       _$$_PortainerEndpointAzureCredentialsFromJson(json);
 
-  @override
-
   /// Azure application ID
+  @override
   @JsonKey(name: 'ApplicationID')
   final String applicationId;
-  @override
 
   /// Azure authentication key
+  @override
   @JsonKey(name: 'AuthenticationKey')
   final String authenticationKey;
-  @override
 
   /// Azure tenant ID
+  @override
   @JsonKey(name: 'TenantID')
   final String tenantId;
 
@@ -195,7 +170,7 @@ class _$_PortainerEndpointAzureCredentials
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerEndpointAzureCredentials &&
+            other is _$_PortainerEndpointAzureCredentials &&
             const DeepCollectionEquality()
                 .equals(other.applicationId, applicationId) &&
             const DeepCollectionEquality()
@@ -203,6 +178,7 @@ class _$_PortainerEndpointAzureCredentials
             const DeepCollectionEquality().equals(other.tenantId, tenantId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -212,10 +188,10 @@ class _$_PortainerEndpointAzureCredentials
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerEndpointAzureCredentialsCopyWith<
-          _PortainerEndpointAzureCredentials>
-      get copyWith => __$PortainerEndpointAzureCredentialsCopyWithImpl<
-          _PortainerEndpointAzureCredentials>(this, _$identity);
+  _$$_PortainerEndpointAzureCredentialsCopyWith<
+          _$_PortainerEndpointAzureCredentials>
+      get copyWith => __$$_PortainerEndpointAzureCredentialsCopyWithImpl<
+          _$_PortainerEndpointAzureCredentials>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -226,9 +202,12 @@ class _$_PortainerEndpointAzureCredentials
 abstract class _PortainerEndpointAzureCredentials
     implements PortainerEndpointAzureCredentials {
   const factory _PortainerEndpointAzureCredentials(
-          {@JsonKey(name: 'ApplicationID') required String applicationId,
-          @JsonKey(name: 'AuthenticationKey') required String authenticationKey,
-          @JsonKey(name: 'TenantID') required String tenantId}) =
+          {@JsonKey(name: 'ApplicationID')
+              required final String applicationId,
+          @JsonKey(name: 'AuthenticationKey')
+              required final String authenticationKey,
+          @JsonKey(name: 'TenantID')
+              required final String tenantId}) =
       _$_PortainerEndpointAzureCredentials;
 
   factory _PortainerEndpointAzureCredentials.fromJson(
@@ -239,20 +218,20 @@ abstract class _PortainerEndpointAzureCredentials
 
   /// Azure application ID
   @JsonKey(name: 'ApplicationID')
-  String get applicationId;
+  String get applicationId => throw _privateConstructorUsedError;
   @override
 
   /// Azure authentication key
   @JsonKey(name: 'AuthenticationKey')
-  String get authenticationKey;
+  String get authenticationKey => throw _privateConstructorUsedError;
   @override
 
   /// Azure tenant ID
   @JsonKey(name: 'TenantID')
-  String get tenantId;
+  String get tenantId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerEndpointAzureCredentialsCopyWith<
-          _PortainerEndpointAzureCredentials>
+  _$$_PortainerEndpointAzureCredentialsCopyWith<
+          _$_PortainerEndpointAzureCredentials>
       get copyWith => throw _privateConstructorUsedError;
 }

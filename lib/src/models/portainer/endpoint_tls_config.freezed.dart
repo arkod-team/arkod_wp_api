@@ -12,39 +12,12 @@ part of 'endpoint_tls_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerEndpointTLSConfig _$PortainerEndpointTLSConfigFromJson(
     Map<String, dynamic> json) {
   return _PortainerEndpointTLSConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerEndpointTLSConfigTearOff {
-  const _$PortainerEndpointTLSConfigTearOff();
-
-  _PortainerEndpointTLSConfig call(
-      {@JsonKey(name: 'TLS') required bool tls,
-      @JsonKey(name: 'TLSSkipVerify') required bool skipVerify,
-      @JsonKey(name: 'TLSCACert') String? tlsCACert,
-      @JsonKey(name: 'TLSCert') String? tlsCert,
-      @JsonKey(name: 'TLSKey') String? tlsKey}) {
-    return _PortainerEndpointTLSConfig(
-      tls: tls,
-      skipVerify: skipVerify,
-      tlsCACert: tlsCACert,
-      tlsCert: tlsCert,
-      tlsKey: tlsKey,
-    );
-  }
-
-  PortainerEndpointTLSConfig fromJson(Map<String, Object?> json) {
-    return PortainerEndpointTLSConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerEndpointTLSConfig = _$PortainerEndpointTLSConfigTearOff();
 
 /// @nodoc
 mixin _$PortainerEndpointTLSConfig {
@@ -130,12 +103,12 @@ class _$PortainerEndpointTLSConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerEndpointTLSConfigCopyWith<$Res>
+abstract class _$$_PortainerEndpointTLSConfigCopyWith<$Res>
     implements $PortainerEndpointTLSConfigCopyWith<$Res> {
-  factory _$PortainerEndpointTLSConfigCopyWith(
-          _PortainerEndpointTLSConfig value,
-          $Res Function(_PortainerEndpointTLSConfig) then) =
-      __$PortainerEndpointTLSConfigCopyWithImpl<$Res>;
+  factory _$$_PortainerEndpointTLSConfigCopyWith(
+          _$_PortainerEndpointTLSConfig value,
+          $Res Function(_$_PortainerEndpointTLSConfig) then) =
+      __$$_PortainerEndpointTLSConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'TLS') bool tls,
@@ -146,16 +119,17 @@ abstract class _$PortainerEndpointTLSConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerEndpointTLSConfigCopyWithImpl<$Res>
+class __$$_PortainerEndpointTLSConfigCopyWithImpl<$Res>
     extends _$PortainerEndpointTLSConfigCopyWithImpl<$Res>
-    implements _$PortainerEndpointTLSConfigCopyWith<$Res> {
-  __$PortainerEndpointTLSConfigCopyWithImpl(_PortainerEndpointTLSConfig _value,
-      $Res Function(_PortainerEndpointTLSConfig) _then)
-      : super(_value, (v) => _then(v as _PortainerEndpointTLSConfig));
+    implements _$$_PortainerEndpointTLSConfigCopyWith<$Res> {
+  __$$_PortainerEndpointTLSConfigCopyWithImpl(
+      _$_PortainerEndpointTLSConfig _value,
+      $Res Function(_$_PortainerEndpointTLSConfig) _then)
+      : super(_value, (v) => _then(v as _$_PortainerEndpointTLSConfig));
 
   @override
-  _PortainerEndpointTLSConfig get _value =>
-      super._value as _PortainerEndpointTLSConfig;
+  _$_PortainerEndpointTLSConfig get _value =>
+      super._value as _$_PortainerEndpointTLSConfig;
 
   @override
   $Res call({
@@ -165,7 +139,7 @@ class __$PortainerEndpointTLSConfigCopyWithImpl<$Res>
     Object? tlsCert = freezed,
     Object? tlsKey = freezed,
   }) {
-    return _then(_PortainerEndpointTLSConfig(
+    return _then(_$_PortainerEndpointTLSConfig(
       tls: tls == freezed
           ? _value.tls
           : tls // ignore: cast_nullable_to_non_nullable
@@ -203,29 +177,28 @@ class _$_PortainerEndpointTLSConfig implements _PortainerEndpointTLSConfig {
   factory _$_PortainerEndpointTLSConfig.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerEndpointTLSConfigFromJson(json);
 
-  @override
-
   /// Is the endpoint using TLS ?
+  @override
   @JsonKey(name: 'TLS')
   final bool tls;
-  @override
 
   /// Is the TLS certificate verification skipped
+  @override
   @JsonKey(name: 'TLSSkipVerify')
   final bool skipVerify;
-  @override
 
   /// TLS CA certicicate file path
+  @override
   @JsonKey(name: 'TLSCACert')
   final String? tlsCACert;
-  @override
 
   /// TLS client certicicate file path
+  @override
   @JsonKey(name: 'TLSCert')
   final String? tlsCert;
-  @override
 
   /// TLS client certicicate key file path
+  @override
   @JsonKey(name: 'TLSKey')
   final String? tlsKey;
 
@@ -238,7 +211,7 @@ class _$_PortainerEndpointTLSConfig implements _PortainerEndpointTLSConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerEndpointTLSConfig &&
+            other is _$_PortainerEndpointTLSConfig &&
             const DeepCollectionEquality().equals(other.tls, tls) &&
             const DeepCollectionEquality()
                 .equals(other.skipVerify, skipVerify) &&
@@ -247,6 +220,7 @@ class _$_PortainerEndpointTLSConfig implements _PortainerEndpointTLSConfig {
             const DeepCollectionEquality().equals(other.tlsKey, tlsKey));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -258,9 +232,9 @@ class _$_PortainerEndpointTLSConfig implements _PortainerEndpointTLSConfig {
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerEndpointTLSConfigCopyWith<_PortainerEndpointTLSConfig>
-      get copyWith => __$PortainerEndpointTLSConfigCopyWithImpl<
-          _PortainerEndpointTLSConfig>(this, _$identity);
+  _$$_PortainerEndpointTLSConfigCopyWith<_$_PortainerEndpointTLSConfig>
+      get copyWith => __$$_PortainerEndpointTLSConfigCopyWithImpl<
+          _$_PortainerEndpointTLSConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -271,11 +245,12 @@ class _$_PortainerEndpointTLSConfig implements _PortainerEndpointTLSConfig {
 abstract class _PortainerEndpointTLSConfig
     implements PortainerEndpointTLSConfig {
   const factory _PortainerEndpointTLSConfig(
-      {@JsonKey(name: 'TLS') required bool tls,
-      @JsonKey(name: 'TLSSkipVerify') required bool skipVerify,
-      @JsonKey(name: 'TLSCACert') String? tlsCACert,
-      @JsonKey(name: 'TLSCert') String? tlsCert,
-      @JsonKey(name: 'TLSKey') String? tlsKey}) = _$_PortainerEndpointTLSConfig;
+          {@JsonKey(name: 'TLS') required final bool tls,
+          @JsonKey(name: 'TLSSkipVerify') required final bool skipVerify,
+          @JsonKey(name: 'TLSCACert') final String? tlsCACert,
+          @JsonKey(name: 'TLSCert') final String? tlsCert,
+          @JsonKey(name: 'TLSKey') final String? tlsKey}) =
+      _$_PortainerEndpointTLSConfig;
 
   factory _PortainerEndpointTLSConfig.fromJson(Map<String, dynamic> json) =
       _$_PortainerEndpointTLSConfig.fromJson;
@@ -284,29 +259,29 @@ abstract class _PortainerEndpointTLSConfig
 
   /// Is the endpoint using TLS ?
   @JsonKey(name: 'TLS')
-  bool get tls;
+  bool get tls => throw _privateConstructorUsedError;
   @override
 
   /// Is the TLS certificate verification skipped
   @JsonKey(name: 'TLSSkipVerify')
-  bool get skipVerify;
+  bool get skipVerify => throw _privateConstructorUsedError;
   @override
 
   /// TLS CA certicicate file path
   @JsonKey(name: 'TLSCACert')
-  String? get tlsCACert;
+  String? get tlsCACert => throw _privateConstructorUsedError;
   @override
 
   /// TLS client certicicate file path
   @JsonKey(name: 'TLSCert')
-  String? get tlsCert;
+  String? get tlsCert => throw _privateConstructorUsedError;
   @override
 
   /// TLS client certicicate key file path
   @JsonKey(name: 'TLSKey')
-  String? get tlsKey;
+  String? get tlsKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerEndpointTLSConfigCopyWith<_PortainerEndpointTLSConfig>
+  _$$_PortainerEndpointTLSConfigCopyWith<_$_PortainerEndpointTLSConfig>
       get copyWith => throw _privateConstructorUsedError;
 }

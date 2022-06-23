@@ -12,49 +12,12 @@ part of 'endpoint_security_settings.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerEndpointSecuritySettings _$PortainerEndpointSecuritySettingsFromJson(
     Map<String, dynamic> json) {
   return _PortainerEndpointSecuritySettings.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerEndpointSecuritySettingsTearOff {
-  const _$PortainerEndpointSecuritySettingsTearOff();
-
-  _PortainerEndpointSecuritySettings call(
-      {required bool allowBindMountsForRegularUsers,
-      required bool allowContainerCapabilitiesForRegularUsers,
-      required bool allowDeviceMappingForRegularUsers,
-      required bool allowHostNamespaceForRegularUsers,
-      required bool allowPrivilegedModeForRegularUsers,
-      required bool allowStackManagementForRegularUsers,
-      required bool allowSysctlSettingForRegularUsers,
-      required bool allowVolumeBrowserForRegularUsers,
-      required bool enableHostManagementFeatures}) {
-    return _PortainerEndpointSecuritySettings(
-      allowBindMountsForRegularUsers: allowBindMountsForRegularUsers,
-      allowContainerCapabilitiesForRegularUsers:
-          allowContainerCapabilitiesForRegularUsers,
-      allowDeviceMappingForRegularUsers: allowDeviceMappingForRegularUsers,
-      allowHostNamespaceForRegularUsers: allowHostNamespaceForRegularUsers,
-      allowPrivilegedModeForRegularUsers: allowPrivilegedModeForRegularUsers,
-      allowStackManagementForRegularUsers: allowStackManagementForRegularUsers,
-      allowSysctlSettingForRegularUsers: allowSysctlSettingForRegularUsers,
-      allowVolumeBrowserForRegularUsers: allowVolumeBrowserForRegularUsers,
-      enableHostManagementFeatures: enableHostManagementFeatures,
-    );
-  }
-
-  PortainerEndpointSecuritySettings fromJson(Map<String, Object?> json) {
-    return PortainerEndpointSecuritySettings.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerEndpointSecuritySettings =
-    _$PortainerEndpointSecuritySettingsTearOff();
 
 /// @nodoc
 mixin _$PortainerEndpointSecuritySettings {
@@ -186,12 +149,12 @@ class _$PortainerEndpointSecuritySettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerEndpointSecuritySettingsCopyWith<$Res>
+abstract class _$$_PortainerEndpointSecuritySettingsCopyWith<$Res>
     implements $PortainerEndpointSecuritySettingsCopyWith<$Res> {
-  factory _$PortainerEndpointSecuritySettingsCopyWith(
-          _PortainerEndpointSecuritySettings value,
-          $Res Function(_PortainerEndpointSecuritySettings) then) =
-      __$PortainerEndpointSecuritySettingsCopyWithImpl<$Res>;
+  factory _$$_PortainerEndpointSecuritySettingsCopyWith(
+          _$_PortainerEndpointSecuritySettings value,
+          $Res Function(_$_PortainerEndpointSecuritySettings) then) =
+      __$$_PortainerEndpointSecuritySettingsCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool allowBindMountsForRegularUsers,
@@ -206,17 +169,17 @@ abstract class _$PortainerEndpointSecuritySettingsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerEndpointSecuritySettingsCopyWithImpl<$Res>
+class __$$_PortainerEndpointSecuritySettingsCopyWithImpl<$Res>
     extends _$PortainerEndpointSecuritySettingsCopyWithImpl<$Res>
-    implements _$PortainerEndpointSecuritySettingsCopyWith<$Res> {
-  __$PortainerEndpointSecuritySettingsCopyWithImpl(
-      _PortainerEndpointSecuritySettings _value,
-      $Res Function(_PortainerEndpointSecuritySettings) _then)
-      : super(_value, (v) => _then(v as _PortainerEndpointSecuritySettings));
+    implements _$$_PortainerEndpointSecuritySettingsCopyWith<$Res> {
+  __$$_PortainerEndpointSecuritySettingsCopyWithImpl(
+      _$_PortainerEndpointSecuritySettings _value,
+      $Res Function(_$_PortainerEndpointSecuritySettings) _then)
+      : super(_value, (v) => _then(v as _$_PortainerEndpointSecuritySettings));
 
   @override
-  _PortainerEndpointSecuritySettings get _value =>
-      super._value as _PortainerEndpointSecuritySettings;
+  _$_PortainerEndpointSecuritySettings get _value =>
+      super._value as _$_PortainerEndpointSecuritySettings;
 
   @override
   $Res call({
@@ -230,7 +193,7 @@ class __$PortainerEndpointSecuritySettingsCopyWithImpl<$Res>
     Object? allowVolumeBrowserForRegularUsers = freezed,
     Object? enableHostManagementFeatures = freezed,
   }) {
-    return _then(_PortainerEndpointSecuritySettings(
+    return _then(_$_PortainerEndpointSecuritySettings(
       allowBindMountsForRegularUsers: allowBindMountsForRegularUsers == freezed
           ? _value.allowBindMountsForRegularUsers
           : allowBindMountsForRegularUsers // ignore: cast_nullable_to_non_nullable
@@ -297,41 +260,40 @@ class _$_PortainerEndpointSecuritySettings
           Map<String, dynamic> json) =>
       _$$_PortainerEndpointSecuritySettingsFromJson(json);
 
-  @override
-
   /// Are non-administrator users allowed to bind mounts when creating containers ?
-  final bool allowBindMountsForRegularUsers;
   @override
+  final bool allowBindMountsForRegularUsers;
 
   /// Are non-administrator users allowed to use container capabilities ?
-  final bool allowContainerCapabilitiesForRegularUsers;
   @override
+  final bool allowContainerCapabilitiesForRegularUsers;
 
   /// Are non-administrator users allowed to map devices ?
-  final bool allowDeviceMappingForRegularUsers;
   @override
+  final bool allowDeviceMappingForRegularUsers;
 
   /// Are non-administrator users allowed to use the host PID ?
-  final bool allowHostNamespaceForRegularUsers;
   @override
+  final bool allowHostNamespaceForRegularUsers;
 
   /// Are non-administrator users allowed to use privileged mode when creating containers ?
-  final bool allowPrivilegedModeForRegularUsers;
   @override
+  final bool allowPrivilegedModeForRegularUsers;
 
   /// Are non-administrator users allowed to manage stacks ?
-  final bool allowStackManagementForRegularUsers;
   @override
+  final bool allowStackManagementForRegularUsers;
 
   /// Are non-administrator users allowed to use sysctl settings ?
-  final bool allowSysctlSettingForRegularUsers;
   @override
+  final bool allowSysctlSettingForRegularUsers;
 
   /// Are non-administrator users allowed to browse volumes ?
-  final bool allowVolumeBrowserForRegularUsers;
   @override
+  final bool allowVolumeBrowserForRegularUsers;
 
   /// Are host management features enabled ?
+  @override
   final bool enableHostManagementFeatures;
 
   @override
@@ -343,7 +305,7 @@ class _$_PortainerEndpointSecuritySettings
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerEndpointSecuritySettings &&
+            other is _$_PortainerEndpointSecuritySettings &&
             const DeepCollectionEquality().equals(
                 other.allowBindMountsForRegularUsers,
                 allowBindMountsForRegularUsers) &&
@@ -373,6 +335,7 @@ class _$_PortainerEndpointSecuritySettings
                 enableHostManagementFeatures));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -389,10 +352,10 @@ class _$_PortainerEndpointSecuritySettings
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerEndpointSecuritySettingsCopyWith<
-          _PortainerEndpointSecuritySettings>
-      get copyWith => __$PortainerEndpointSecuritySettingsCopyWithImpl<
-          _PortainerEndpointSecuritySettings>(this, _$identity);
+  _$$_PortainerEndpointSecuritySettingsCopyWith<
+          _$_PortainerEndpointSecuritySettings>
+      get copyWith => __$$_PortainerEndpointSecuritySettingsCopyWithImpl<
+          _$_PortainerEndpointSecuritySettings>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -403,15 +366,15 @@ class _$_PortainerEndpointSecuritySettings
 abstract class _PortainerEndpointSecuritySettings
     implements PortainerEndpointSecuritySettings {
   const factory _PortainerEndpointSecuritySettings(
-          {required bool allowBindMountsForRegularUsers,
-          required bool allowContainerCapabilitiesForRegularUsers,
-          required bool allowDeviceMappingForRegularUsers,
-          required bool allowHostNamespaceForRegularUsers,
-          required bool allowPrivilegedModeForRegularUsers,
-          required bool allowStackManagementForRegularUsers,
-          required bool allowSysctlSettingForRegularUsers,
-          required bool allowVolumeBrowserForRegularUsers,
-          required bool enableHostManagementFeatures}) =
+          {required final bool allowBindMountsForRegularUsers,
+          required final bool allowContainerCapabilitiesForRegularUsers,
+          required final bool allowDeviceMappingForRegularUsers,
+          required final bool allowHostNamespaceForRegularUsers,
+          required final bool allowPrivilegedModeForRegularUsers,
+          required final bool allowStackManagementForRegularUsers,
+          required final bool allowSysctlSettingForRegularUsers,
+          required final bool allowVolumeBrowserForRegularUsers,
+          required final bool enableHostManagementFeatures}) =
       _$_PortainerEndpointSecuritySettings;
 
   factory _PortainerEndpointSecuritySettings.fromJson(
@@ -421,42 +384,49 @@ abstract class _PortainerEndpointSecuritySettings
   @override
 
   /// Are non-administrator users allowed to bind mounts when creating containers ?
-  bool get allowBindMountsForRegularUsers;
+  bool get allowBindMountsForRegularUsers => throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to use container capabilities ?
-  bool get allowContainerCapabilitiesForRegularUsers;
+  bool get allowContainerCapabilitiesForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to map devices ?
-  bool get allowDeviceMappingForRegularUsers;
+  bool get allowDeviceMappingForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to use the host PID ?
-  bool get allowHostNamespaceForRegularUsers;
+  bool get allowHostNamespaceForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to use privileged mode when creating containers ?
-  bool get allowPrivilegedModeForRegularUsers;
+  bool get allowPrivilegedModeForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to manage stacks ?
-  bool get allowStackManagementForRegularUsers;
+  bool get allowStackManagementForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to use sysctl settings ?
-  bool get allowSysctlSettingForRegularUsers;
+  bool get allowSysctlSettingForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are non-administrator users allowed to browse volumes ?
-  bool get allowVolumeBrowserForRegularUsers;
+  bool get allowVolumeBrowserForRegularUsers =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Are host management features enabled ?
-  bool get enableHostManagementFeatures;
+  bool get enableHostManagementFeatures => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerEndpointSecuritySettingsCopyWith<
-          _PortainerEndpointSecuritySettings>
+  _$$_PortainerEndpointSecuritySettingsCopyWith<
+          _$_PortainerEndpointSecuritySettings>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,40 +12,11 @@ part of 'container_port.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerPort _$DockerContainerPortFromJson(Map<String, dynamic> json) {
   return _DockerContainerPort.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerPortTearOff {
-  const _$DockerContainerPortTearOff();
-
-  _DockerContainerPort call(
-      {@JsonKey(name: 'IP')
-          String? ip,
-      @JsonKey(name: 'PrivatePort')
-          int? privatePort,
-      @JsonKey(name: 'PublicPort')
-          int? publicPort,
-      @JsonKey(name: 'Type', fromJson: _containerPortTypeFromJson, toJson: _containerPortTypeToJson)
-          required DockerContainerPortType type}) {
-    return _DockerContainerPort(
-      ip: ip,
-      privatePort: privatePort,
-      publicPort: publicPort,
-      type: type,
-    );
-  }
-
-  DockerContainerPort fromJson(Map<String, Object?> json) {
-    return DockerContainerPort.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerPort = _$DockerContainerPortTearOff();
 
 /// @nodoc
 mixin _$DockerContainerPort {
@@ -128,11 +99,11 @@ class _$DockerContainerPortCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerPortCopyWith<$Res>
+abstract class _$$_DockerContainerPortCopyWith<$Res>
     implements $DockerContainerPortCopyWith<$Res> {
-  factory _$DockerContainerPortCopyWith(_DockerContainerPort value,
-          $Res Function(_DockerContainerPort) then) =
-      __$DockerContainerPortCopyWithImpl<$Res>;
+  factory _$$_DockerContainerPortCopyWith(_$_DockerContainerPort value,
+          $Res Function(_$_DockerContainerPort) then) =
+      __$$_DockerContainerPortCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'IP')
@@ -146,15 +117,15 @@ abstract class _$DockerContainerPortCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerPortCopyWithImpl<$Res>
+class __$$_DockerContainerPortCopyWithImpl<$Res>
     extends _$DockerContainerPortCopyWithImpl<$Res>
-    implements _$DockerContainerPortCopyWith<$Res> {
-  __$DockerContainerPortCopyWithImpl(
-      _DockerContainerPort _value, $Res Function(_DockerContainerPort) _then)
-      : super(_value, (v) => _then(v as _DockerContainerPort));
+    implements _$$_DockerContainerPortCopyWith<$Res> {
+  __$$_DockerContainerPortCopyWithImpl(_$_DockerContainerPort _value,
+      $Res Function(_$_DockerContainerPort) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerPort));
 
   @override
-  _DockerContainerPort get _value => super._value as _DockerContainerPort;
+  _$_DockerContainerPort get _value => super._value as _$_DockerContainerPort;
 
   @override
   $Res call({
@@ -163,7 +134,7 @@ class __$DockerContainerPortCopyWithImpl<$Res>
     Object? publicPort = freezed,
     Object? type = freezed,
   }) {
-    return _then(_DockerContainerPort(
+    return _then(_$_DockerContainerPort(
       ip: ip == freezed
           ? _value.ip
           : ip // ignore: cast_nullable_to_non_nullable
@@ -200,24 +171,23 @@ class _$_DockerContainerPort implements _DockerContainerPort {
   factory _$_DockerContainerPort.fromJson(Map<String, dynamic> json) =>
       _$$_DockerContainerPortFromJson(json);
 
-  @override
-
   /// Host IP address mapped to the port
+  @override
   @JsonKey(name: 'IP')
   final String? ip;
-  @override
 
   /// Container port
+  @override
   @JsonKey(name: 'PrivatePort')
   final int? privatePort;
-  @override
 
   /// Host port
+  @override
   @JsonKey(name: 'PublicPort')
   final int? publicPort;
-  @override
 
   /// Port type
+  @override
   @JsonKey(
       name: 'Type',
       fromJson: _containerPortTypeFromJson,
@@ -233,7 +203,7 @@ class _$_DockerContainerPort implements _DockerContainerPort {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerPort &&
+            other is _$_DockerContainerPort &&
             const DeepCollectionEquality().equals(other.ip, ip) &&
             const DeepCollectionEquality()
                 .equals(other.privatePort, privatePort) &&
@@ -242,6 +212,7 @@ class _$_DockerContainerPort implements _DockerContainerPort {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -252,8 +223,8 @@ class _$_DockerContainerPort implements _DockerContainerPort {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerPortCopyWith<_DockerContainerPort> get copyWith =>
-      __$DockerContainerPortCopyWithImpl<_DockerContainerPort>(
+  _$$_DockerContainerPortCopyWith<_$_DockerContainerPort> get copyWith =>
+      __$$_DockerContainerPortCopyWithImpl<_$_DockerContainerPort>(
           this, _$identity);
 
   @override
@@ -265,13 +236,13 @@ class _$_DockerContainerPort implements _DockerContainerPort {
 abstract class _DockerContainerPort implements DockerContainerPort {
   const factory _DockerContainerPort(
       {@JsonKey(name: 'IP')
-          String? ip,
+          final String? ip,
       @JsonKey(name: 'PrivatePort')
-          int? privatePort,
+          final int? privatePort,
       @JsonKey(name: 'PublicPort')
-          int? publicPort,
+          final int? publicPort,
       @JsonKey(name: 'Type', fromJson: _containerPortTypeFromJson, toJson: _containerPortTypeToJson)
-          required DockerContainerPortType type}) = _$_DockerContainerPort;
+          required final DockerContainerPortType type}) = _$_DockerContainerPort;
 
   factory _DockerContainerPort.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerPort.fromJson;
@@ -280,17 +251,17 @@ abstract class _DockerContainerPort implements DockerContainerPort {
 
   /// Host IP address mapped to the port
   @JsonKey(name: 'IP')
-  String? get ip;
+  String? get ip => throw _privateConstructorUsedError;
   @override
 
   /// Container port
   @JsonKey(name: 'PrivatePort')
-  int? get privatePort;
+  int? get privatePort => throw _privateConstructorUsedError;
   @override
 
   /// Host port
   @JsonKey(name: 'PublicPort')
-  int? get publicPort;
+  int? get publicPort => throw _privateConstructorUsedError;
   @override
 
   /// Port type
@@ -298,9 +269,9 @@ abstract class _DockerContainerPort implements DockerContainerPort {
       name: 'Type',
       fromJson: _containerPortTypeFromJson,
       toJson: _containerPortTypeToJson)
-  DockerContainerPortType get type;
+  DockerContainerPortType get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerPortCopyWith<_DockerContainerPort> get copyWith =>
+  _$$_DockerContainerPortCopyWith<_$_DockerContainerPort> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,38 +12,12 @@ part of 'stack_auto_update_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerStackAutoUpdateConfig _$PortainerStackAutoUpdateConfigFromJson(
     Map<String, dynamic> json) {
   return _PortainerStackAutoUpdateConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerStackAutoUpdateConfigTearOff {
-  const _$PortainerStackAutoUpdateConfigTearOff();
-
-  _PortainerStackAutoUpdateConfig call(
-      {@JsonKey(name: 'jobID') required String jobId,
-      required String webhook,
-      String interval = '1m30s',
-      bool forceUpdate = false}) {
-    return _PortainerStackAutoUpdateConfig(
-      jobId: jobId,
-      webhook: webhook,
-      interval: interval,
-      forceUpdate: forceUpdate,
-    );
-  }
-
-  PortainerStackAutoUpdateConfig fromJson(Map<String, Object?> json) {
-    return PortainerStackAutoUpdateConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerStackAutoUpdateConfig =
-    _$PortainerStackAutoUpdateConfigTearOff();
 
 /// @nodoc
 mixin _$PortainerStackAutoUpdateConfig {
@@ -117,12 +91,12 @@ class _$PortainerStackAutoUpdateConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerStackAutoUpdateConfigCopyWith<$Res>
+abstract class _$$_PortainerStackAutoUpdateConfigCopyWith<$Res>
     implements $PortainerStackAutoUpdateConfigCopyWith<$Res> {
-  factory _$PortainerStackAutoUpdateConfigCopyWith(
-          _PortainerStackAutoUpdateConfig value,
-          $Res Function(_PortainerStackAutoUpdateConfig) then) =
-      __$PortainerStackAutoUpdateConfigCopyWithImpl<$Res>;
+  factory _$$_PortainerStackAutoUpdateConfigCopyWith(
+          _$_PortainerStackAutoUpdateConfig value,
+          $Res Function(_$_PortainerStackAutoUpdateConfig) then) =
+      __$$_PortainerStackAutoUpdateConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'jobID') String jobId,
@@ -132,17 +106,17 @@ abstract class _$PortainerStackAutoUpdateConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerStackAutoUpdateConfigCopyWithImpl<$Res>
+class __$$_PortainerStackAutoUpdateConfigCopyWithImpl<$Res>
     extends _$PortainerStackAutoUpdateConfigCopyWithImpl<$Res>
-    implements _$PortainerStackAutoUpdateConfigCopyWith<$Res> {
-  __$PortainerStackAutoUpdateConfigCopyWithImpl(
-      _PortainerStackAutoUpdateConfig _value,
-      $Res Function(_PortainerStackAutoUpdateConfig) _then)
-      : super(_value, (v) => _then(v as _PortainerStackAutoUpdateConfig));
+    implements _$$_PortainerStackAutoUpdateConfigCopyWith<$Res> {
+  __$$_PortainerStackAutoUpdateConfigCopyWithImpl(
+      _$_PortainerStackAutoUpdateConfig _value,
+      $Res Function(_$_PortainerStackAutoUpdateConfig) _then)
+      : super(_value, (v) => _then(v as _$_PortainerStackAutoUpdateConfig));
 
   @override
-  _PortainerStackAutoUpdateConfig get _value =>
-      super._value as _PortainerStackAutoUpdateConfig;
+  _$_PortainerStackAutoUpdateConfig get _value =>
+      super._value as _$_PortainerStackAutoUpdateConfig;
 
   @override
   $Res call({
@@ -151,7 +125,7 @@ class __$PortainerStackAutoUpdateConfigCopyWithImpl<$Res>
     Object? interval = freezed,
     Object? forceUpdate = freezed,
   }) {
-    return _then(_PortainerStackAutoUpdateConfig(
+    return _then(_$_PortainerStackAutoUpdateConfig(
       jobId: jobId == freezed
           ? _value.jobId
           : jobId // ignore: cast_nullable_to_non_nullable
@@ -186,24 +160,23 @@ class _$_PortainerStackAutoUpdateConfig
           Map<String, dynamic> json) =>
       _$$_PortainerStackAutoUpdateConfigFromJson(json);
 
-  @override
-
   /// Auto-update job id
+  @override
   @JsonKey(name: 'jobID')
   final String jobId;
-  @override
 
   /// A UUID generated from client
-  final String webhook;
-  @JsonKey()
   @override
+  final String webhook;
 
   /// Auto-update interval
-  final String interval;
-  @JsonKey()
   @override
+  @JsonKey()
+  final String interval;
 
   /// Force update ignores repo changes
+  @override
+  @JsonKey()
   final bool forceUpdate;
 
   @override
@@ -215,7 +188,7 @@ class _$_PortainerStackAutoUpdateConfig
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerStackAutoUpdateConfig &&
+            other is _$_PortainerStackAutoUpdateConfig &&
             const DeepCollectionEquality().equals(other.jobId, jobId) &&
             const DeepCollectionEquality().equals(other.webhook, webhook) &&
             const DeepCollectionEquality().equals(other.interval, interval) &&
@@ -223,6 +196,7 @@ class _$_PortainerStackAutoUpdateConfig
                 .equals(other.forceUpdate, forceUpdate));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -233,9 +207,9 @@ class _$_PortainerStackAutoUpdateConfig
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerStackAutoUpdateConfigCopyWith<_PortainerStackAutoUpdateConfig>
-      get copyWith => __$PortainerStackAutoUpdateConfigCopyWithImpl<
-          _PortainerStackAutoUpdateConfig>(this, _$identity);
+  _$$_PortainerStackAutoUpdateConfigCopyWith<_$_PortainerStackAutoUpdateConfig>
+      get copyWith => __$$_PortainerStackAutoUpdateConfigCopyWithImpl<
+          _$_PortainerStackAutoUpdateConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -246,10 +220,10 @@ class _$_PortainerStackAutoUpdateConfig
 abstract class _PortainerStackAutoUpdateConfig
     implements PortainerStackAutoUpdateConfig {
   const factory _PortainerStackAutoUpdateConfig(
-      {@JsonKey(name: 'jobID') required String jobId,
-      required String webhook,
-      String interval,
-      bool forceUpdate}) = _$_PortainerStackAutoUpdateConfig;
+      {@JsonKey(name: 'jobID') required final String jobId,
+      required final String webhook,
+      final String interval,
+      final bool forceUpdate}) = _$_PortainerStackAutoUpdateConfig;
 
   factory _PortainerStackAutoUpdateConfig.fromJson(Map<String, dynamic> json) =
       _$_PortainerStackAutoUpdateConfig.fromJson;
@@ -258,21 +232,21 @@ abstract class _PortainerStackAutoUpdateConfig
 
   /// Auto-update job id
   @JsonKey(name: 'jobID')
-  String get jobId;
+  String get jobId => throw _privateConstructorUsedError;
   @override
 
   /// A UUID generated from client
-  String get webhook;
+  String get webhook => throw _privateConstructorUsedError;
   @override
 
   /// Auto-update interval
-  String get interval;
+  String get interval => throw _privateConstructorUsedError;
   @override
 
   /// Force update ignores repo changes
-  bool get forceUpdate;
+  bool get forceUpdate => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerStackAutoUpdateConfigCopyWith<_PortainerStackAutoUpdateConfig>
+  _$$_PortainerStackAutoUpdateConfigCopyWith<_$_PortainerStackAutoUpdateConfig>
       get copyWith => throw _privateConstructorUsedError;
 }

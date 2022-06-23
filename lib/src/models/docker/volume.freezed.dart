@@ -12,55 +12,11 @@ part of 'volume.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerVolume _$DockerVolumeFromJson(Map<String, dynamic> json) {
   return _DockerVolume.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerVolumeTearOff {
-  const _$DockerVolumeTearOff();
-
-  _DockerVolume call(
-      {@JsonKey(name: 'Name')
-          required String name,
-      @JsonKey(name: 'Driver')
-          required String driver,
-      @JsonKey(name: 'Mountpoint')
-          required String mountpoint,
-      @JsonKey(name: 'CreatedAt')
-          required String createdAt,
-      @JsonKey(name: 'Status')
-          required Map<String, String>? status,
-      @JsonKey(name: 'Labels')
-          required Map<String, String> labels,
-      @JsonKey(name: 'Scope', fromJson: _volumeScopeFromJson, toJson: _volumeScopeToJson)
-          required DockerVolumeScope scope,
-      @JsonKey(name: 'Options')
-          Map<String, String>? options,
-      @JsonKey(name: 'UsageData')
-          DockerUsageData? usageData}) {
-    return _DockerVolume(
-      name: name,
-      driver: driver,
-      mountpoint: mountpoint,
-      createdAt: createdAt,
-      status: status,
-      labels: labels,
-      scope: scope,
-      options: options,
-      usageData: usageData,
-    );
-  }
-
-  DockerVolume fromJson(Map<String, Object?> json) {
-    return DockerVolume.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerVolume = _$DockerVolumeTearOff();
 
 /// @nodoc
 mixin _$DockerVolume {
@@ -208,11 +164,11 @@ class _$DockerVolumeCopyWithImpl<$Res> implements $DockerVolumeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DockerVolumeCopyWith<$Res>
+abstract class _$$_DockerVolumeCopyWith<$Res>
     implements $DockerVolumeCopyWith<$Res> {
-  factory _$DockerVolumeCopyWith(
-          _DockerVolume value, $Res Function(_DockerVolume) then) =
-      __$DockerVolumeCopyWithImpl<$Res>;
+  factory _$$_DockerVolumeCopyWith(
+          _$_DockerVolume value, $Res Function(_$_DockerVolume) then) =
+      __$$_DockerVolumeCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Name')
@@ -239,14 +195,15 @@ abstract class _$DockerVolumeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerVolumeCopyWithImpl<$Res> extends _$DockerVolumeCopyWithImpl<$Res>
-    implements _$DockerVolumeCopyWith<$Res> {
-  __$DockerVolumeCopyWithImpl(
-      _DockerVolume _value, $Res Function(_DockerVolume) _then)
-      : super(_value, (v) => _then(v as _DockerVolume));
+class __$$_DockerVolumeCopyWithImpl<$Res>
+    extends _$DockerVolumeCopyWithImpl<$Res>
+    implements _$$_DockerVolumeCopyWith<$Res> {
+  __$$_DockerVolumeCopyWithImpl(
+      _$_DockerVolume _value, $Res Function(_$_DockerVolume) _then)
+      : super(_value, (v) => _then(v as _$_DockerVolume));
 
   @override
-  _DockerVolume get _value => super._value as _DockerVolume;
+  _$_DockerVolume get _value => super._value as _$_DockerVolume;
 
   @override
   $Res call({
@@ -260,7 +217,7 @@ class __$DockerVolumeCopyWithImpl<$Res> extends _$DockerVolumeCopyWithImpl<$Res>
     Object? options = freezed,
     Object? usageData = freezed,
   }) {
-    return _then(_DockerVolume(
+    return _then(_$_DockerVolume(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -278,11 +235,11 @@ class __$DockerVolumeCopyWithImpl<$Res> extends _$DockerVolumeCopyWithImpl<$Res>
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
       status: status == freezed
-          ? _value.status
+          ? _value._status
           : status // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       labels: labels == freezed
-          ? _value.labels
+          ? _value._labels
           : labels // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
       scope: scope == freezed
@@ -290,7 +247,7 @@ class __$DockerVolumeCopyWithImpl<$Res> extends _$DockerVolumeCopyWithImpl<$Res>
           : scope // ignore: cast_nullable_to_non_nullable
               as DockerVolumeScope,
       options: options == freezed
-          ? _value.options
+          ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       usageData: usageData == freezed
@@ -314,63 +271,87 @@ class _$_DockerVolume implements _DockerVolume {
       @JsonKey(name: 'CreatedAt')
           required this.createdAt,
       @JsonKey(name: 'Status')
-          required this.status,
+          required final Map<String, String>? status,
       @JsonKey(name: 'Labels')
-          required this.labels,
+          required final Map<String, String> labels,
       @JsonKey(name: 'Scope', fromJson: _volumeScopeFromJson, toJson: _volumeScopeToJson)
           required this.scope,
       @JsonKey(name: 'Options')
-          this.options,
+          final Map<String, String>? options,
       @JsonKey(name: 'UsageData')
-          this.usageData});
+          this.usageData})
+      : _status = status,
+        _labels = labels,
+        _options = options;
 
   factory _$_DockerVolume.fromJson(Map<String, dynamic> json) =>
       _$$_DockerVolumeFromJson(json);
 
-  @override
-
   /// Volume name
+  @override
   @JsonKey(name: 'Name')
   final String name;
-  @override
 
   /// Volume drive
+  @override
   @JsonKey(name: 'Driver')
   final String driver;
-  @override
 
   /// Volume mount path
+  @override
   @JsonKey(name: 'Mountpoint')
   final String mountpoint;
-  @override
 
   /// Volume creation date time formatted as ISO8601 string
+  @override
   @JsonKey(name: 'CreatedAt')
   final String createdAt;
-  @override
 
   /// Volume low-level details provided by the volume driver
-  @JsonKey(name: 'Status')
-  final Map<String, String>? status;
+  final Map<String, String>? _status;
+
+  /// Volume low-level details provided by the volume driver
   @override
+  @JsonKey(name: 'Status')
+  Map<String, String>? get status {
+    final value = _status;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Volume labels
-  @JsonKey(name: 'Labels')
-  final Map<String, String> labels;
+  final Map<String, String> _labels;
+
+  /// Volume labels
   @override
+  @JsonKey(name: 'Labels')
+  Map<String, String> get labels {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_labels);
+  }
 
   /// Volume scope
+  @override
   @JsonKey(
       name: 'Scope', fromJson: _volumeScopeFromJson, toJson: _volumeScopeToJson)
   final DockerVolumeScope scope;
-  @override
 
   /// Volume driver options
-  @JsonKey(name: 'Options')
-  final Map<String, String>? options;
+  final Map<String, String>? _options;
+
+  /// Volume driver options
   @override
+  @JsonKey(name: 'Options')
+  Map<String, String>? get options {
+    final value = _options;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Volume data usage
+  @override
   @JsonKey(name: 'UsageData')
   final DockerUsageData? usageData;
 
@@ -383,19 +364,20 @@ class _$_DockerVolume implements _DockerVolume {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerVolume &&
+            other is _$_DockerVolume &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.driver, driver) &&
             const DeepCollectionEquality()
                 .equals(other.mountpoint, mountpoint) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.labels, labels) &&
+            const DeepCollectionEquality().equals(other._status, _status) &&
+            const DeepCollectionEquality().equals(other._labels, _labels) &&
             const DeepCollectionEquality().equals(other.scope, scope) &&
-            const DeepCollectionEquality().equals(other.options, options) &&
+            const DeepCollectionEquality().equals(other._options, _options) &&
             const DeepCollectionEquality().equals(other.usageData, usageData));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -403,16 +385,16 @@ class _$_DockerVolume implements _DockerVolume {
       const DeepCollectionEquality().hash(driver),
       const DeepCollectionEquality().hash(mountpoint),
       const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(labels),
+      const DeepCollectionEquality().hash(_status),
+      const DeepCollectionEquality().hash(_labels),
       const DeepCollectionEquality().hash(scope),
-      const DeepCollectionEquality().hash(options),
+      const DeepCollectionEquality().hash(_options),
       const DeepCollectionEquality().hash(usageData));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerVolumeCopyWith<_DockerVolume> get copyWith =>
-      __$DockerVolumeCopyWithImpl<_DockerVolume>(this, _$identity);
+  _$$_DockerVolumeCopyWith<_$_DockerVolume> get copyWith =>
+      __$$_DockerVolumeCopyWithImpl<_$_DockerVolume>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -423,23 +405,23 @@ class _$_DockerVolume implements _DockerVolume {
 abstract class _DockerVolume implements DockerVolume {
   const factory _DockerVolume(
       {@JsonKey(name: 'Name')
-          required String name,
+          required final String name,
       @JsonKey(name: 'Driver')
-          required String driver,
+          required final String driver,
       @JsonKey(name: 'Mountpoint')
-          required String mountpoint,
+          required final String mountpoint,
       @JsonKey(name: 'CreatedAt')
-          required String createdAt,
+          required final String createdAt,
       @JsonKey(name: 'Status')
-          required Map<String, String>? status,
+          required final Map<String, String>? status,
       @JsonKey(name: 'Labels')
-          required Map<String, String> labels,
+          required final Map<String, String> labels,
       @JsonKey(name: 'Scope', fromJson: _volumeScopeFromJson, toJson: _volumeScopeToJson)
-          required DockerVolumeScope scope,
+          required final DockerVolumeScope scope,
       @JsonKey(name: 'Options')
-          Map<String, String>? options,
+          final Map<String, String>? options,
       @JsonKey(name: 'UsageData')
-          DockerUsageData? usageData}) = _$_DockerVolume;
+          final DockerUsageData? usageData}) = _$_DockerVolume;
 
   factory _DockerVolume.fromJson(Map<String, dynamic> json) =
       _$_DockerVolume.fromJson;
@@ -448,50 +430,50 @@ abstract class _DockerVolume implements DockerVolume {
 
   /// Volume name
   @JsonKey(name: 'Name')
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Volume drive
   @JsonKey(name: 'Driver')
-  String get driver;
+  String get driver => throw _privateConstructorUsedError;
   @override
 
   /// Volume mount path
   @JsonKey(name: 'Mountpoint')
-  String get mountpoint;
+  String get mountpoint => throw _privateConstructorUsedError;
   @override
 
   /// Volume creation date time formatted as ISO8601 string
   @JsonKey(name: 'CreatedAt')
-  String get createdAt;
+  String get createdAt => throw _privateConstructorUsedError;
   @override
 
   /// Volume low-level details provided by the volume driver
   @JsonKey(name: 'Status')
-  Map<String, String>? get status;
+  Map<String, String>? get status => throw _privateConstructorUsedError;
   @override
 
   /// Volume labels
   @JsonKey(name: 'Labels')
-  Map<String, String> get labels;
+  Map<String, String> get labels => throw _privateConstructorUsedError;
   @override
 
   /// Volume scope
   @JsonKey(
       name: 'Scope', fromJson: _volumeScopeFromJson, toJson: _volumeScopeToJson)
-  DockerVolumeScope get scope;
+  DockerVolumeScope get scope => throw _privateConstructorUsedError;
   @override
 
   /// Volume driver options
   @JsonKey(name: 'Options')
-  Map<String, String>? get options;
+  Map<String, String>? get options => throw _privateConstructorUsedError;
   @override
 
   /// Volume data usage
   @JsonKey(name: 'UsageData')
-  DockerUsageData? get usageData;
+  DockerUsageData? get usageData => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerVolumeCopyWith<_DockerVolume> get copyWith =>
+  _$$_DockerVolumeCopyWith<_$_DockerVolume> get copyWith =>
       throw _privateConstructorUsedError;
 }

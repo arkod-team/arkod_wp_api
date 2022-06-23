@@ -12,35 +12,12 @@ part of 'container_restart_policy.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerRestartPolicy _$DockerContainerRestartPolicyFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerRestartPolicy.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerRestartPolicyTearOff {
-  const _$DockerContainerRestartPolicyTearOff();
-
-  _DockerContainerRestartPolicy call(
-      {@JsonKey(name: 'Name', fromJson: _containerRestartPolicyNameFromJson, toJson: _containerRestartPolicyNameToJson)
-          DockerContainerRestartPolicyName? name,
-      @JsonKey(name: 'MaximumRetryCount')
-          int maximumRetryCount = 0}) {
-    return _DockerContainerRestartPolicy(
-      name: name,
-      maximumRetryCount: maximumRetryCount,
-    );
-  }
-
-  DockerContainerRestartPolicy fromJson(Map<String, Object?> json) {
-    return DockerContainerRestartPolicy.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerRestartPolicy = _$DockerContainerRestartPolicyTearOff();
 
 /// @nodoc
 mixin _$DockerContainerRestartPolicy {
@@ -103,12 +80,12 @@ class _$DockerContainerRestartPolicyCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerRestartPolicyCopyWith<$Res>
+abstract class _$$_DockerContainerRestartPolicyCopyWith<$Res>
     implements $DockerContainerRestartPolicyCopyWith<$Res> {
-  factory _$DockerContainerRestartPolicyCopyWith(
-          _DockerContainerRestartPolicy value,
-          $Res Function(_DockerContainerRestartPolicy) then) =
-      __$DockerContainerRestartPolicyCopyWithImpl<$Res>;
+  factory _$$_DockerContainerRestartPolicyCopyWith(
+          _$_DockerContainerRestartPolicy value,
+          $Res Function(_$_DockerContainerRestartPolicy) then) =
+      __$$_DockerContainerRestartPolicyCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Name', fromJson: _containerRestartPolicyNameFromJson, toJson: _containerRestartPolicyNameToJson)
@@ -118,24 +95,24 @@ abstract class _$DockerContainerRestartPolicyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerRestartPolicyCopyWithImpl<$Res>
+class __$$_DockerContainerRestartPolicyCopyWithImpl<$Res>
     extends _$DockerContainerRestartPolicyCopyWithImpl<$Res>
-    implements _$DockerContainerRestartPolicyCopyWith<$Res> {
-  __$DockerContainerRestartPolicyCopyWithImpl(
-      _DockerContainerRestartPolicy _value,
-      $Res Function(_DockerContainerRestartPolicy) _then)
-      : super(_value, (v) => _then(v as _DockerContainerRestartPolicy));
+    implements _$$_DockerContainerRestartPolicyCopyWith<$Res> {
+  __$$_DockerContainerRestartPolicyCopyWithImpl(
+      _$_DockerContainerRestartPolicy _value,
+      $Res Function(_$_DockerContainerRestartPolicy) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerRestartPolicy));
 
   @override
-  _DockerContainerRestartPolicy get _value =>
-      super._value as _DockerContainerRestartPolicy;
+  _$_DockerContainerRestartPolicy get _value =>
+      super._value as _$_DockerContainerRestartPolicy;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? maximumRetryCount = freezed,
   }) {
-    return _then(_DockerContainerRestartPolicy(
+    return _then(_$_DockerContainerRestartPolicy(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -160,17 +137,16 @@ class _$_DockerContainerRestartPolicy implements _DockerContainerRestartPolicy {
   factory _$_DockerContainerRestartPolicy.fromJson(Map<String, dynamic> json) =>
       _$$_DockerContainerRestartPolicyFromJson(json);
 
-  @override
-
   /// Restart policy name
+  @override
   @JsonKey(
       name: 'Name',
       fromJson: _containerRestartPolicyNameFromJson,
       toJson: _containerRestartPolicyNameToJson)
   final DockerContainerRestartPolicyName? name;
-  @override
 
   /// Restart policy max retries
+  @override
   @JsonKey(name: 'MaximumRetryCount')
   final int maximumRetryCount;
 
@@ -183,12 +159,13 @@ class _$_DockerContainerRestartPolicy implements _DockerContainerRestartPolicy {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerRestartPolicy &&
+            other is _$_DockerContainerRestartPolicy &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.maximumRetryCount, maximumRetryCount));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -197,9 +174,9 @@ class _$_DockerContainerRestartPolicy implements _DockerContainerRestartPolicy {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerRestartPolicyCopyWith<_DockerContainerRestartPolicy>
-      get copyWith => __$DockerContainerRestartPolicyCopyWithImpl<
-          _DockerContainerRestartPolicy>(this, _$identity);
+  _$$_DockerContainerRestartPolicyCopyWith<_$_DockerContainerRestartPolicy>
+      get copyWith => __$$_DockerContainerRestartPolicyCopyWithImpl<
+          _$_DockerContainerRestartPolicy>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -211,9 +188,9 @@ abstract class _DockerContainerRestartPolicy
     implements DockerContainerRestartPolicy {
   const factory _DockerContainerRestartPolicy(
       {@JsonKey(name: 'Name', fromJson: _containerRestartPolicyNameFromJson, toJson: _containerRestartPolicyNameToJson)
-          DockerContainerRestartPolicyName? name,
+          final DockerContainerRestartPolicyName? name,
       @JsonKey(name: 'MaximumRetryCount')
-          int maximumRetryCount}) = _$_DockerContainerRestartPolicy;
+          final int maximumRetryCount}) = _$_DockerContainerRestartPolicy;
 
   factory _DockerContainerRestartPolicy.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerRestartPolicy.fromJson;
@@ -225,14 +202,15 @@ abstract class _DockerContainerRestartPolicy
       name: 'Name',
       fromJson: _containerRestartPolicyNameFromJson,
       toJson: _containerRestartPolicyNameToJson)
-  DockerContainerRestartPolicyName? get name;
+  DockerContainerRestartPolicyName? get name =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Restart policy max retries
   @JsonKey(name: 'MaximumRetryCount')
-  int get maximumRetryCount;
+  int get maximumRetryCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerRestartPolicyCopyWith<_DockerContainerRestartPolicy>
+  _$$_DockerContainerRestartPolicyCopyWith<_$_DockerContainerRestartPolicy>
       get copyWith => throw _privateConstructorUsedError;
 }

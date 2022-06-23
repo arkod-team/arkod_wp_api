@@ -12,55 +12,12 @@ part of 'endpoint_settings.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerEndpointSettings _$DockerEndpointSettingsFromJson(
     Map<String, dynamic> json) {
   return _DockerEndpointSettings.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerEndpointSettingsTearOff {
-  const _$DockerEndpointSettingsTearOff();
-
-  _DockerEndpointSettings call(
-      {@JsonKey(name: 'IPAMConfig') DockerEndpointIpamConfig? ipamConfig,
-      @JsonKey(name: 'Links') List<String> links = const [],
-      @JsonKey(name: 'Aliases') List<String> aliases = const [],
-      @JsonKey(name: 'NetworkID') required String networkId,
-      @JsonKey(name: 'EndpointID') required String endpointId,
-      @JsonKey(name: 'Gateway') required String gateway,
-      @JsonKey(name: 'IPAddress') required String ipAddress,
-      @JsonKey(name: 'IPPrefixLen') required int ipPrefixLength,
-      @JsonKey(name: 'IPv6Gateway') required String ipv6Gateway,
-      @JsonKey(name: 'GlobalIPv6Address') required String globalIpv6Address,
-      @JsonKey(name: 'GlobalIPv6PrefixLen') required int globalIpv6PrefixLength,
-      @JsonKey(name: 'MacAdress') String? macAddress,
-      @JsonKey(name: 'DriverOpts') Map<String, String>? driverOptions}) {
-    return _DockerEndpointSettings(
-      ipamConfig: ipamConfig,
-      links: links,
-      aliases: aliases,
-      networkId: networkId,
-      endpointId: endpointId,
-      gateway: gateway,
-      ipAddress: ipAddress,
-      ipPrefixLength: ipPrefixLength,
-      ipv6Gateway: ipv6Gateway,
-      globalIpv6Address: globalIpv6Address,
-      globalIpv6PrefixLength: globalIpv6PrefixLength,
-      macAddress: macAddress,
-      driverOptions: driverOptions,
-    );
-  }
-
-  DockerEndpointSettings fromJson(Map<String, Object?> json) {
-    return DockerEndpointSettings.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerEndpointSettings = _$DockerEndpointSettingsTearOff();
 
 /// @nodoc
 mixin _$DockerEndpointSettings {
@@ -240,11 +197,11 @@ class _$DockerEndpointSettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerEndpointSettingsCopyWith<$Res>
+abstract class _$$_DockerEndpointSettingsCopyWith<$Res>
     implements $DockerEndpointSettingsCopyWith<$Res> {
-  factory _$DockerEndpointSettingsCopyWith(_DockerEndpointSettings value,
-          $Res Function(_DockerEndpointSettings) then) =
-      __$DockerEndpointSettingsCopyWithImpl<$Res>;
+  factory _$$_DockerEndpointSettingsCopyWith(_$_DockerEndpointSettings value,
+          $Res Function(_$_DockerEndpointSettings) then) =
+      __$$_DockerEndpointSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'IPAMConfig') DockerEndpointIpamConfig? ipamConfig,
@@ -266,15 +223,16 @@ abstract class _$DockerEndpointSettingsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerEndpointSettingsCopyWithImpl<$Res>
+class __$$_DockerEndpointSettingsCopyWithImpl<$Res>
     extends _$DockerEndpointSettingsCopyWithImpl<$Res>
-    implements _$DockerEndpointSettingsCopyWith<$Res> {
-  __$DockerEndpointSettingsCopyWithImpl(_DockerEndpointSettings _value,
-      $Res Function(_DockerEndpointSettings) _then)
-      : super(_value, (v) => _then(v as _DockerEndpointSettings));
+    implements _$$_DockerEndpointSettingsCopyWith<$Res> {
+  __$$_DockerEndpointSettingsCopyWithImpl(_$_DockerEndpointSettings _value,
+      $Res Function(_$_DockerEndpointSettings) _then)
+      : super(_value, (v) => _then(v as _$_DockerEndpointSettings));
 
   @override
-  _DockerEndpointSettings get _value => super._value as _DockerEndpointSettings;
+  _$_DockerEndpointSettings get _value =>
+      super._value as _$_DockerEndpointSettings;
 
   @override
   $Res call({
@@ -292,17 +250,17 @@ class __$DockerEndpointSettingsCopyWithImpl<$Res>
     Object? macAddress = freezed,
     Object? driverOptions = freezed,
   }) {
-    return _then(_DockerEndpointSettings(
+    return _then(_$_DockerEndpointSettings(
       ipamConfig: ipamConfig == freezed
           ? _value.ipamConfig
           : ipamConfig // ignore: cast_nullable_to_non_nullable
               as DockerEndpointIpamConfig?,
       links: links == freezed
-          ? _value.links
+          ? _value._links
           : links // ignore: cast_nullable_to_non_nullable
               as List<String>,
       aliases: aliases == freezed
-          ? _value.aliases
+          ? _value._aliases
           : aliases // ignore: cast_nullable_to_non_nullable
               as List<String>,
       networkId: networkId == freezed
@@ -342,7 +300,7 @@ class __$DockerEndpointSettingsCopyWithImpl<$Res>
           : macAddress // ignore: cast_nullable_to_non_nullable
               as String?,
       driverOptions: driverOptions == freezed
-          ? _value.driverOptions
+          ? _value._driverOptions
           : driverOptions // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
     ));
@@ -356,9 +314,9 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
       {@JsonKey(name: 'IPAMConfig')
           this.ipamConfig,
       @JsonKey(name: 'Links')
-          this.links = const [],
+          final List<String> links = const [],
       @JsonKey(name: 'Aliases')
-          this.aliases = const [],
+          final List<String> aliases = const [],
       @JsonKey(name: 'NetworkID')
           required this.networkId,
       @JsonKey(name: 'EndpointID')
@@ -378,76 +336,98 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
       @JsonKey(name: 'MacAdress')
           this.macAddress,
       @JsonKey(name: 'DriverOpts')
-          this.driverOptions});
+          final Map<String, String>? driverOptions})
+      : _links = links,
+        _aliases = aliases,
+        _driverOptions = driverOptions;
 
   factory _$_DockerEndpointSettings.fromJson(Map<String, dynamic> json) =>
       _$$_DockerEndpointSettingsFromJson(json);
 
-  @override
-
   /// Endpoint IPAM configuration
+  @override
   @JsonKey(name: 'IPAMConfig')
   final DockerEndpointIpamConfig? ipamConfig;
-  @override
 
   /// Endpoint links
-  @JsonKey(name: 'Links')
-  final List<String> links;
+  final List<String> _links;
+
+  /// Endpoint links
   @override
+  @JsonKey(name: 'Links')
+  List<String> get links {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_links);
+  }
 
   /// Endpoint aliases
-  @JsonKey(name: 'Aliases')
-  final List<String> aliases;
+  final List<String> _aliases;
+
+  /// Endpoint aliases
   @override
+  @JsonKey(name: 'Aliases')
+  List<String> get aliases {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_aliases);
+  }
 
   /// Endpoint network's ID
+  @override
   @JsonKey(name: 'NetworkID')
   final String networkId;
-  @override
 
   /// Endpoint ID
+  @override
   @JsonKey(name: 'EndpointID')
   final String endpointId;
-  @override
 
   /// Endpoint network's gateway address
+  @override
   @JsonKey(name: 'Gateway')
   final String gateway;
-  @override
 
   /// Endpoint IPv4 address
+  @override
   @JsonKey(name: 'IPAddress')
   final String ipAddress;
-  @override
 
   /// Endpoint IPv4 address's mask length
+  @override
   @JsonKey(name: 'IPPrefixLen')
   final int ipPrefixLength;
-  @override
 
   /// Endpoint network's gateway IPv6 address
+  @override
   @JsonKey(name: 'IPv6Gateway')
   final String ipv6Gateway;
-  @override
 
   /// Endpoint global IPv6 address
+  @override
   @JsonKey(name: 'GlobalIPv6Address')
   final String globalIpv6Address;
-  @override
 
   /// Endpoint global IPv6 address's mask length
+  @override
   @JsonKey(name: 'GlobalIPv6PrefixLen')
   final int globalIpv6PrefixLength;
-  @override
 
   /// Endpoint MAC address
+  @override
   @JsonKey(name: 'MacAdress')
   final String? macAddress;
-  @override
 
   /// Endpoint driver options
+  final Map<String, String>? _driverOptions;
+
+  /// Endpoint driver options
+  @override
   @JsonKey(name: 'DriverOpts')
-  final Map<String, String>? driverOptions;
+  Map<String, String>? get driverOptions {
+    final value = _driverOptions;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
@@ -458,11 +438,11 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerEndpointSettings &&
+            other is _$_DockerEndpointSettings &&
             const DeepCollectionEquality()
                 .equals(other.ipamConfig, ipamConfig) &&
-            const DeepCollectionEquality().equals(other.links, links) &&
-            const DeepCollectionEquality().equals(other.aliases, aliases) &&
+            const DeepCollectionEquality().equals(other._links, _links) &&
+            const DeepCollectionEquality().equals(other._aliases, _aliases) &&
             const DeepCollectionEquality().equals(other.networkId, networkId) &&
             const DeepCollectionEquality()
                 .equals(other.endpointId, endpointId) &&
@@ -479,15 +459,16 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
             const DeepCollectionEquality()
                 .equals(other.macAddress, macAddress) &&
             const DeepCollectionEquality()
-                .equals(other.driverOptions, driverOptions));
+                .equals(other._driverOptions, _driverOptions));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(ipamConfig),
-      const DeepCollectionEquality().hash(links),
-      const DeepCollectionEquality().hash(aliases),
+      const DeepCollectionEquality().hash(_links),
+      const DeepCollectionEquality().hash(_aliases),
       const DeepCollectionEquality().hash(networkId),
       const DeepCollectionEquality().hash(endpointId),
       const DeepCollectionEquality().hash(gateway),
@@ -497,12 +478,12 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
       const DeepCollectionEquality().hash(globalIpv6Address),
       const DeepCollectionEquality().hash(globalIpv6PrefixLength),
       const DeepCollectionEquality().hash(macAddress),
-      const DeepCollectionEquality().hash(driverOptions));
+      const DeepCollectionEquality().hash(_driverOptions));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerEndpointSettingsCopyWith<_DockerEndpointSettings> get copyWith =>
-      __$DockerEndpointSettingsCopyWithImpl<_DockerEndpointSettings>(
+  _$$_DockerEndpointSettingsCopyWith<_$_DockerEndpointSettings> get copyWith =>
+      __$$_DockerEndpointSettingsCopyWithImpl<_$_DockerEndpointSettings>(
           this, _$identity);
 
   @override
@@ -513,32 +494,33 @@ class _$_DockerEndpointSettings implements _DockerEndpointSettings {
 
 abstract class _DockerEndpointSettings implements DockerEndpointSettings {
   const factory _DockerEndpointSettings(
-      {@JsonKey(name: 'IPAMConfig')
-          DockerEndpointIpamConfig? ipamConfig,
-      @JsonKey(name: 'Links')
-          List<String> links,
-      @JsonKey(name: 'Aliases')
-          List<String> aliases,
-      @JsonKey(name: 'NetworkID')
-          required String networkId,
-      @JsonKey(name: 'EndpointID')
-          required String endpointId,
-      @JsonKey(name: 'Gateway')
-          required String gateway,
-      @JsonKey(name: 'IPAddress')
-          required String ipAddress,
-      @JsonKey(name: 'IPPrefixLen')
-          required int ipPrefixLength,
-      @JsonKey(name: 'IPv6Gateway')
-          required String ipv6Gateway,
-      @JsonKey(name: 'GlobalIPv6Address')
-          required String globalIpv6Address,
-      @JsonKey(name: 'GlobalIPv6PrefixLen')
-          required int globalIpv6PrefixLength,
-      @JsonKey(name: 'MacAdress')
-          String? macAddress,
-      @JsonKey(name: 'DriverOpts')
-          Map<String, String>? driverOptions}) = _$_DockerEndpointSettings;
+          {@JsonKey(name: 'IPAMConfig')
+              final DockerEndpointIpamConfig? ipamConfig,
+          @JsonKey(name: 'Links')
+              final List<String> links,
+          @JsonKey(name: 'Aliases')
+              final List<String> aliases,
+          @JsonKey(name: 'NetworkID')
+              required final String networkId,
+          @JsonKey(name: 'EndpointID')
+              required final String endpointId,
+          @JsonKey(name: 'Gateway')
+              required final String gateway,
+          @JsonKey(name: 'IPAddress')
+              required final String ipAddress,
+          @JsonKey(name: 'IPPrefixLen')
+              required final int ipPrefixLength,
+          @JsonKey(name: 'IPv6Gateway')
+              required final String ipv6Gateway,
+          @JsonKey(name: 'GlobalIPv6Address')
+              required final String globalIpv6Address,
+          @JsonKey(name: 'GlobalIPv6PrefixLen')
+              required final int globalIpv6PrefixLength,
+          @JsonKey(name: 'MacAdress')
+              final String? macAddress,
+          @JsonKey(name: 'DriverOpts')
+              final Map<String, String>? driverOptions}) =
+      _$_DockerEndpointSettings;
 
   factory _DockerEndpointSettings.fromJson(Map<String, dynamic> json) =
       _$_DockerEndpointSettings.fromJson;
@@ -547,69 +529,70 @@ abstract class _DockerEndpointSettings implements DockerEndpointSettings {
 
   /// Endpoint IPAM configuration
   @JsonKey(name: 'IPAMConfig')
-  DockerEndpointIpamConfig? get ipamConfig;
+  DockerEndpointIpamConfig? get ipamConfig =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Endpoint links
   @JsonKey(name: 'Links')
-  List<String> get links;
+  List<String> get links => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint aliases
   @JsonKey(name: 'Aliases')
-  List<String> get aliases;
+  List<String> get aliases => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint network's ID
   @JsonKey(name: 'NetworkID')
-  String get networkId;
+  String get networkId => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint ID
   @JsonKey(name: 'EndpointID')
-  String get endpointId;
+  String get endpointId => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint network's gateway address
   @JsonKey(name: 'Gateway')
-  String get gateway;
+  String get gateway => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint IPv4 address
   @JsonKey(name: 'IPAddress')
-  String get ipAddress;
+  String get ipAddress => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint IPv4 address's mask length
   @JsonKey(name: 'IPPrefixLen')
-  int get ipPrefixLength;
+  int get ipPrefixLength => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint network's gateway IPv6 address
   @JsonKey(name: 'IPv6Gateway')
-  String get ipv6Gateway;
+  String get ipv6Gateway => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint global IPv6 address
   @JsonKey(name: 'GlobalIPv6Address')
-  String get globalIpv6Address;
+  String get globalIpv6Address => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint global IPv6 address's mask length
   @JsonKey(name: 'GlobalIPv6PrefixLen')
-  int get globalIpv6PrefixLength;
+  int get globalIpv6PrefixLength => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint MAC address
   @JsonKey(name: 'MacAdress')
-  String? get macAddress;
+  String? get macAddress => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint driver options
   @JsonKey(name: 'DriverOpts')
-  Map<String, String>? get driverOptions;
+  Map<String, String>? get driverOptions => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerEndpointSettingsCopyWith<_DockerEndpointSettings> get copyWith =>
+  _$$_DockerEndpointSettingsCopyWith<_$_DockerEndpointSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }

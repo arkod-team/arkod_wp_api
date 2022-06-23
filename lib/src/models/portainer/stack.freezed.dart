@@ -12,88 +12,11 @@ part of 'stack.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerStack _$PortainerStackFromJson(Map<String, dynamic> json) {
   return _PortainerStack.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerStackTearOff {
-  const _$PortainerStackTearOff();
-
-  _PortainerStack call(
-      {@JsonKey(name: 'Id')
-          required int id,
-      @JsonKey(name: 'Name')
-          required String name,
-      @JsonKey(name: 'Type', fromJson: _stackTypeFromJson, toJson: _stackTypeToJson)
-          required PortainerStackType type,
-      @JsonKey(name: 'Status', fromJson: _stackStatusFromJson, toJson: _stackStatusToJson)
-          required PortainerStackStatus status,
-      @JsonKey(name: 'EndpointId')
-          required int endpointId,
-      @JsonKey(name: 'Env')
-          List<PortainerStackEnvironmentVariable> env = const [],
-      @JsonKey(name: 'EntryPoint')
-          required String entrypoint,
-      @JsonKey(name: 'ProjectPath')
-          required String projectPath,
-      @JsonKey(name: 'ResourceControl')
-          PortainerResourceControl? resourceControl,
-      @JsonKey(name: 'CreatedBy')
-          required String createdBy,
-      @JsonKey(name: 'CreationDate')
-          required int creationDate,
-      @JsonKey(name: 'UpdatedBy')
-          required String updatedBy,
-      @JsonKey(name: 'UpdateDate')
-          required int updateDate,
-      @JsonKey(name: 'SwarmId')
-          required String swarmId,
-      @JsonKey(name: 'IsComposeFormat')
-          bool isComposeFormat = false,
-      @JsonKey(name: 'FromAppTemplate')
-          bool fromAppTemplate = false,
-      @JsonKey(name: 'Namespace')
-          required String namespace,
-      @JsonKey(name: 'AdditionalFiles')
-          List<String>? additionalFiles,
-      @JsonKey(name: 'AutoUpdate')
-          PortainerStackAutoUpdateConfig? autoUpdate,
-      @JsonKey(name: 'GitConfig')
-          PortainerStackGitConfig? gitConfig}) {
-    return _PortainerStack(
-      id: id,
-      name: name,
-      type: type,
-      status: status,
-      endpointId: endpointId,
-      env: env,
-      entrypoint: entrypoint,
-      projectPath: projectPath,
-      resourceControl: resourceControl,
-      createdBy: createdBy,
-      creationDate: creationDate,
-      updatedBy: updatedBy,
-      updateDate: updateDate,
-      swarmId: swarmId,
-      isComposeFormat: isComposeFormat,
-      fromAppTemplate: fromAppTemplate,
-      namespace: namespace,
-      additionalFiles: additionalFiles,
-      autoUpdate: autoUpdate,
-      gitConfig: gitConfig,
-    );
-  }
-
-  PortainerStack fromJson(Map<String, Object?> json) {
-    return PortainerStack.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerStack = _$PortainerStackTearOff();
 
 /// @nodoc
 mixin _$PortainerStack {
@@ -394,11 +317,11 @@ class _$PortainerStackCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerStackCopyWith<$Res>
+abstract class _$$_PortainerStackCopyWith<$Res>
     implements $PortainerStackCopyWith<$Res> {
-  factory _$PortainerStackCopyWith(
-          _PortainerStack value, $Res Function(_PortainerStack) then) =
-      __$PortainerStackCopyWithImpl<$Res>;
+  factory _$$_PortainerStackCopyWith(
+          _$_PortainerStack value, $Res Function(_$_PortainerStack) then) =
+      __$$_PortainerStackCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Id')
@@ -451,15 +374,15 @@ abstract class _$PortainerStackCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerStackCopyWithImpl<$Res>
+class __$$_PortainerStackCopyWithImpl<$Res>
     extends _$PortainerStackCopyWithImpl<$Res>
-    implements _$PortainerStackCopyWith<$Res> {
-  __$PortainerStackCopyWithImpl(
-      _PortainerStack _value, $Res Function(_PortainerStack) _then)
-      : super(_value, (v) => _then(v as _PortainerStack));
+    implements _$$_PortainerStackCopyWith<$Res> {
+  __$$_PortainerStackCopyWithImpl(
+      _$_PortainerStack _value, $Res Function(_$_PortainerStack) _then)
+      : super(_value, (v) => _then(v as _$_PortainerStack));
 
   @override
-  _PortainerStack get _value => super._value as _PortainerStack;
+  _$_PortainerStack get _value => super._value as _$_PortainerStack;
 
   @override
   $Res call({
@@ -484,7 +407,7 @@ class __$PortainerStackCopyWithImpl<$Res>
     Object? autoUpdate = freezed,
     Object? gitConfig = freezed,
   }) {
-    return _then(_PortainerStack(
+    return _then(_$_PortainerStack(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -506,7 +429,7 @@ class __$PortainerStackCopyWithImpl<$Res>
           : endpointId // ignore: cast_nullable_to_non_nullable
               as int,
       env: env == freezed
-          ? _value.env
+          ? _value._env
           : env // ignore: cast_nullable_to_non_nullable
               as List<PortainerStackEnvironmentVariable>,
       entrypoint: entrypoint == freezed
@@ -554,7 +477,7 @@ class __$PortainerStackCopyWithImpl<$Res>
           : namespace // ignore: cast_nullable_to_non_nullable
               as String,
       additionalFiles: additionalFiles == freezed
-          ? _value.additionalFiles
+          ? _value._additionalFiles
           : additionalFiles // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       autoUpdate: autoUpdate == freezed
@@ -584,7 +507,7 @@ class _$_PortainerStack implements _PortainerStack {
       @JsonKey(name: 'EndpointId')
           required this.endpointId,
       @JsonKey(name: 'Env')
-          this.env = const [],
+          final List<PortainerStackEnvironmentVariable> env = const [],
       @JsonKey(name: 'EntryPoint')
           required this.entrypoint,
       @JsonKey(name: 'ProjectPath')
@@ -608,116 +531,131 @@ class _$_PortainerStack implements _PortainerStack {
       @JsonKey(name: 'Namespace')
           required this.namespace,
       @JsonKey(name: 'AdditionalFiles')
-          this.additionalFiles,
+          final List<String>? additionalFiles,
       @JsonKey(name: 'AutoUpdate')
           this.autoUpdate,
       @JsonKey(name: 'GitConfig')
-          this.gitConfig});
+          this.gitConfig})
+      : _env = env,
+        _additionalFiles = additionalFiles;
 
   factory _$_PortainerStack.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerStackFromJson(json);
 
-  @override
-
   /// Stack ID
+  @override
   @JsonKey(name: 'Id')
   final int id;
-  @override
 
   /// Stack name
+  @override
   @JsonKey(name: 'Name')
   final String name;
-  @override
 
   /// Stack type
+  @override
   @JsonKey(name: 'Type', fromJson: _stackTypeFromJson, toJson: _stackTypeToJson)
   final PortainerStackType type;
-  @override
 
   /// Stack status
+  @override
   @JsonKey(
       name: 'Status',
       fromJson: _stackStatusFromJson,
       toJson: _stackStatusToJson)
   final PortainerStackStatus status;
-  @override
 
   /// Endpoint used for deployment
+  @override
   @JsonKey(name: 'EndpointId')
   final int endpointId;
-  @override
 
   /// Stack enpoints
-  @JsonKey(name: 'Env')
-  final List<PortainerStackEnvironmentVariable> env;
+  final List<PortainerStackEnvironmentVariable> _env;
+
+  /// Stack enpoints
   @override
+  @JsonKey(name: 'Env')
+  List<PortainerStackEnvironmentVariable> get env {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_env);
+  }
 
   /// Stack file path
+  @override
   @JsonKey(name: 'EntryPoint')
   final String entrypoint;
-  @override
 
   /// Stack file path on disk
+  @override
   @JsonKey(name: 'ProjectPath')
   final String projectPath;
-  @override
 
   /// Stack resource access control
+  @override
   @JsonKey(name: 'ResourceControl')
   final PortainerResourceControl? resourceControl;
-  @override
 
   /// Username which created the stack
+  @override
   @JsonKey(name: 'CreatedBy')
   final String createdBy;
-  @override
 
   /// Stack creation timestamp
+  @override
   @JsonKey(name: 'CreationDate')
   final int creationDate;
-  @override
 
   /// Username which last updated the stack
+  @override
   @JsonKey(name: 'UpdatedBy')
   final String updatedBy;
-  @override
 
   /// Stack last update timestamp
+  @override
   @JsonKey(name: 'UpdateDate')
   final int updateDate;
-  @override
 
   /// Swarm cluster ID (Swarm stack only)
+  @override
   @JsonKey(name: 'SwarmId')
   final String swarmId;
-  @override
 
   /// Is the stack deployed from a Docker Compose file (Kubernetes stack only)
+  @override
   @JsonKey(name: 'IsComposeFormat')
   final bool isComposeFormat;
-  @override
 
   /// Is the stack deployed from an app template
+  @override
   @JsonKey(name: 'FromAppTemplate')
   final bool fromAppTemplate;
-  @override
 
   /// Kubernetes namespace (Kubernetes stack only)
+  @override
   @JsonKey(name: 'Namespace')
   final String namespace;
-  @override
 
   /// Additional deployment files (Stack deployed with multiple files only)
-  @JsonKey(name: 'AdditionalFiles')
-  final List<String>? additionalFiles;
+  final List<String>? _additionalFiles;
+
+  /// Additional deployment files (Stack deployed with multiple files only)
   @override
+  @JsonKey(name: 'AdditionalFiles')
+  List<String>? get additionalFiles {
+    final value = _additionalFiles;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// Auto-update configutation
+  @override
   @JsonKey(name: 'AutoUpdate')
   final PortainerStackAutoUpdateConfig? autoUpdate;
-  @override
 
   /// Git configuration
+  @override
   @JsonKey(name: 'GitConfig')
   final PortainerStackGitConfig? gitConfig;
 
@@ -730,14 +668,14 @@ class _$_PortainerStack implements _PortainerStack {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerStack &&
+            other is _$_PortainerStack &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
                 .equals(other.endpointId, endpointId) &&
-            const DeepCollectionEquality().equals(other.env, env) &&
+            const DeepCollectionEquality().equals(other._env, _env) &&
             const DeepCollectionEquality()
                 .equals(other.entrypoint, entrypoint) &&
             const DeepCollectionEquality()
@@ -757,12 +695,13 @@ class _$_PortainerStack implements _PortainerStack {
                 .equals(other.fromAppTemplate, fromAppTemplate) &&
             const DeepCollectionEquality().equals(other.namespace, namespace) &&
             const DeepCollectionEquality()
-                .equals(other.additionalFiles, additionalFiles) &&
+                .equals(other._additionalFiles, _additionalFiles) &&
             const DeepCollectionEquality()
                 .equals(other.autoUpdate, autoUpdate) &&
             const DeepCollectionEquality().equals(other.gitConfig, gitConfig));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -771,7 +710,7 @@ class _$_PortainerStack implements _PortainerStack {
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(status),
         const DeepCollectionEquality().hash(endpointId),
-        const DeepCollectionEquality().hash(env),
+        const DeepCollectionEquality().hash(_env),
         const DeepCollectionEquality().hash(entrypoint),
         const DeepCollectionEquality().hash(projectPath),
         const DeepCollectionEquality().hash(resourceControl),
@@ -783,15 +722,15 @@ class _$_PortainerStack implements _PortainerStack {
         const DeepCollectionEquality().hash(isComposeFormat),
         const DeepCollectionEquality().hash(fromAppTemplate),
         const DeepCollectionEquality().hash(namespace),
-        const DeepCollectionEquality().hash(additionalFiles),
+        const DeepCollectionEquality().hash(_additionalFiles),
         const DeepCollectionEquality().hash(autoUpdate),
         const DeepCollectionEquality().hash(gitConfig)
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerStackCopyWith<_PortainerStack> get copyWith =>
-      __$PortainerStackCopyWithImpl<_PortainerStack>(this, _$identity);
+  _$$_PortainerStackCopyWith<_$_PortainerStack> get copyWith =>
+      __$$_PortainerStackCopyWithImpl<_$_PortainerStack>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -802,45 +741,45 @@ class _$_PortainerStack implements _PortainerStack {
 abstract class _PortainerStack implements PortainerStack {
   const factory _PortainerStack(
       {@JsonKey(name: 'Id')
-          required int id,
+          required final int id,
       @JsonKey(name: 'Name')
-          required String name,
+          required final String name,
       @JsonKey(name: 'Type', fromJson: _stackTypeFromJson, toJson: _stackTypeToJson)
-          required PortainerStackType type,
+          required final PortainerStackType type,
       @JsonKey(name: 'Status', fromJson: _stackStatusFromJson, toJson: _stackStatusToJson)
-          required PortainerStackStatus status,
+          required final PortainerStackStatus status,
       @JsonKey(name: 'EndpointId')
-          required int endpointId,
+          required final int endpointId,
       @JsonKey(name: 'Env')
-          List<PortainerStackEnvironmentVariable> env,
+          final List<PortainerStackEnvironmentVariable> env,
       @JsonKey(name: 'EntryPoint')
-          required String entrypoint,
+          required final String entrypoint,
       @JsonKey(name: 'ProjectPath')
-          required String projectPath,
+          required final String projectPath,
       @JsonKey(name: 'ResourceControl')
-          PortainerResourceControl? resourceControl,
+          final PortainerResourceControl? resourceControl,
       @JsonKey(name: 'CreatedBy')
-          required String createdBy,
+          required final String createdBy,
       @JsonKey(name: 'CreationDate')
-          required int creationDate,
+          required final int creationDate,
       @JsonKey(name: 'UpdatedBy')
-          required String updatedBy,
+          required final String updatedBy,
       @JsonKey(name: 'UpdateDate')
-          required int updateDate,
+          required final int updateDate,
       @JsonKey(name: 'SwarmId')
-          required String swarmId,
+          required final String swarmId,
       @JsonKey(name: 'IsComposeFormat')
-          bool isComposeFormat,
+          final bool isComposeFormat,
       @JsonKey(name: 'FromAppTemplate')
-          bool fromAppTemplate,
+          final bool fromAppTemplate,
       @JsonKey(name: 'Namespace')
-          required String namespace,
+          required final String namespace,
       @JsonKey(name: 'AdditionalFiles')
-          List<String>? additionalFiles,
+          final List<String>? additionalFiles,
       @JsonKey(name: 'AutoUpdate')
-          PortainerStackAutoUpdateConfig? autoUpdate,
+          final PortainerStackAutoUpdateConfig? autoUpdate,
       @JsonKey(name: 'GitConfig')
-          PortainerStackGitConfig? gitConfig}) = _$_PortainerStack;
+          final PortainerStackGitConfig? gitConfig}) = _$_PortainerStack;
 
   factory _PortainerStack.fromJson(Map<String, dynamic> json) =
       _$_PortainerStack.fromJson;
@@ -849,17 +788,17 @@ abstract class _PortainerStack implements PortainerStack {
 
   /// Stack ID
   @JsonKey(name: 'Id')
-  int get id;
+  int get id => throw _privateConstructorUsedError;
   @override
 
   /// Stack name
   @JsonKey(name: 'Name')
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Stack type
   @JsonKey(name: 'Type', fromJson: _stackTypeFromJson, toJson: _stackTypeToJson)
-  PortainerStackType get type;
+  PortainerStackType get type => throw _privateConstructorUsedError;
   @override
 
   /// Stack status
@@ -867,89 +806,92 @@ abstract class _PortainerStack implements PortainerStack {
       name: 'Status',
       fromJson: _stackStatusFromJson,
       toJson: _stackStatusToJson)
-  PortainerStackStatus get status;
+  PortainerStackStatus get status => throw _privateConstructorUsedError;
   @override
 
   /// Endpoint used for deployment
   @JsonKey(name: 'EndpointId')
-  int get endpointId;
+  int get endpointId => throw _privateConstructorUsedError;
   @override
 
   /// Stack enpoints
   @JsonKey(name: 'Env')
-  List<PortainerStackEnvironmentVariable> get env;
+  List<PortainerStackEnvironmentVariable> get env =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Stack file path
   @JsonKey(name: 'EntryPoint')
-  String get entrypoint;
+  String get entrypoint => throw _privateConstructorUsedError;
   @override
 
   /// Stack file path on disk
   @JsonKey(name: 'ProjectPath')
-  String get projectPath;
+  String get projectPath => throw _privateConstructorUsedError;
   @override
 
   /// Stack resource access control
   @JsonKey(name: 'ResourceControl')
-  PortainerResourceControl? get resourceControl;
+  PortainerResourceControl? get resourceControl =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Username which created the stack
   @JsonKey(name: 'CreatedBy')
-  String get createdBy;
+  String get createdBy => throw _privateConstructorUsedError;
   @override
 
   /// Stack creation timestamp
   @JsonKey(name: 'CreationDate')
-  int get creationDate;
+  int get creationDate => throw _privateConstructorUsedError;
   @override
 
   /// Username which last updated the stack
   @JsonKey(name: 'UpdatedBy')
-  String get updatedBy;
+  String get updatedBy => throw _privateConstructorUsedError;
   @override
 
   /// Stack last update timestamp
   @JsonKey(name: 'UpdateDate')
-  int get updateDate;
+  int get updateDate => throw _privateConstructorUsedError;
   @override
 
   /// Swarm cluster ID (Swarm stack only)
   @JsonKey(name: 'SwarmId')
-  String get swarmId;
+  String get swarmId => throw _privateConstructorUsedError;
   @override
 
   /// Is the stack deployed from a Docker Compose file (Kubernetes stack only)
   @JsonKey(name: 'IsComposeFormat')
-  bool get isComposeFormat;
+  bool get isComposeFormat => throw _privateConstructorUsedError;
   @override
 
   /// Is the stack deployed from an app template
   @JsonKey(name: 'FromAppTemplate')
-  bool get fromAppTemplate;
+  bool get fromAppTemplate => throw _privateConstructorUsedError;
   @override
 
   /// Kubernetes namespace (Kubernetes stack only)
   @JsonKey(name: 'Namespace')
-  String get namespace;
+  String get namespace => throw _privateConstructorUsedError;
   @override
 
   /// Additional deployment files (Stack deployed with multiple files only)
   @JsonKey(name: 'AdditionalFiles')
-  List<String>? get additionalFiles;
+  List<String>? get additionalFiles => throw _privateConstructorUsedError;
   @override
 
   /// Auto-update configutation
   @JsonKey(name: 'AutoUpdate')
-  PortainerStackAutoUpdateConfig? get autoUpdate;
+  PortainerStackAutoUpdateConfig? get autoUpdate =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Git configuration
   @JsonKey(name: 'GitConfig')
-  PortainerStackGitConfig? get gitConfig;
+  PortainerStackGitConfig? get gitConfig => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerStackCopyWith<_PortainerStack> get copyWith =>
+  _$$_PortainerStackCopyWith<_$_PortainerStack> get copyWith =>
       throw _privateConstructorUsedError;
 }

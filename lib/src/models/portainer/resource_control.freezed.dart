@@ -12,56 +12,12 @@ part of 'resource_control.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerResourceControl _$PortainerResourceControlFromJson(
     Map<String, dynamic> json) {
   return _PortainerResourceControl.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerResourceControlTearOff {
-  const _$PortainerResourceControlTearOff();
-
-  _PortainerResourceControl call(
-      {@JsonKey(name: 'ResourceId')
-          required String resourceId,
-      @JsonKey(name: 'SubResourceIds')
-          List<String> subResourceIds = const [],
-      @JsonKey(name: 'Type', fromJson: _resourceTypeFromJson, toJson: _resourceTypeToJson)
-          required PortainerResourceType type,
-      @JsonKey(name: 'AdministratorsOnly')
-          bool administratorsOnly = true,
-      @JsonKey(name: 'Public')
-          bool public = true,
-      @JsonKey(name: 'System')
-          bool system = false,
-      @JsonKey(name: 'AccessLevel')
-          int? accessLevel,
-      @JsonKey(name: 'TeamAccesses')
-          List<PortainerTeamResourceAccess> teamAccesses = const [],
-      @JsonKey(name: 'UserAccesses')
-          List<PortainerUserResourceAccess> userAccesses = const []}) {
-    return _PortainerResourceControl(
-      resourceId: resourceId,
-      subResourceIds: subResourceIds,
-      type: type,
-      administratorsOnly: administratorsOnly,
-      public: public,
-      system: system,
-      accessLevel: accessLevel,
-      teamAccesses: teamAccesses,
-      userAccesses: userAccesses,
-    );
-  }
-
-  PortainerResourceControl fromJson(Map<String, Object?> json) {
-    return PortainerResourceControl.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerResourceControl = _$PortainerResourceControlTearOff();
 
 /// @nodoc
 mixin _$PortainerResourceControl {
@@ -201,11 +157,12 @@ class _$PortainerResourceControlCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerResourceControlCopyWith<$Res>
+abstract class _$$_PortainerResourceControlCopyWith<$Res>
     implements $PortainerResourceControlCopyWith<$Res> {
-  factory _$PortainerResourceControlCopyWith(_PortainerResourceControl value,
-          $Res Function(_PortainerResourceControl) then) =
-      __$PortainerResourceControlCopyWithImpl<$Res>;
+  factory _$$_PortainerResourceControlCopyWith(
+          _$_PortainerResourceControl value,
+          $Res Function(_$_PortainerResourceControl) then) =
+      __$$_PortainerResourceControlCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'ResourceId')
@@ -229,16 +186,16 @@ abstract class _$PortainerResourceControlCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerResourceControlCopyWithImpl<$Res>
+class __$$_PortainerResourceControlCopyWithImpl<$Res>
     extends _$PortainerResourceControlCopyWithImpl<$Res>
-    implements _$PortainerResourceControlCopyWith<$Res> {
-  __$PortainerResourceControlCopyWithImpl(_PortainerResourceControl _value,
-      $Res Function(_PortainerResourceControl) _then)
-      : super(_value, (v) => _then(v as _PortainerResourceControl));
+    implements _$$_PortainerResourceControlCopyWith<$Res> {
+  __$$_PortainerResourceControlCopyWithImpl(_$_PortainerResourceControl _value,
+      $Res Function(_$_PortainerResourceControl) _then)
+      : super(_value, (v) => _then(v as _$_PortainerResourceControl));
 
   @override
-  _PortainerResourceControl get _value =>
-      super._value as _PortainerResourceControl;
+  _$_PortainerResourceControl get _value =>
+      super._value as _$_PortainerResourceControl;
 
   @override
   $Res call({
@@ -252,13 +209,13 @@ class __$PortainerResourceControlCopyWithImpl<$Res>
     Object? teamAccesses = freezed,
     Object? userAccesses = freezed,
   }) {
-    return _then(_PortainerResourceControl(
+    return _then(_$_PortainerResourceControl(
       resourceId: resourceId == freezed
           ? _value.resourceId
           : resourceId // ignore: cast_nullable_to_non_nullable
               as String,
       subResourceIds: subResourceIds == freezed
-          ? _value.subResourceIds
+          ? _value._subResourceIds
           : subResourceIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       type: type == freezed
@@ -282,11 +239,11 @@ class __$PortainerResourceControlCopyWithImpl<$Res>
           : accessLevel // ignore: cast_nullable_to_non_nullable
               as int?,
       teamAccesses: teamAccesses == freezed
-          ? _value.teamAccesses
+          ? _value._teamAccesses
           : teamAccesses // ignore: cast_nullable_to_non_nullable
               as List<PortainerTeamResourceAccess>,
       userAccesses: userAccesses == freezed
-          ? _value.userAccesses
+          ? _value._userAccesses
           : userAccesses // ignore: cast_nullable_to_non_nullable
               as List<PortainerUserResourceAccess>,
     ));
@@ -300,7 +257,7 @@ class _$_PortainerResourceControl implements _PortainerResourceControl {
       {@JsonKey(name: 'ResourceId')
           required this.resourceId,
       @JsonKey(name: 'SubResourceIds')
-          this.subResourceIds = const [],
+          final List<String> subResourceIds = const [],
       @JsonKey(name: 'Type', fromJson: _resourceTypeFromJson, toJson: _resourceTypeToJson)
           required this.type,
       @JsonKey(name: 'AdministratorsOnly')
@@ -312,61 +269,81 @@ class _$_PortainerResourceControl implements _PortainerResourceControl {
       @JsonKey(name: 'AccessLevel')
           this.accessLevel,
       @JsonKey(name: 'TeamAccesses')
-          this.teamAccesses = const [],
+          final List<PortainerTeamResourceAccess> teamAccesses = const [],
       @JsonKey(name: 'UserAccesses')
-          this.userAccesses = const []});
+          final List<PortainerUserResourceAccess> userAccesses = const []})
+      : _subResourceIds = subResourceIds,
+        _teamAccesses = teamAccesses,
+        _userAccesses = userAccesses;
 
   factory _$_PortainerResourceControl.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerResourceControlFromJson(json);
 
-  @override
-
   /// Docker / Kubernetes resource ID on which the access control will be applied (for stacks, the stack name is used)
+  @override
   @JsonKey(name: 'ResourceId')
   final String resourceId;
-  @override
 
   /// Docker / Kubernetes resources IDs which inherit the access control
-  @JsonKey(name: 'SubResourceIds')
-  final List<String> subResourceIds;
+  final List<String> _subResourceIds;
+
+  /// Docker / Kubernetes resources IDs which inherit the access control
   @override
+  @JsonKey(name: 'SubResourceIds')
+  List<String> get subResourceIds {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_subResourceIds);
+  }
 
   /// Resource type
+  @override
   @JsonKey(
       name: 'Type',
       fromJson: _resourceTypeFromJson,
       toJson: _resourceTypeToJson)
   final PortainerResourceType type;
-  @override
 
   /// Resource access is granted to administrators only ?
+  @override
   @JsonKey(name: 'AdministratorsOnly')
   final bool administratorsOnly;
-  @override
 
   /// Resource access is granted to any user ?
+  @override
   @JsonKey(name: 'Public')
   final bool public;
-  @override
 
   /// Resource access control is managed by the system ?
+  @override
   @JsonKey(name: 'System')
   final bool system;
-  @override
 
   /// Resource control access level
+  @override
   @JsonKey(name: 'AccessLevel')
   final int? accessLevel;
-  @override
 
   /// Teams accesses for the resource
-  @JsonKey(name: 'TeamAccesses')
-  final List<PortainerTeamResourceAccess> teamAccesses;
+  final List<PortainerTeamResourceAccess> _teamAccesses;
+
+  /// Teams accesses for the resource
   @override
+  @JsonKey(name: 'TeamAccesses')
+  List<PortainerTeamResourceAccess> get teamAccesses {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_teamAccesses);
+  }
 
   /// Users accesses for the resource
+  final List<PortainerUserResourceAccess> _userAccesses;
+
+  /// Users accesses for the resource
+  @override
   @JsonKey(name: 'UserAccesses')
-  final List<PortainerUserResourceAccess> userAccesses;
+  List<PortainerUserResourceAccess> get userAccesses {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userAccesses);
+  }
 
   @override
   String toString() {
@@ -377,11 +354,11 @@ class _$_PortainerResourceControl implements _PortainerResourceControl {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerResourceControl &&
+            other is _$_PortainerResourceControl &&
             const DeepCollectionEquality()
                 .equals(other.resourceId, resourceId) &&
             const DeepCollectionEquality()
-                .equals(other.subResourceIds, subResourceIds) &&
+                .equals(other._subResourceIds, _subResourceIds) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
                 .equals(other.administratorsOnly, administratorsOnly) &&
@@ -390,29 +367,30 @@ class _$_PortainerResourceControl implements _PortainerResourceControl {
             const DeepCollectionEquality()
                 .equals(other.accessLevel, accessLevel) &&
             const DeepCollectionEquality()
-                .equals(other.teamAccesses, teamAccesses) &&
+                .equals(other._teamAccesses, _teamAccesses) &&
             const DeepCollectionEquality()
-                .equals(other.userAccesses, userAccesses));
+                .equals(other._userAccesses, _userAccesses));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(resourceId),
-      const DeepCollectionEquality().hash(subResourceIds),
+      const DeepCollectionEquality().hash(_subResourceIds),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(administratorsOnly),
       const DeepCollectionEquality().hash(public),
       const DeepCollectionEquality().hash(system),
       const DeepCollectionEquality().hash(accessLevel),
-      const DeepCollectionEquality().hash(teamAccesses),
-      const DeepCollectionEquality().hash(userAccesses));
+      const DeepCollectionEquality().hash(_teamAccesses),
+      const DeepCollectionEquality().hash(_userAccesses));
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerResourceControlCopyWith<_PortainerResourceControl> get copyWith =>
-      __$PortainerResourceControlCopyWithImpl<_PortainerResourceControl>(
-          this, _$identity);
+  _$$_PortainerResourceControlCopyWith<_$_PortainerResourceControl>
+      get copyWith => __$$_PortainerResourceControlCopyWithImpl<
+          _$_PortainerResourceControl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -423,23 +401,23 @@ class _$_PortainerResourceControl implements _PortainerResourceControl {
 abstract class _PortainerResourceControl implements PortainerResourceControl {
   const factory _PortainerResourceControl(
       {@JsonKey(name: 'ResourceId')
-          required String resourceId,
+          required final String resourceId,
       @JsonKey(name: 'SubResourceIds')
-          List<String> subResourceIds,
+          final List<String> subResourceIds,
       @JsonKey(name: 'Type', fromJson: _resourceTypeFromJson, toJson: _resourceTypeToJson)
-          required PortainerResourceType type,
+          required final PortainerResourceType type,
       @JsonKey(name: 'AdministratorsOnly')
-          bool administratorsOnly,
+          final bool administratorsOnly,
       @JsonKey(name: 'Public')
-          bool public,
+          final bool public,
       @JsonKey(name: 'System')
-          bool system,
+          final bool system,
       @JsonKey(name: 'AccessLevel')
-          int? accessLevel,
+          final int? accessLevel,
       @JsonKey(name: 'TeamAccesses')
-          List<PortainerTeamResourceAccess> teamAccesses,
+          final List<PortainerTeamResourceAccess> teamAccesses,
       @JsonKey(name: 'UserAccesses')
-          List<PortainerUserResourceAccess> userAccesses}) = _$_PortainerResourceControl;
+          final List<PortainerUserResourceAccess> userAccesses}) = _$_PortainerResourceControl;
 
   factory _PortainerResourceControl.fromJson(Map<String, dynamic> json) =
       _$_PortainerResourceControl.fromJson;
@@ -448,12 +426,12 @@ abstract class _PortainerResourceControl implements PortainerResourceControl {
 
   /// Docker / Kubernetes resource ID on which the access control will be applied (for stacks, the stack name is used)
   @JsonKey(name: 'ResourceId')
-  String get resourceId;
+  String get resourceId => throw _privateConstructorUsedError;
   @override
 
   /// Docker / Kubernetes resources IDs which inherit the access control
   @JsonKey(name: 'SubResourceIds')
-  List<String> get subResourceIds;
+  List<String> get subResourceIds => throw _privateConstructorUsedError;
   @override
 
   /// Resource type
@@ -461,39 +439,41 @@ abstract class _PortainerResourceControl implements PortainerResourceControl {
       name: 'Type',
       fromJson: _resourceTypeFromJson,
       toJson: _resourceTypeToJson)
-  PortainerResourceType get type;
+  PortainerResourceType get type => throw _privateConstructorUsedError;
   @override
 
   /// Resource access is granted to administrators only ?
   @JsonKey(name: 'AdministratorsOnly')
-  bool get administratorsOnly;
+  bool get administratorsOnly => throw _privateConstructorUsedError;
   @override
 
   /// Resource access is granted to any user ?
   @JsonKey(name: 'Public')
-  bool get public;
+  bool get public => throw _privateConstructorUsedError;
   @override
 
   /// Resource access control is managed by the system ?
   @JsonKey(name: 'System')
-  bool get system;
+  bool get system => throw _privateConstructorUsedError;
   @override
 
   /// Resource control access level
   @JsonKey(name: 'AccessLevel')
-  int? get accessLevel;
+  int? get accessLevel => throw _privateConstructorUsedError;
   @override
 
   /// Teams accesses for the resource
   @JsonKey(name: 'TeamAccesses')
-  List<PortainerTeamResourceAccess> get teamAccesses;
+  List<PortainerTeamResourceAccess> get teamAccesses =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Users accesses for the resource
   @JsonKey(name: 'UserAccesses')
-  List<PortainerUserResourceAccess> get userAccesses;
+  List<PortainerUserResourceAccess> get userAccesses =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerResourceControlCopyWith<_PortainerResourceControl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PortainerResourceControlCopyWith<_$_PortainerResourceControl>
+      get copyWith => throw _privateConstructorUsedError;
 }

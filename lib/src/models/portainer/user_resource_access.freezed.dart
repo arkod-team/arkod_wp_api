@@ -12,33 +12,12 @@ part of 'user_resource_access.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerUserResourceAccess _$PortainerUserResourceAccessFromJson(
     Map<String, dynamic> json) {
   return _PortainerUserResourceAccess.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerUserResourceAccessTearOff {
-  const _$PortainerUserResourceAccessTearOff();
-
-  _PortainerUserResourceAccess call(
-      {@JsonKey(name: 'AccessLevel') required int accessLevel,
-      @JsonKey(name: 'UserId') required int userId}) {
-    return _PortainerUserResourceAccess(
-      accessLevel: accessLevel,
-      userId: userId,
-    );
-  }
-
-  PortainerUserResourceAccess fromJson(Map<String, Object?> json) {
-    return PortainerUserResourceAccess.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerUserResourceAccess = _$PortainerUserResourceAccessTearOff();
 
 /// @nodoc
 mixin _$PortainerUserResourceAccess {
@@ -95,12 +74,12 @@ class _$PortainerUserResourceAccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerUserResourceAccessCopyWith<$Res>
+abstract class _$$_PortainerUserResourceAccessCopyWith<$Res>
     implements $PortainerUserResourceAccessCopyWith<$Res> {
-  factory _$PortainerUserResourceAccessCopyWith(
-          _PortainerUserResourceAccess value,
-          $Res Function(_PortainerUserResourceAccess) then) =
-      __$PortainerUserResourceAccessCopyWithImpl<$Res>;
+  factory _$$_PortainerUserResourceAccessCopyWith(
+          _$_PortainerUserResourceAccess value,
+          $Res Function(_$_PortainerUserResourceAccess) then) =
+      __$$_PortainerUserResourceAccessCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'AccessLevel') int accessLevel,
@@ -108,24 +87,24 @@ abstract class _$PortainerUserResourceAccessCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerUserResourceAccessCopyWithImpl<$Res>
+class __$$_PortainerUserResourceAccessCopyWithImpl<$Res>
     extends _$PortainerUserResourceAccessCopyWithImpl<$Res>
-    implements _$PortainerUserResourceAccessCopyWith<$Res> {
-  __$PortainerUserResourceAccessCopyWithImpl(
-      _PortainerUserResourceAccess _value,
-      $Res Function(_PortainerUserResourceAccess) _then)
-      : super(_value, (v) => _then(v as _PortainerUserResourceAccess));
+    implements _$$_PortainerUserResourceAccessCopyWith<$Res> {
+  __$$_PortainerUserResourceAccessCopyWithImpl(
+      _$_PortainerUserResourceAccess _value,
+      $Res Function(_$_PortainerUserResourceAccess) _then)
+      : super(_value, (v) => _then(v as _$_PortainerUserResourceAccess));
 
   @override
-  _PortainerUserResourceAccess get _value =>
-      super._value as _PortainerUserResourceAccess;
+  _$_PortainerUserResourceAccess get _value =>
+      super._value as _$_PortainerUserResourceAccess;
 
   @override
   $Res call({
     Object? accessLevel = freezed,
     Object? userId = freezed,
   }) {
-    return _then(_PortainerUserResourceAccess(
+    return _then(_$_PortainerUserResourceAccess(
       accessLevel: accessLevel == freezed
           ? _value.accessLevel
           : accessLevel // ignore: cast_nullable_to_non_nullable
@@ -148,14 +127,13 @@ class _$_PortainerUserResourceAccess implements _PortainerUserResourceAccess {
   factory _$_PortainerUserResourceAccess.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerUserResourceAccessFromJson(json);
 
-  @override
-
   /// Resource access level
+  @override
   @JsonKey(name: 'AccessLevel')
   final int accessLevel;
-  @override
 
   /// User ID for which the resource access is defined
+  @override
   @JsonKey(name: 'UserId')
   final int userId;
 
@@ -168,12 +146,13 @@ class _$_PortainerUserResourceAccess implements _PortainerUserResourceAccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerUserResourceAccess &&
+            other is _$_PortainerUserResourceAccess &&
             const DeepCollectionEquality()
                 .equals(other.accessLevel, accessLevel) &&
             const DeepCollectionEquality().equals(other.userId, userId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -182,9 +161,9 @@ class _$_PortainerUserResourceAccess implements _PortainerUserResourceAccess {
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerUserResourceAccessCopyWith<_PortainerUserResourceAccess>
-      get copyWith => __$PortainerUserResourceAccessCopyWithImpl<
-          _PortainerUserResourceAccess>(this, _$identity);
+  _$$_PortainerUserResourceAccessCopyWith<_$_PortainerUserResourceAccess>
+      get copyWith => __$$_PortainerUserResourceAccessCopyWithImpl<
+          _$_PortainerUserResourceAccess>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -195,8 +174,8 @@ class _$_PortainerUserResourceAccess implements _PortainerUserResourceAccess {
 abstract class _PortainerUserResourceAccess
     implements PortainerUserResourceAccess {
   const factory _PortainerUserResourceAccess(
-          {@JsonKey(name: 'AccessLevel') required int accessLevel,
-          @JsonKey(name: 'UserId') required int userId}) =
+          {@JsonKey(name: 'AccessLevel') required final int accessLevel,
+          @JsonKey(name: 'UserId') required final int userId}) =
       _$_PortainerUserResourceAccess;
 
   factory _PortainerUserResourceAccess.fromJson(Map<String, dynamic> json) =
@@ -206,14 +185,14 @@ abstract class _PortainerUserResourceAccess
 
   /// Resource access level
   @JsonKey(name: 'AccessLevel')
-  int get accessLevel;
+  int get accessLevel => throw _privateConstructorUsedError;
   @override
 
   /// User ID for which the resource access is defined
   @JsonKey(name: 'UserId')
-  int get userId;
+  int get userId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerUserResourceAccessCopyWith<_PortainerUserResourceAccess>
+  _$$_PortainerUserResourceAccessCopyWith<_$_PortainerUserResourceAccess>
       get copyWith => throw _privateConstructorUsedError;
 }

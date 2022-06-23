@@ -12,35 +12,12 @@ part of 'endpoint_ipam_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerEndpointIpamConfig _$DockerEndpointIpamConfigFromJson(
     Map<String, dynamic> json) {
   return _DockerEndpointIpamConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerEndpointIpamConfigTearOff {
-  const _$DockerEndpointIpamConfigTearOff();
-
-  _DockerEndpointIpamConfig call(
-      {@JsonKey(name: 'IPv4Address') required String ipv4Address,
-      @JsonKey(name: 'IPv6Address') required String ipv6Address,
-      @JsonKey(name: 'LinkLocalIPs') List<String> linkLocalIps = const []}) {
-    return _DockerEndpointIpamConfig(
-      ipv4Address: ipv4Address,
-      ipv6Address: ipv6Address,
-      linkLocalIps: linkLocalIps,
-    );
-  }
-
-  DockerEndpointIpamConfig fromJson(Map<String, Object?> json) {
-    return DockerEndpointIpamConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerEndpointIpamConfig = _$DockerEndpointIpamConfigTearOff();
 
 /// @nodoc
 mixin _$DockerEndpointIpamConfig {
@@ -106,11 +83,12 @@ class _$DockerEndpointIpamConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerEndpointIpamConfigCopyWith<$Res>
+abstract class _$$_DockerEndpointIpamConfigCopyWith<$Res>
     implements $DockerEndpointIpamConfigCopyWith<$Res> {
-  factory _$DockerEndpointIpamConfigCopyWith(_DockerEndpointIpamConfig value,
-          $Res Function(_DockerEndpointIpamConfig) then) =
-      __$DockerEndpointIpamConfigCopyWithImpl<$Res>;
+  factory _$$_DockerEndpointIpamConfigCopyWith(
+          _$_DockerEndpointIpamConfig value,
+          $Res Function(_$_DockerEndpointIpamConfig) then) =
+      __$$_DockerEndpointIpamConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'IPv4Address') String ipv4Address,
@@ -119,16 +97,16 @@ abstract class _$DockerEndpointIpamConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerEndpointIpamConfigCopyWithImpl<$Res>
+class __$$_DockerEndpointIpamConfigCopyWithImpl<$Res>
     extends _$DockerEndpointIpamConfigCopyWithImpl<$Res>
-    implements _$DockerEndpointIpamConfigCopyWith<$Res> {
-  __$DockerEndpointIpamConfigCopyWithImpl(_DockerEndpointIpamConfig _value,
-      $Res Function(_DockerEndpointIpamConfig) _then)
-      : super(_value, (v) => _then(v as _DockerEndpointIpamConfig));
+    implements _$$_DockerEndpointIpamConfigCopyWith<$Res> {
+  __$$_DockerEndpointIpamConfigCopyWithImpl(_$_DockerEndpointIpamConfig _value,
+      $Res Function(_$_DockerEndpointIpamConfig) _then)
+      : super(_value, (v) => _then(v as _$_DockerEndpointIpamConfig));
 
   @override
-  _DockerEndpointIpamConfig get _value =>
-      super._value as _DockerEndpointIpamConfig;
+  _$_DockerEndpointIpamConfig get _value =>
+      super._value as _$_DockerEndpointIpamConfig;
 
   @override
   $Res call({
@@ -136,7 +114,7 @@ class __$DockerEndpointIpamConfigCopyWithImpl<$Res>
     Object? ipv6Address = freezed,
     Object? linkLocalIps = freezed,
   }) {
-    return _then(_DockerEndpointIpamConfig(
+    return _then(_$_DockerEndpointIpamConfig(
       ipv4Address: ipv4Address == freezed
           ? _value.ipv4Address
           : ipv4Address // ignore: cast_nullable_to_non_nullable
@@ -146,7 +124,7 @@ class __$DockerEndpointIpamConfigCopyWithImpl<$Res>
           : ipv6Address // ignore: cast_nullable_to_non_nullable
               as String,
       linkLocalIps: linkLocalIps == freezed
-          ? _value.linkLocalIps
+          ? _value._linkLocalIps
           : linkLocalIps // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -157,28 +135,37 @@ class __$DockerEndpointIpamConfigCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_DockerEndpointIpamConfig implements _DockerEndpointIpamConfig {
   const _$_DockerEndpointIpamConfig(
-      {@JsonKey(name: 'IPv4Address') required this.ipv4Address,
-      @JsonKey(name: 'IPv6Address') required this.ipv6Address,
-      @JsonKey(name: 'LinkLocalIPs') this.linkLocalIps = const []});
+      {@JsonKey(name: 'IPv4Address')
+          required this.ipv4Address,
+      @JsonKey(name: 'IPv6Address')
+          required this.ipv6Address,
+      @JsonKey(name: 'LinkLocalIPs')
+          final List<String> linkLocalIps = const []})
+      : _linkLocalIps = linkLocalIps;
 
   factory _$_DockerEndpointIpamConfig.fromJson(Map<String, dynamic> json) =>
       _$$_DockerEndpointIpamConfigFromJson(json);
 
-  @override
-
   /// IPv4 address
+  @override
   @JsonKey(name: 'IPv4Address')
   final String ipv4Address;
-  @override
 
   /// IPv6 address
+  @override
   @JsonKey(name: 'IPv6Address')
   final String ipv6Address;
-  @override
 
   /// Local IPs linked
+  final List<String> _linkLocalIps;
+
+  /// Local IPs linked
+  @override
   @JsonKey(name: 'LinkLocalIPs')
-  final List<String> linkLocalIps;
+  List<String> get linkLocalIps {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_linkLocalIps);
+  }
 
   @override
   String toString() {
@@ -189,27 +176,28 @@ class _$_DockerEndpointIpamConfig implements _DockerEndpointIpamConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerEndpointIpamConfig &&
+            other is _$_DockerEndpointIpamConfig &&
             const DeepCollectionEquality()
                 .equals(other.ipv4Address, ipv4Address) &&
             const DeepCollectionEquality()
                 .equals(other.ipv6Address, ipv6Address) &&
             const DeepCollectionEquality()
-                .equals(other.linkLocalIps, linkLocalIps));
+                .equals(other._linkLocalIps, _linkLocalIps));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(ipv4Address),
       const DeepCollectionEquality().hash(ipv6Address),
-      const DeepCollectionEquality().hash(linkLocalIps));
+      const DeepCollectionEquality().hash(_linkLocalIps));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerEndpointIpamConfigCopyWith<_DockerEndpointIpamConfig> get copyWith =>
-      __$DockerEndpointIpamConfigCopyWithImpl<_DockerEndpointIpamConfig>(
-          this, _$identity);
+  _$$_DockerEndpointIpamConfigCopyWith<_$_DockerEndpointIpamConfig>
+      get copyWith => __$$_DockerEndpointIpamConfigCopyWithImpl<
+          _$_DockerEndpointIpamConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -219,9 +207,9 @@ class _$_DockerEndpointIpamConfig implements _DockerEndpointIpamConfig {
 
 abstract class _DockerEndpointIpamConfig implements DockerEndpointIpamConfig {
   const factory _DockerEndpointIpamConfig(
-          {@JsonKey(name: 'IPv4Address') required String ipv4Address,
-          @JsonKey(name: 'IPv6Address') required String ipv6Address,
-          @JsonKey(name: 'LinkLocalIPs') List<String> linkLocalIps}) =
+          {@JsonKey(name: 'IPv4Address') required final String ipv4Address,
+          @JsonKey(name: 'IPv6Address') required final String ipv6Address,
+          @JsonKey(name: 'LinkLocalIPs') final List<String> linkLocalIps}) =
       _$_DockerEndpointIpamConfig;
 
   factory _DockerEndpointIpamConfig.fromJson(Map<String, dynamic> json) =
@@ -231,19 +219,19 @@ abstract class _DockerEndpointIpamConfig implements DockerEndpointIpamConfig {
 
   /// IPv4 address
   @JsonKey(name: 'IPv4Address')
-  String get ipv4Address;
+  String get ipv4Address => throw _privateConstructorUsedError;
   @override
 
   /// IPv6 address
   @JsonKey(name: 'IPv6Address')
-  String get ipv6Address;
+  String get ipv6Address => throw _privateConstructorUsedError;
   @override
 
   /// Local IPs linked
   @JsonKey(name: 'LinkLocalIPs')
-  List<String> get linkLocalIps;
+  List<String> get linkLocalIps => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerEndpointIpamConfigCopyWith<_DockerEndpointIpamConfig> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_DockerEndpointIpamConfigCopyWith<_$_DockerEndpointIpamConfig>
+      get copyWith => throw _privateConstructorUsedError;
 }

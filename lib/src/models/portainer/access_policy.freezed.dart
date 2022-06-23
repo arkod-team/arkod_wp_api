@@ -12,30 +12,12 @@ part of 'access_policy.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerAccessPolicy _$PortainerAccessPolicyFromJson(
     Map<String, dynamic> json) {
   return _PortainerAccessPolicy.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerAccessPolicyTearOff {
-  const _$PortainerAccessPolicyTearOff();
-
-  _PortainerAccessPolicy call({@JsonKey(name: 'RoleId') required int roleId}) {
-    return _PortainerAccessPolicy(
-      roleId: roleId,
-    );
-  }
-
-  PortainerAccessPolicy fromJson(Map<String, Object?> json) {
-    return PortainerAccessPolicy.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerAccessPolicy = _$PortainerAccessPolicyTearOff();
 
 /// @nodoc
 mixin _$PortainerAccessPolicy {
@@ -80,31 +62,32 @@ class _$PortainerAccessPolicyCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerAccessPolicyCopyWith<$Res>
+abstract class _$$_PortainerAccessPolicyCopyWith<$Res>
     implements $PortainerAccessPolicyCopyWith<$Res> {
-  factory _$PortainerAccessPolicyCopyWith(_PortainerAccessPolicy value,
-          $Res Function(_PortainerAccessPolicy) then) =
-      __$PortainerAccessPolicyCopyWithImpl<$Res>;
+  factory _$$_PortainerAccessPolicyCopyWith(_$_PortainerAccessPolicy value,
+          $Res Function(_$_PortainerAccessPolicy) then) =
+      __$$_PortainerAccessPolicyCopyWithImpl<$Res>;
   @override
   $Res call({@JsonKey(name: 'RoleId') int roleId});
 }
 
 /// @nodoc
-class __$PortainerAccessPolicyCopyWithImpl<$Res>
+class __$$_PortainerAccessPolicyCopyWithImpl<$Res>
     extends _$PortainerAccessPolicyCopyWithImpl<$Res>
-    implements _$PortainerAccessPolicyCopyWith<$Res> {
-  __$PortainerAccessPolicyCopyWithImpl(_PortainerAccessPolicy _value,
-      $Res Function(_PortainerAccessPolicy) _then)
-      : super(_value, (v) => _then(v as _PortainerAccessPolicy));
+    implements _$$_PortainerAccessPolicyCopyWith<$Res> {
+  __$$_PortainerAccessPolicyCopyWithImpl(_$_PortainerAccessPolicy _value,
+      $Res Function(_$_PortainerAccessPolicy) _then)
+      : super(_value, (v) => _then(v as _$_PortainerAccessPolicy));
 
   @override
-  _PortainerAccessPolicy get _value => super._value as _PortainerAccessPolicy;
+  _$_PortainerAccessPolicy get _value =>
+      super._value as _$_PortainerAccessPolicy;
 
   @override
   $Res call({
     Object? roleId = freezed,
   }) {
-    return _then(_PortainerAccessPolicy(
+    return _then(_$_PortainerAccessPolicy(
       roleId: roleId == freezed
           ? _value.roleId
           : roleId // ignore: cast_nullable_to_non_nullable
@@ -122,9 +105,8 @@ class _$_PortainerAccessPolicy implements _PortainerAccessPolicy {
   factory _$_PortainerAccessPolicy.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerAccessPolicyFromJson(json);
 
-  @override
-
   /// Role ID associated to the policy
+  @override
   @JsonKey(name: 'RoleId')
   final int roleId;
 
@@ -137,18 +119,19 @@ class _$_PortainerAccessPolicy implements _PortainerAccessPolicy {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerAccessPolicy &&
+            other is _$_PortainerAccessPolicy &&
             const DeepCollectionEquality().equals(other.roleId, roleId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(roleId));
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerAccessPolicyCopyWith<_PortainerAccessPolicy> get copyWith =>
-      __$PortainerAccessPolicyCopyWithImpl<_PortainerAccessPolicy>(
+  _$$_PortainerAccessPolicyCopyWith<_$_PortainerAccessPolicy> get copyWith =>
+      __$$_PortainerAccessPolicyCopyWithImpl<_$_PortainerAccessPolicy>(
           this, _$identity);
 
   @override
@@ -159,7 +142,7 @@ class _$_PortainerAccessPolicy implements _PortainerAccessPolicy {
 
 abstract class _PortainerAccessPolicy implements PortainerAccessPolicy {
   const factory _PortainerAccessPolicy(
-          {@JsonKey(name: 'RoleId') required int roleId}) =
+          {@JsonKey(name: 'RoleId') required final int roleId}) =
       _$_PortainerAccessPolicy;
 
   factory _PortainerAccessPolicy.fromJson(Map<String, dynamic> json) =
@@ -169,9 +152,9 @@ abstract class _PortainerAccessPolicy implements PortainerAccessPolicy {
 
   /// Role ID associated to the policy
   @JsonKey(name: 'RoleId')
-  int get roleId;
+  int get roleId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerAccessPolicyCopyWith<_PortainerAccessPolicy> get copyWith =>
+  _$$_PortainerAccessPolicyCopyWith<_$_PortainerAccessPolicy> get copyWith =>
       throw _privateConstructorUsedError;
 }

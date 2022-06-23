@@ -12,33 +12,12 @@ part of 'container_networking_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerNetworkingConfig _$DockerContainerNetworkingConfigFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerNetworkingConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerNetworkingConfigTearOff {
-  const _$DockerContainerNetworkingConfigTearOff();
-
-  _DockerContainerNetworkingConfig call(
-      {@JsonKey(name: 'EndpointsConfig')
-          required Map<String, DockerEndpointSettings> endpointsConfig}) {
-    return _DockerContainerNetworkingConfig(
-      endpointsConfig: endpointsConfig,
-    );
-  }
-
-  DockerContainerNetworkingConfig fromJson(Map<String, Object?> json) {
-    return DockerContainerNetworkingConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerNetworkingConfig =
-    _$DockerContainerNetworkingConfigTearOff();
 
 /// @nodoc
 mixin _$DockerContainerNetworkingConfig {
@@ -87,12 +66,12 @@ class _$DockerContainerNetworkingConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerNetworkingConfigCopyWith<$Res>
+abstract class _$$_DockerContainerNetworkingConfigCopyWith<$Res>
     implements $DockerContainerNetworkingConfigCopyWith<$Res> {
-  factory _$DockerContainerNetworkingConfigCopyWith(
-          _DockerContainerNetworkingConfig value,
-          $Res Function(_DockerContainerNetworkingConfig) then) =
-      __$DockerContainerNetworkingConfigCopyWithImpl<$Res>;
+  factory _$$_DockerContainerNetworkingConfigCopyWith(
+          _$_DockerContainerNetworkingConfig value,
+          $Res Function(_$_DockerContainerNetworkingConfig) then) =
+      __$$_DockerContainerNetworkingConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'EndpointsConfig')
@@ -100,25 +79,25 @@ abstract class _$DockerContainerNetworkingConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerNetworkingConfigCopyWithImpl<$Res>
+class __$$_DockerContainerNetworkingConfigCopyWithImpl<$Res>
     extends _$DockerContainerNetworkingConfigCopyWithImpl<$Res>
-    implements _$DockerContainerNetworkingConfigCopyWith<$Res> {
-  __$DockerContainerNetworkingConfigCopyWithImpl(
-      _DockerContainerNetworkingConfig _value,
-      $Res Function(_DockerContainerNetworkingConfig) _then)
-      : super(_value, (v) => _then(v as _DockerContainerNetworkingConfig));
+    implements _$$_DockerContainerNetworkingConfigCopyWith<$Res> {
+  __$$_DockerContainerNetworkingConfigCopyWithImpl(
+      _$_DockerContainerNetworkingConfig _value,
+      $Res Function(_$_DockerContainerNetworkingConfig) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerNetworkingConfig));
 
   @override
-  _DockerContainerNetworkingConfig get _value =>
-      super._value as _DockerContainerNetworkingConfig;
+  _$_DockerContainerNetworkingConfig get _value =>
+      super._value as _$_DockerContainerNetworkingConfig;
 
   @override
   $Res call({
     Object? endpointsConfig = freezed,
   }) {
-    return _then(_DockerContainerNetworkingConfig(
+    return _then(_$_DockerContainerNetworkingConfig(
       endpointsConfig: endpointsConfig == freezed
-          ? _value.endpointsConfig
+          ? _value._endpointsConfig
           : endpointsConfig // ignore: cast_nullable_to_non_nullable
               as Map<String, DockerEndpointSettings>,
     ));
@@ -130,17 +109,24 @@ class __$DockerContainerNetworkingConfigCopyWithImpl<$Res>
 class _$_DockerContainerNetworkingConfig
     implements _DockerContainerNetworkingConfig {
   const _$_DockerContainerNetworkingConfig(
-      {@JsonKey(name: 'EndpointsConfig') required this.endpointsConfig});
+      {@JsonKey(name: 'EndpointsConfig')
+          required final Map<String, DockerEndpointSettings> endpointsConfig})
+      : _endpointsConfig = endpointsConfig;
 
   factory _$_DockerContainerNetworkingConfig.fromJson(
           Map<String, dynamic> json) =>
       _$$_DockerContainerNetworkingConfigFromJson(json);
 
-  @override
+  /// Container networks
+  final Map<String, DockerEndpointSettings> _endpointsConfig;
 
   /// Container networks
+  @override
   @JsonKey(name: 'EndpointsConfig')
-  final Map<String, DockerEndpointSettings> endpointsConfig;
+  Map<String, DockerEndpointSettings> get endpointsConfig {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_endpointsConfig);
+  }
 
   @override
   String toString() {
@@ -151,20 +137,22 @@ class _$_DockerContainerNetworkingConfig
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerNetworkingConfig &&
+            other is _$_DockerContainerNetworkingConfig &&
             const DeepCollectionEquality()
-                .equals(other.endpointsConfig, endpointsConfig));
+                .equals(other._endpointsConfig, _endpointsConfig));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(endpointsConfig));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerNetworkingConfigCopyWith<_DockerContainerNetworkingConfig>
-      get copyWith => __$DockerContainerNetworkingConfigCopyWithImpl<
-          _DockerContainerNetworkingConfig>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_endpointsConfig));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DockerContainerNetworkingConfigCopyWith<
+          _$_DockerContainerNetworkingConfig>
+      get copyWith => __$$_DockerContainerNetworkingConfigCopyWithImpl<
+          _$_DockerContainerNetworkingConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -175,9 +163,9 @@ class _$_DockerContainerNetworkingConfig
 abstract class _DockerContainerNetworkingConfig
     implements DockerContainerNetworkingConfig {
   const factory _DockerContainerNetworkingConfig(
-          {@JsonKey(name: 'EndpointsConfig')
-              required Map<String, DockerEndpointSettings> endpointsConfig}) =
-      _$_DockerContainerNetworkingConfig;
+      {@JsonKey(name: 'EndpointsConfig')
+          required final Map<String, DockerEndpointSettings>
+              endpointsConfig}) = _$_DockerContainerNetworkingConfig;
 
   factory _DockerContainerNetworkingConfig.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerNetworkingConfig.fromJson;
@@ -186,9 +174,11 @@ abstract class _DockerContainerNetworkingConfig
 
   /// Container networks
   @JsonKey(name: 'EndpointsConfig')
-  Map<String, DockerEndpointSettings> get endpointsConfig;
+  Map<String, DockerEndpointSettings> get endpointsConfig =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerNetworkingConfigCopyWith<_DockerContainerNetworkingConfig>
+  _$$_DockerContainerNetworkingConfigCopyWith<
+          _$_DockerContainerNetworkingConfig>
       get copyWith => throw _privateConstructorUsedError;
 }

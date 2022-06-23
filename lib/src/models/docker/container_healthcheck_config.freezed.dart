@@ -12,40 +12,12 @@ part of 'container_healthcheck_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerHealthcheckConfig _$DockerContainerHealthcheckConfigFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerHealthcheckConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerHealthcheckConfigTearOff {
-  const _$DockerContainerHealthcheckConfigTearOff();
-
-  _DockerContainerHealthcheckConfig call(
-      {@JsonKey(name: 'Test') required List<String> test,
-      @JsonKey(name: 'Interval') int interval = 0,
-      @JsonKey(name: 'Timeout') int timeout = 0,
-      @JsonKey(name: 'Retries') int retries = 0,
-      @JsonKey(name: 'StartPeriod') int startPeriod = 0}) {
-    return _DockerContainerHealthcheckConfig(
-      test: test,
-      interval: interval,
-      timeout: timeout,
-      retries: retries,
-      startPeriod: startPeriod,
-    );
-  }
-
-  DockerContainerHealthcheckConfig fromJson(Map<String, Object?> json) {
-    return DockerContainerHealthcheckConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerHealthcheckConfig =
-    _$DockerContainerHealthcheckConfigTearOff();
 
 /// @nodoc
 mixin _$DockerContainerHealthcheckConfig {
@@ -132,12 +104,12 @@ class _$DockerContainerHealthcheckConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerHealthcheckConfigCopyWith<$Res>
+abstract class _$$_DockerContainerHealthcheckConfigCopyWith<$Res>
     implements $DockerContainerHealthcheckConfigCopyWith<$Res> {
-  factory _$DockerContainerHealthcheckConfigCopyWith(
-          _DockerContainerHealthcheckConfig value,
-          $Res Function(_DockerContainerHealthcheckConfig) then) =
-      __$DockerContainerHealthcheckConfigCopyWithImpl<$Res>;
+  factory _$$_DockerContainerHealthcheckConfigCopyWith(
+          _$_DockerContainerHealthcheckConfig value,
+          $Res Function(_$_DockerContainerHealthcheckConfig) then) =
+      __$$_DockerContainerHealthcheckConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'Test') List<String> test,
@@ -148,17 +120,17 @@ abstract class _$DockerContainerHealthcheckConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerHealthcheckConfigCopyWithImpl<$Res>
+class __$$_DockerContainerHealthcheckConfigCopyWithImpl<$Res>
     extends _$DockerContainerHealthcheckConfigCopyWithImpl<$Res>
-    implements _$DockerContainerHealthcheckConfigCopyWith<$Res> {
-  __$DockerContainerHealthcheckConfigCopyWithImpl(
-      _DockerContainerHealthcheckConfig _value,
-      $Res Function(_DockerContainerHealthcheckConfig) _then)
-      : super(_value, (v) => _then(v as _DockerContainerHealthcheckConfig));
+    implements _$$_DockerContainerHealthcheckConfigCopyWith<$Res> {
+  __$$_DockerContainerHealthcheckConfigCopyWithImpl(
+      _$_DockerContainerHealthcheckConfig _value,
+      $Res Function(_$_DockerContainerHealthcheckConfig) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerHealthcheckConfig));
 
   @override
-  _DockerContainerHealthcheckConfig get _value =>
-      super._value as _DockerContainerHealthcheckConfig;
+  _$_DockerContainerHealthcheckConfig get _value =>
+      super._value as _$_DockerContainerHealthcheckConfig;
 
   @override
   $Res call({
@@ -168,9 +140,9 @@ class __$DockerContainerHealthcheckConfigCopyWithImpl<$Res>
     Object? retries = freezed,
     Object? startPeriod = freezed,
   }) {
-    return _then(_DockerContainerHealthcheckConfig(
+    return _then(_$_DockerContainerHealthcheckConfig(
       test: test == freezed
-          ? _value.test
+          ? _value._test
           : test // ignore: cast_nullable_to_non_nullable
               as List<String>,
       interval: interval == freezed
@@ -198,39 +170,45 @@ class __$DockerContainerHealthcheckConfigCopyWithImpl<$Res>
 class _$_DockerContainerHealthcheckConfig
     implements _DockerContainerHealthcheckConfig {
   const _$_DockerContainerHealthcheckConfig(
-      {@JsonKey(name: 'Test') required this.test,
+      {@JsonKey(name: 'Test') required final List<String> test,
       @JsonKey(name: 'Interval') this.interval = 0,
       @JsonKey(name: 'Timeout') this.timeout = 0,
       @JsonKey(name: 'Retries') this.retries = 0,
-      @JsonKey(name: 'StartPeriod') this.startPeriod = 0});
+      @JsonKey(name: 'StartPeriod') this.startPeriod = 0})
+      : _test = test;
 
   factory _$_DockerContainerHealthcheckConfig.fromJson(
           Map<String, dynamic> json) =>
       _$$_DockerContainerHealthcheckConfigFromJson(json);
 
-  @override
+  /// Healthcheck test command
+  final List<String> _test;
 
   /// Healthcheck test command
-  @JsonKey(name: 'Test')
-  final List<String> test;
   @override
+  @JsonKey(name: 'Test')
+  List<String> get test {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_test);
+  }
 
   /// Healthcheck checks interval (in nanosecods, 1000000 = 1ms)
+  @override
   @JsonKey(name: 'Interval')
   final int interval;
-  @override
 
   /// Healthcheck check timeout (in nanosecods, 1000000 = 1ms)
+  @override
   @JsonKey(name: 'Timeout')
   final int timeout;
-  @override
 
   /// Healthcheck check retries before considering failed
+  @override
   @JsonKey(name: 'Retries')
   final int retries;
-  @override
 
   /// Healthcheck period before first check (in nanosecods, 1000000 = 1ms)
+  @override
   @JsonKey(name: 'StartPeriod')
   final int startPeriod;
 
@@ -243,8 +221,8 @@ class _$_DockerContainerHealthcheckConfig
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerHealthcheckConfig &&
-            const DeepCollectionEquality().equals(other.test, test) &&
+            other is _$_DockerContainerHealthcheckConfig &&
+            const DeepCollectionEquality().equals(other._test, _test) &&
             const DeepCollectionEquality().equals(other.interval, interval) &&
             const DeepCollectionEquality().equals(other.timeout, timeout) &&
             const DeepCollectionEquality().equals(other.retries, retries) &&
@@ -252,10 +230,11 @@ class _$_DockerContainerHealthcheckConfig
                 .equals(other.startPeriod, startPeriod));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(test),
+      const DeepCollectionEquality().hash(_test),
       const DeepCollectionEquality().hash(interval),
       const DeepCollectionEquality().hash(timeout),
       const DeepCollectionEquality().hash(retries),
@@ -263,9 +242,10 @@ class _$_DockerContainerHealthcheckConfig
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerHealthcheckConfigCopyWith<_DockerContainerHealthcheckConfig>
-      get copyWith => __$DockerContainerHealthcheckConfigCopyWithImpl<
-          _DockerContainerHealthcheckConfig>(this, _$identity);
+  _$$_DockerContainerHealthcheckConfigCopyWith<
+          _$_DockerContainerHealthcheckConfig>
+      get copyWith => __$$_DockerContainerHealthcheckConfigCopyWithImpl<
+          _$_DockerContainerHealthcheckConfig>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -276,11 +256,11 @@ class _$_DockerContainerHealthcheckConfig
 abstract class _DockerContainerHealthcheckConfig
     implements DockerContainerHealthcheckConfig {
   const factory _DockerContainerHealthcheckConfig(
-          {@JsonKey(name: 'Test') required List<String> test,
-          @JsonKey(name: 'Interval') int interval,
-          @JsonKey(name: 'Timeout') int timeout,
-          @JsonKey(name: 'Retries') int retries,
-          @JsonKey(name: 'StartPeriod') int startPeriod}) =
+          {@JsonKey(name: 'Test') required final List<String> test,
+          @JsonKey(name: 'Interval') final int interval,
+          @JsonKey(name: 'Timeout') final int timeout,
+          @JsonKey(name: 'Retries') final int retries,
+          @JsonKey(name: 'StartPeriod') final int startPeriod}) =
       _$_DockerContainerHealthcheckConfig;
 
   factory _DockerContainerHealthcheckConfig.fromJson(
@@ -290,29 +270,30 @@ abstract class _DockerContainerHealthcheckConfig
 
   /// Healthcheck test command
   @JsonKey(name: 'Test')
-  List<String> get test;
+  List<String> get test => throw _privateConstructorUsedError;
   @override
 
   /// Healthcheck checks interval (in nanosecods, 1000000 = 1ms)
   @JsonKey(name: 'Interval')
-  int get interval;
+  int get interval => throw _privateConstructorUsedError;
   @override
 
   /// Healthcheck check timeout (in nanosecods, 1000000 = 1ms)
   @JsonKey(name: 'Timeout')
-  int get timeout;
+  int get timeout => throw _privateConstructorUsedError;
   @override
 
   /// Healthcheck check retries before considering failed
   @JsonKey(name: 'Retries')
-  int get retries;
+  int get retries => throw _privateConstructorUsedError;
   @override
 
   /// Healthcheck period before first check (in nanosecods, 1000000 = 1ms)
   @JsonKey(name: 'StartPeriod')
-  int get startPeriod;
+  int get startPeriod => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerHealthcheckConfigCopyWith<_DockerContainerHealthcheckConfig>
+  _$$_DockerContainerHealthcheckConfigCopyWith<
+          _$_DockerContainerHealthcheckConfig>
       get copyWith => throw _privateConstructorUsedError;
 }

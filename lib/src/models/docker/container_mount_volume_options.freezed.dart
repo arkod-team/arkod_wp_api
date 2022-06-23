@@ -12,39 +12,12 @@ part of 'container_mount_volume_options.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerMountVolumeOptions _$DockerContainerMountVolumeOptionsFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerMountVolumeOptions.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerMountVolumeOptionsTearOff {
-  const _$DockerContainerMountVolumeOptionsTearOff();
-
-  _DockerContainerMountVolumeOptions call(
-      {@JsonKey(name: 'NoCopy')
-          bool noCopy = false,
-      @JsonKey(name: 'Labels')
-          Map<String, String>? labels,
-      @JsonKey(name: 'DriverConfig')
-          DockerContainerMountVolumeDriverConfig? driverConfig}) {
-    return _DockerContainerMountVolumeOptions(
-      noCopy: noCopy,
-      labels: labels,
-      driverConfig: driverConfig,
-    );
-  }
-
-  DockerContainerMountVolumeOptions fromJson(Map<String, Object?> json) {
-    return DockerContainerMountVolumeOptions.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerMountVolumeOptions =
-    _$DockerContainerMountVolumeOptionsTearOff();
 
 /// @nodoc
 mixin _$DockerContainerMountVolumeOptions {
@@ -129,12 +102,12 @@ class _$DockerContainerMountVolumeOptionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerMountVolumeOptionsCopyWith<$Res>
+abstract class _$$_DockerContainerMountVolumeOptionsCopyWith<$Res>
     implements $DockerContainerMountVolumeOptionsCopyWith<$Res> {
-  factory _$DockerContainerMountVolumeOptionsCopyWith(
-          _DockerContainerMountVolumeOptions value,
-          $Res Function(_DockerContainerMountVolumeOptions) then) =
-      __$DockerContainerMountVolumeOptionsCopyWithImpl<$Res>;
+  factory _$$_DockerContainerMountVolumeOptionsCopyWith(
+          _$_DockerContainerMountVolumeOptions value,
+          $Res Function(_$_DockerContainerMountVolumeOptions) then) =
+      __$$_DockerContainerMountVolumeOptionsCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'NoCopy')
@@ -149,17 +122,17 @@ abstract class _$DockerContainerMountVolumeOptionsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerMountVolumeOptionsCopyWithImpl<$Res>
+class __$$_DockerContainerMountVolumeOptionsCopyWithImpl<$Res>
     extends _$DockerContainerMountVolumeOptionsCopyWithImpl<$Res>
-    implements _$DockerContainerMountVolumeOptionsCopyWith<$Res> {
-  __$DockerContainerMountVolumeOptionsCopyWithImpl(
-      _DockerContainerMountVolumeOptions _value,
-      $Res Function(_DockerContainerMountVolumeOptions) _then)
-      : super(_value, (v) => _then(v as _DockerContainerMountVolumeOptions));
+    implements _$$_DockerContainerMountVolumeOptionsCopyWith<$Res> {
+  __$$_DockerContainerMountVolumeOptionsCopyWithImpl(
+      _$_DockerContainerMountVolumeOptions _value,
+      $Res Function(_$_DockerContainerMountVolumeOptions) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerMountVolumeOptions));
 
   @override
-  _DockerContainerMountVolumeOptions get _value =>
-      super._value as _DockerContainerMountVolumeOptions;
+  _$_DockerContainerMountVolumeOptions get _value =>
+      super._value as _$_DockerContainerMountVolumeOptions;
 
   @override
   $Res call({
@@ -167,13 +140,13 @@ class __$DockerContainerMountVolumeOptionsCopyWithImpl<$Res>
     Object? labels = freezed,
     Object? driverConfig = freezed,
   }) {
-    return _then(_DockerContainerMountVolumeOptions(
+    return _then(_$_DockerContainerMountVolumeOptions(
       noCopy: noCopy == freezed
           ? _value.noCopy
           : noCopy // ignore: cast_nullable_to_non_nullable
               as bool,
       labels: labels == freezed
-          ? _value.labels
+          ? _value._labels
           : labels // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
       driverConfig: driverConfig == freezed
@@ -190,26 +163,34 @@ class _$_DockerContainerMountVolumeOptions
     implements _DockerContainerMountVolumeOptions {
   const _$_DockerContainerMountVolumeOptions(
       {@JsonKey(name: 'NoCopy') this.noCopy = false,
-      @JsonKey(name: 'Labels') this.labels,
-      @JsonKey(name: 'DriverConfig') this.driverConfig});
+      @JsonKey(name: 'Labels') final Map<String, String>? labels,
+      @JsonKey(name: 'DriverConfig') this.driverConfig})
+      : _labels = labels;
 
   factory _$_DockerContainerMountVolumeOptions.fromJson(
           Map<String, dynamic> json) =>
       _$$_DockerContainerMountVolumeOptionsFromJson(json);
 
-  @override
-
   /// Is the mount volume populated with data from the target ?
+  @override
   @JsonKey(name: 'NoCopy')
   final bool noCopy;
-  @override
 
   /// Mount volume labels
-  @JsonKey(name: 'Labels')
-  final Map<String, String>? labels;
+  final Map<String, String>? _labels;
+
+  /// Mount volume labels
   @override
+  @JsonKey(name: 'Labels')
+  Map<String, String>? get labels {
+    final value = _labels;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   /// Mount volume driver configuration
+  @override
   @JsonKey(name: 'DriverConfig')
   final DockerContainerMountVolumeDriverConfig? driverConfig;
 
@@ -222,26 +203,27 @@ class _$_DockerContainerMountVolumeOptions
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerMountVolumeOptions &&
+            other is _$_DockerContainerMountVolumeOptions &&
             const DeepCollectionEquality().equals(other.noCopy, noCopy) &&
-            const DeepCollectionEquality().equals(other.labels, labels) &&
+            const DeepCollectionEquality().equals(other._labels, _labels) &&
             const DeepCollectionEquality()
                 .equals(other.driverConfig, driverConfig));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(noCopy),
-      const DeepCollectionEquality().hash(labels),
+      const DeepCollectionEquality().hash(_labels),
       const DeepCollectionEquality().hash(driverConfig));
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerMountVolumeOptionsCopyWith<
-          _DockerContainerMountVolumeOptions>
-      get copyWith => __$DockerContainerMountVolumeOptionsCopyWithImpl<
-          _DockerContainerMountVolumeOptions>(this, _$identity);
+  _$$_DockerContainerMountVolumeOptionsCopyWith<
+          _$_DockerContainerMountVolumeOptions>
+      get copyWith => __$$_DockerContainerMountVolumeOptionsCopyWithImpl<
+          _$_DockerContainerMountVolumeOptions>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -253,11 +235,11 @@ abstract class _DockerContainerMountVolumeOptions
     implements DockerContainerMountVolumeOptions {
   const factory _DockerContainerMountVolumeOptions(
           {@JsonKey(name: 'NoCopy')
-              bool noCopy,
+              final bool noCopy,
           @JsonKey(name: 'Labels')
-              Map<String, String>? labels,
+              final Map<String, String>? labels,
           @JsonKey(name: 'DriverConfig')
-              DockerContainerMountVolumeDriverConfig? driverConfig}) =
+              final DockerContainerMountVolumeDriverConfig? driverConfig}) =
       _$_DockerContainerMountVolumeOptions;
 
   factory _DockerContainerMountVolumeOptions.fromJson(
@@ -268,20 +250,21 @@ abstract class _DockerContainerMountVolumeOptions
 
   /// Is the mount volume populated with data from the target ?
   @JsonKey(name: 'NoCopy')
-  bool get noCopy;
+  bool get noCopy => throw _privateConstructorUsedError;
   @override
 
   /// Mount volume labels
   @JsonKey(name: 'Labels')
-  Map<String, String>? get labels;
+  Map<String, String>? get labels => throw _privateConstructorUsedError;
   @override
 
   /// Mount volume driver configuration
   @JsonKey(name: 'DriverConfig')
-  DockerContainerMountVolumeDriverConfig? get driverConfig;
+  DockerContainerMountVolumeDriverConfig? get driverConfig =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerMountVolumeOptionsCopyWith<
-          _DockerContainerMountVolumeOptions>
+  _$$_DockerContainerMountVolumeOptionsCopyWith<
+          _$_DockerContainerMountVolumeOptions>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -12,35 +12,12 @@ part of 'container_exit_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DockerContainerExitResult _$DockerContainerExitResultFromJson(
     Map<String, dynamic> json) {
   return _DockerContainerExitResult.fromJson(json);
 }
-
-/// @nodoc
-class _$DockerContainerExitResultTearOff {
-  const _$DockerContainerExitResultTearOff();
-
-  _DockerContainerExitResult call(
-      {@JsonKey(name: 'StatusCode') required int statusCode,
-      @JsonKey(name: 'Error') DockerContainerExitError? error,
-      String? logs}) {
-    return _DockerContainerExitResult(
-      statusCode: statusCode,
-      error: error,
-      logs: logs,
-    );
-  }
-
-  DockerContainerExitResult fromJson(Map<String, Object?> json) {
-    return DockerContainerExitResult.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DockerContainerExitResult = _$DockerContainerExitResultTearOff();
 
 /// @nodoc
 mixin _$DockerContainerExitResult {
@@ -118,11 +95,12 @@ class _$DockerContainerExitResultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DockerContainerExitResultCopyWith<$Res>
+abstract class _$$_DockerContainerExitResultCopyWith<$Res>
     implements $DockerContainerExitResultCopyWith<$Res> {
-  factory _$DockerContainerExitResultCopyWith(_DockerContainerExitResult value,
-          $Res Function(_DockerContainerExitResult) then) =
-      __$DockerContainerExitResultCopyWithImpl<$Res>;
+  factory _$$_DockerContainerExitResultCopyWith(
+          _$_DockerContainerExitResult value,
+          $Res Function(_$_DockerContainerExitResult) then) =
+      __$$_DockerContainerExitResultCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'StatusCode') int statusCode,
@@ -134,16 +112,17 @@ abstract class _$DockerContainerExitResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DockerContainerExitResultCopyWithImpl<$Res>
+class __$$_DockerContainerExitResultCopyWithImpl<$Res>
     extends _$DockerContainerExitResultCopyWithImpl<$Res>
-    implements _$DockerContainerExitResultCopyWith<$Res> {
-  __$DockerContainerExitResultCopyWithImpl(_DockerContainerExitResult _value,
-      $Res Function(_DockerContainerExitResult) _then)
-      : super(_value, (v) => _then(v as _DockerContainerExitResult));
+    implements _$$_DockerContainerExitResultCopyWith<$Res> {
+  __$$_DockerContainerExitResultCopyWithImpl(
+      _$_DockerContainerExitResult _value,
+      $Res Function(_$_DockerContainerExitResult) _then)
+      : super(_value, (v) => _then(v as _$_DockerContainerExitResult));
 
   @override
-  _DockerContainerExitResult get _value =>
-      super._value as _DockerContainerExitResult;
+  _$_DockerContainerExitResult get _value =>
+      super._value as _$_DockerContainerExitResult;
 
   @override
   $Res call({
@@ -151,7 +130,7 @@ class __$DockerContainerExitResultCopyWithImpl<$Res>
     Object? error = freezed,
     Object? logs = freezed,
   }) {
-    return _then(_DockerContainerExitResult(
+    return _then(_$_DockerContainerExitResult(
       statusCode: statusCode == freezed
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -179,19 +158,18 @@ class _$_DockerContainerExitResult implements _DockerContainerExitResult {
   factory _$_DockerContainerExitResult.fromJson(Map<String, dynamic> json) =>
       _$$_DockerContainerExitResultFromJson(json);
 
-  @override
-
   /// Exit code
+  @override
   @JsonKey(name: 'StatusCode')
   final int statusCode;
-  @override
 
   /// Exit error
+  @override
   @JsonKey(name: 'Error')
   final DockerContainerExitError? error;
-  @override
 
   /// Container logs
+  @override
   final String? logs;
 
   @override
@@ -203,13 +181,14 @@ class _$_DockerContainerExitResult implements _DockerContainerExitResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DockerContainerExitResult &&
+            other is _$_DockerContainerExitResult &&
             const DeepCollectionEquality()
                 .equals(other.statusCode, statusCode) &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.logs, logs));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -219,10 +198,9 @@ class _$_DockerContainerExitResult implements _DockerContainerExitResult {
 
   @JsonKey(ignore: true)
   @override
-  _$DockerContainerExitResultCopyWith<_DockerContainerExitResult>
-      get copyWith =>
-          __$DockerContainerExitResultCopyWithImpl<_DockerContainerExitResult>(
-              this, _$identity);
+  _$$_DockerContainerExitResultCopyWith<_$_DockerContainerExitResult>
+      get copyWith => __$$_DockerContainerExitResultCopyWithImpl<
+          _$_DockerContainerExitResult>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -232,9 +210,9 @@ class _$_DockerContainerExitResult implements _DockerContainerExitResult {
 
 abstract class _DockerContainerExitResult implements DockerContainerExitResult {
   const factory _DockerContainerExitResult(
-      {@JsonKey(name: 'StatusCode') required int statusCode,
-      @JsonKey(name: 'Error') DockerContainerExitError? error,
-      String? logs}) = _$_DockerContainerExitResult;
+      {@JsonKey(name: 'StatusCode') required final int statusCode,
+      @JsonKey(name: 'Error') final DockerContainerExitError? error,
+      final String? logs}) = _$_DockerContainerExitResult;
 
   factory _DockerContainerExitResult.fromJson(Map<String, dynamic> json) =
       _$_DockerContainerExitResult.fromJson;
@@ -243,18 +221,18 @@ abstract class _DockerContainerExitResult implements DockerContainerExitResult {
 
   /// Exit code
   @JsonKey(name: 'StatusCode')
-  int get statusCode;
+  int get statusCode => throw _privateConstructorUsedError;
   @override
 
   /// Exit error
   @JsonKey(name: 'Error')
-  DockerContainerExitError? get error;
+  DockerContainerExitError? get error => throw _privateConstructorUsedError;
   @override
 
   /// Container logs
-  String? get logs;
+  String? get logs => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DockerContainerExitResultCopyWith<_DockerContainerExitResult>
+  _$$_DockerContainerExitResultCopyWith<_$_DockerContainerExitResult>
       get copyWith => throw _privateConstructorUsedError;
 }

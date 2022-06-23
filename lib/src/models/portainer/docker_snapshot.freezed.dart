@@ -12,74 +12,12 @@ part of 'docker_snapshot.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerDockerSnapshot _$PortainerDockerSnapshotFromJson(
     Map<String, dynamic> json) {
   return _PortainerDockerSnapshot.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerDockerSnapshotTearOff {
-  const _$PortainerDockerSnapshotTearOff();
-
-  _PortainerDockerSnapshot call(
-      {@JsonKey(name: 'DockerVersion')
-          required String dockerVersion,
-      @JsonKey(name: 'HealthyContainerCount')
-          required int healthyContainers,
-      @JsonKey(name: 'UnhealthyContainerCount')
-          required int unhealthyContainers,
-      @JsonKey(name: 'RunningContainerCount')
-          required int runningContainers,
-      @JsonKey(name: 'StoppedContainerCount')
-          required int stoppedContainers,
-      @JsonKey(name: 'ServiceCount')
-          required int services,
-      @JsonKey(name: 'StackCount')
-          required int stacks,
-      @JsonKey(name: 'ImageCount')
-          required int images,
-      @JsonKey(name: 'VolumeCount')
-          required int volumes,
-      @JsonKey(name: 'NodeCount')
-          required int nodes,
-      @JsonKey(name: 'Swarm')
-          required bool swarm,
-      @JsonKey(name: 'Time')
-          required int timestamp,
-      @JsonKey(name: 'TotalCPU')
-          required int cpus,
-      @JsonKey(name: 'TotalMemory')
-          required int memory,
-      @JsonKey(name: 'DockerSnapshotRaw')
-          required Map<String, dynamic> rawSnapshot}) {
-    return _PortainerDockerSnapshot(
-      dockerVersion: dockerVersion,
-      healthyContainers: healthyContainers,
-      unhealthyContainers: unhealthyContainers,
-      runningContainers: runningContainers,
-      stoppedContainers: stoppedContainers,
-      services: services,
-      stacks: stacks,
-      images: images,
-      volumes: volumes,
-      nodes: nodes,
-      swarm: swarm,
-      timestamp: timestamp,
-      cpus: cpus,
-      memory: memory,
-      rawSnapshot: rawSnapshot,
-    );
-  }
-
-  PortainerDockerSnapshot fromJson(Map<String, Object?> json) {
-    return PortainerDockerSnapshot.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerDockerSnapshot = _$PortainerDockerSnapshotTearOff();
 
 /// @nodoc
 mixin _$PortainerDockerSnapshot {
@@ -265,11 +203,11 @@ class _$PortainerDockerSnapshotCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerDockerSnapshotCopyWith<$Res>
+abstract class _$$_PortainerDockerSnapshotCopyWith<$Res>
     implements $PortainerDockerSnapshotCopyWith<$Res> {
-  factory _$PortainerDockerSnapshotCopyWith(_PortainerDockerSnapshot value,
-          $Res Function(_PortainerDockerSnapshot) then) =
-      __$PortainerDockerSnapshotCopyWithImpl<$Res>;
+  factory _$$_PortainerDockerSnapshotCopyWith(_$_PortainerDockerSnapshot value,
+          $Res Function(_$_PortainerDockerSnapshot) then) =
+      __$$_PortainerDockerSnapshotCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'DockerVersion') String dockerVersion,
@@ -290,16 +228,16 @@ abstract class _$PortainerDockerSnapshotCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerDockerSnapshotCopyWithImpl<$Res>
+class __$$_PortainerDockerSnapshotCopyWithImpl<$Res>
     extends _$PortainerDockerSnapshotCopyWithImpl<$Res>
-    implements _$PortainerDockerSnapshotCopyWith<$Res> {
-  __$PortainerDockerSnapshotCopyWithImpl(_PortainerDockerSnapshot _value,
-      $Res Function(_PortainerDockerSnapshot) _then)
-      : super(_value, (v) => _then(v as _PortainerDockerSnapshot));
+    implements _$$_PortainerDockerSnapshotCopyWith<$Res> {
+  __$$_PortainerDockerSnapshotCopyWithImpl(_$_PortainerDockerSnapshot _value,
+      $Res Function(_$_PortainerDockerSnapshot) _then)
+      : super(_value, (v) => _then(v as _$_PortainerDockerSnapshot));
 
   @override
-  _PortainerDockerSnapshot get _value =>
-      super._value as _PortainerDockerSnapshot;
+  _$_PortainerDockerSnapshot get _value =>
+      super._value as _$_PortainerDockerSnapshot;
 
   @override
   $Res call({
@@ -319,7 +257,7 @@ class __$PortainerDockerSnapshotCopyWithImpl<$Res>
     Object? memory = freezed,
     Object? rawSnapshot = freezed,
   }) {
-    return _then(_PortainerDockerSnapshot(
+    return _then(_$_PortainerDockerSnapshot(
       dockerVersion: dockerVersion == freezed
           ? _value.dockerVersion
           : dockerVersion // ignore: cast_nullable_to_non_nullable
@@ -377,7 +315,7 @@ class __$PortainerDockerSnapshotCopyWithImpl<$Res>
           : memory // ignore: cast_nullable_to_non_nullable
               as int,
       rawSnapshot: rawSnapshot == freezed
-          ? _value.rawSnapshot
+          ? _value._rawSnapshot
           : rawSnapshot // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
@@ -417,86 +355,92 @@ class _$_PortainerDockerSnapshot implements _PortainerDockerSnapshot {
       @JsonKey(name: 'TotalMemory')
           required this.memory,
       @JsonKey(name: 'DockerSnapshotRaw')
-          required this.rawSnapshot});
+          required final Map<String, dynamic> rawSnapshot})
+      : _rawSnapshot = rawSnapshot;
 
   factory _$_PortainerDockerSnapshot.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerDockerSnapshotFromJson(json);
 
-  @override
-
   /// Docker version
+  @override
   @JsonKey(name: 'DockerVersion')
   final String dockerVersion;
-  @override
 
   /// Healthy containers count
+  @override
   @JsonKey(name: 'HealthyContainerCount')
   final int healthyContainers;
-  @override
 
   /// Unhealthy containers count
+  @override
   @JsonKey(name: 'UnhealthyContainerCount')
   final int unhealthyContainers;
-  @override
 
   /// Running containers count
+  @override
   @JsonKey(name: 'RunningContainerCount')
   final int runningContainers;
-  @override
 
   /// Stopped containers count
+  @override
   @JsonKey(name: 'StoppedContainerCount')
   final int stoppedContainers;
-  @override
 
   /// Services count
+  @override
   @JsonKey(name: 'ServiceCount')
   final int services;
-  @override
 
   /// Stacks count
+  @override
   @JsonKey(name: 'StackCount')
   final int stacks;
-  @override
 
   /// Images count
+  @override
   @JsonKey(name: 'ImageCount')
   final int images;
-  @override
 
   /// Volumes count
+  @override
   @JsonKey(name: 'VolumeCount')
   final int volumes;
-  @override
 
   /// Nodes count
+  @override
   @JsonKey(name: 'NodeCount')
   final int nodes;
-  @override
 
   /// Is a swarm cluster ?
+  @override
   @JsonKey(name: 'Swarm')
   final bool swarm;
-  @override
 
   /// Docker timestamp
+  @override
   @JsonKey(name: 'Time')
   final int timestamp;
-  @override
 
   /// Total CPUs count
+  @override
   @JsonKey(name: 'TotalCPU')
   final int cpus;
-  @override
 
   /// Total memory
+  @override
   @JsonKey(name: 'TotalMemory')
   final int memory;
-  @override
 
   /// Raw snapshot
+  final Map<String, dynamic> _rawSnapshot;
+
+  /// Raw snapshot
+  @override
   @JsonKey(name: 'DockerSnapshotRaw')
-  final Map<String, dynamic> rawSnapshot;
+  Map<String, dynamic> get rawSnapshot {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_rawSnapshot);
+  }
 
   @override
   String toString() {
@@ -507,7 +451,7 @@ class _$_PortainerDockerSnapshot implements _PortainerDockerSnapshot {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerDockerSnapshot &&
+            other is _$_PortainerDockerSnapshot &&
             const DeepCollectionEquality()
                 .equals(other.dockerVersion, dockerVersion) &&
             const DeepCollectionEquality()
@@ -528,9 +472,10 @@ class _$_PortainerDockerSnapshot implements _PortainerDockerSnapshot {
             const DeepCollectionEquality().equals(other.cpus, cpus) &&
             const DeepCollectionEquality().equals(other.memory, memory) &&
             const DeepCollectionEquality()
-                .equals(other.rawSnapshot, rawSnapshot));
+                .equals(other._rawSnapshot, _rawSnapshot));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -548,13 +493,14 @@ class _$_PortainerDockerSnapshot implements _PortainerDockerSnapshot {
       const DeepCollectionEquality().hash(timestamp),
       const DeepCollectionEquality().hash(cpus),
       const DeepCollectionEquality().hash(memory),
-      const DeepCollectionEquality().hash(rawSnapshot));
+      const DeepCollectionEquality().hash(_rawSnapshot));
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerDockerSnapshotCopyWith<_PortainerDockerSnapshot> get copyWith =>
-      __$PortainerDockerSnapshotCopyWithImpl<_PortainerDockerSnapshot>(
-          this, _$identity);
+  _$$_PortainerDockerSnapshotCopyWith<_$_PortainerDockerSnapshot>
+      get copyWith =>
+          __$$_PortainerDockerSnapshotCopyWithImpl<_$_PortainerDockerSnapshot>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -565,35 +511,35 @@ class _$_PortainerDockerSnapshot implements _PortainerDockerSnapshot {
 abstract class _PortainerDockerSnapshot implements PortainerDockerSnapshot {
   const factory _PortainerDockerSnapshot(
           {@JsonKey(name: 'DockerVersion')
-              required String dockerVersion,
+              required final String dockerVersion,
           @JsonKey(name: 'HealthyContainerCount')
-              required int healthyContainers,
+              required final int healthyContainers,
           @JsonKey(name: 'UnhealthyContainerCount')
-              required int unhealthyContainers,
+              required final int unhealthyContainers,
           @JsonKey(name: 'RunningContainerCount')
-              required int runningContainers,
+              required final int runningContainers,
           @JsonKey(name: 'StoppedContainerCount')
-              required int stoppedContainers,
+              required final int stoppedContainers,
           @JsonKey(name: 'ServiceCount')
-              required int services,
+              required final int services,
           @JsonKey(name: 'StackCount')
-              required int stacks,
+              required final int stacks,
           @JsonKey(name: 'ImageCount')
-              required int images,
+              required final int images,
           @JsonKey(name: 'VolumeCount')
-              required int volumes,
+              required final int volumes,
           @JsonKey(name: 'NodeCount')
-              required int nodes,
+              required final int nodes,
           @JsonKey(name: 'Swarm')
-              required bool swarm,
+              required final bool swarm,
           @JsonKey(name: 'Time')
-              required int timestamp,
+              required final int timestamp,
           @JsonKey(name: 'TotalCPU')
-              required int cpus,
+              required final int cpus,
           @JsonKey(name: 'TotalMemory')
-              required int memory,
+              required final int memory,
           @JsonKey(name: 'DockerSnapshotRaw')
-              required Map<String, dynamic> rawSnapshot}) =
+              required final Map<String, dynamic> rawSnapshot}) =
       _$_PortainerDockerSnapshot;
 
   factory _PortainerDockerSnapshot.fromJson(Map<String, dynamic> json) =
@@ -603,79 +549,79 @@ abstract class _PortainerDockerSnapshot implements PortainerDockerSnapshot {
 
   /// Docker version
   @JsonKey(name: 'DockerVersion')
-  String get dockerVersion;
+  String get dockerVersion => throw _privateConstructorUsedError;
   @override
 
   /// Healthy containers count
   @JsonKey(name: 'HealthyContainerCount')
-  int get healthyContainers;
+  int get healthyContainers => throw _privateConstructorUsedError;
   @override
 
   /// Unhealthy containers count
   @JsonKey(name: 'UnhealthyContainerCount')
-  int get unhealthyContainers;
+  int get unhealthyContainers => throw _privateConstructorUsedError;
   @override
 
   /// Running containers count
   @JsonKey(name: 'RunningContainerCount')
-  int get runningContainers;
+  int get runningContainers => throw _privateConstructorUsedError;
   @override
 
   /// Stopped containers count
   @JsonKey(name: 'StoppedContainerCount')
-  int get stoppedContainers;
+  int get stoppedContainers => throw _privateConstructorUsedError;
   @override
 
   /// Services count
   @JsonKey(name: 'ServiceCount')
-  int get services;
+  int get services => throw _privateConstructorUsedError;
   @override
 
   /// Stacks count
   @JsonKey(name: 'StackCount')
-  int get stacks;
+  int get stacks => throw _privateConstructorUsedError;
   @override
 
   /// Images count
   @JsonKey(name: 'ImageCount')
-  int get images;
+  int get images => throw _privateConstructorUsedError;
   @override
 
   /// Volumes count
   @JsonKey(name: 'VolumeCount')
-  int get volumes;
+  int get volumes => throw _privateConstructorUsedError;
   @override
 
   /// Nodes count
   @JsonKey(name: 'NodeCount')
-  int get nodes;
+  int get nodes => throw _privateConstructorUsedError;
   @override
 
   /// Is a swarm cluster ?
   @JsonKey(name: 'Swarm')
-  bool get swarm;
+  bool get swarm => throw _privateConstructorUsedError;
   @override
 
   /// Docker timestamp
   @JsonKey(name: 'Time')
-  int get timestamp;
+  int get timestamp => throw _privateConstructorUsedError;
   @override
 
   /// Total CPUs count
   @JsonKey(name: 'TotalCPU')
-  int get cpus;
+  int get cpus => throw _privateConstructorUsedError;
   @override
 
   /// Total memory
   @JsonKey(name: 'TotalMemory')
-  int get memory;
+  int get memory => throw _privateConstructorUsedError;
   @override
 
   /// Raw snapshot
   @JsonKey(name: 'DockerSnapshotRaw')
-  Map<String, dynamic> get rawSnapshot;
+  Map<String, dynamic> get rawSnapshot => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerDockerSnapshotCopyWith<_PortainerDockerSnapshot> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PortainerDockerSnapshotCopyWith<_$_PortainerDockerSnapshot>
+      get copyWith => throw _privateConstructorUsedError;
 }

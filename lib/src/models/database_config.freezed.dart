@@ -12,30 +12,7 @@ part of 'database_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DatabaseConfigTearOff {
-  const _$DatabaseConfigTearOff();
-
-  _DatabaseConfig call(
-      {required String host,
-      required int port,
-      required String name,
-      required String user,
-      required String password}) {
-    return _DatabaseConfig(
-      host: host,
-      port: port,
-      name: name,
-      user: user,
-      password: password,
-    );
-  }
-}
-
-/// @nodoc
-const $DatabaseConfig = _$DatabaseConfigTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DatabaseConfig {
@@ -110,25 +87,25 @@ class _$DatabaseConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DatabaseConfigCopyWith<$Res>
+abstract class _$$_DatabaseConfigCopyWith<$Res>
     implements $DatabaseConfigCopyWith<$Res> {
-  factory _$DatabaseConfigCopyWith(
-          _DatabaseConfig value, $Res Function(_DatabaseConfig) then) =
-      __$DatabaseConfigCopyWithImpl<$Res>;
+  factory _$$_DatabaseConfigCopyWith(
+          _$_DatabaseConfig value, $Res Function(_$_DatabaseConfig) then) =
+      __$$_DatabaseConfigCopyWithImpl<$Res>;
   @override
   $Res call({String host, int port, String name, String user, String password});
 }
 
 /// @nodoc
-class __$DatabaseConfigCopyWithImpl<$Res>
+class __$$_DatabaseConfigCopyWithImpl<$Res>
     extends _$DatabaseConfigCopyWithImpl<$Res>
-    implements _$DatabaseConfigCopyWith<$Res> {
-  __$DatabaseConfigCopyWithImpl(
-      _DatabaseConfig _value, $Res Function(_DatabaseConfig) _then)
-      : super(_value, (v) => _then(v as _DatabaseConfig));
+    implements _$$_DatabaseConfigCopyWith<$Res> {
+  __$$_DatabaseConfigCopyWithImpl(
+      _$_DatabaseConfig _value, $Res Function(_$_DatabaseConfig) _then)
+      : super(_value, (v) => _then(v as _$_DatabaseConfig));
 
   @override
-  _DatabaseConfig get _value => super._value as _DatabaseConfig;
+  _$_DatabaseConfig get _value => super._value as _$_DatabaseConfig;
 
   @override
   $Res call({
@@ -138,7 +115,7 @@ class __$DatabaseConfigCopyWithImpl<$Res>
     Object? user = freezed,
     Object? password = freezed,
   }) {
-    return _then(_DatabaseConfig(
+    return _then(_$_DatabaseConfig(
       host: host == freezed
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -173,25 +150,24 @@ class _$_DatabaseConfig implements _DatabaseConfig {
       required this.user,
       required this.password});
 
-  @override
-
   /// Database host
-  final String host;
   @override
+  final String host;
 
   /// Database port
-  final int port;
   @override
+  final int port;
 
   /// Database name
-  final String name;
   @override
+  final String name;
 
   /// Database user
-  final String user;
   @override
+  final String user;
 
   /// Database user's password
+  @override
   final String password;
 
   @override
@@ -203,7 +179,7 @@ class _$_DatabaseConfig implements _DatabaseConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DatabaseConfig &&
+            other is _$_DatabaseConfig &&
             const DeepCollectionEquality().equals(other.host, host) &&
             const DeepCollectionEquality().equals(other.port, port) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -222,40 +198,40 @@ class _$_DatabaseConfig implements _DatabaseConfig {
 
   @JsonKey(ignore: true)
   @override
-  _$DatabaseConfigCopyWith<_DatabaseConfig> get copyWith =>
-      __$DatabaseConfigCopyWithImpl<_DatabaseConfig>(this, _$identity);
+  _$$_DatabaseConfigCopyWith<_$_DatabaseConfig> get copyWith =>
+      __$$_DatabaseConfigCopyWithImpl<_$_DatabaseConfig>(this, _$identity);
 }
 
 abstract class _DatabaseConfig implements DatabaseConfig {
   const factory _DatabaseConfig(
-      {required String host,
-      required int port,
-      required String name,
-      required String user,
-      required String password}) = _$_DatabaseConfig;
+      {required final String host,
+      required final int port,
+      required final String name,
+      required final String user,
+      required final String password}) = _$_DatabaseConfig;
 
   @override
 
   /// Database host
-  String get host;
+  String get host => throw _privateConstructorUsedError;
   @override
 
   /// Database port
-  int get port;
+  int get port => throw _privateConstructorUsedError;
   @override
 
   /// Database name
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
 
   /// Database user
-  String get user;
+  String get user => throw _privateConstructorUsedError;
   @override
 
   /// Database user's password
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DatabaseConfigCopyWith<_DatabaseConfig> get copyWith =>
+  _$$_DatabaseConfigCopyWith<_$_DatabaseConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }

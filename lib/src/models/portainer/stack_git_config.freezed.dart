@@ -12,39 +12,12 @@ part of 'stack_git_config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PortainerStackGitConfig _$PortainerStackGitConfigFromJson(
     Map<String, dynamic> json) {
   return _PortainerStackGitConfig.fromJson(json);
 }
-
-/// @nodoc
-class _$PortainerStackGitConfigTearOff {
-  const _$PortainerStackGitConfigTearOff();
-
-  _PortainerStackGitConfig call(
-      {required String url,
-      required String referenceName,
-      required String configFilePath,
-      required PortainerStackGitAuthentication authentication,
-      required String configHash}) {
-    return _PortainerStackGitConfig(
-      url: url,
-      referenceName: referenceName,
-      configFilePath: configFilePath,
-      authentication: authentication,
-      configHash: configHash,
-    );
-  }
-
-  PortainerStackGitConfig fromJson(Map<String, Object?> json) {
-    return PortainerStackGitConfig.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PortainerStackGitConfig = _$PortainerStackGitConfigTearOff();
 
 /// @nodoc
 mixin _$PortainerStackGitConfig {
@@ -136,11 +109,11 @@ class _$PortainerStackGitConfigCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PortainerStackGitConfigCopyWith<$Res>
+abstract class _$$_PortainerStackGitConfigCopyWith<$Res>
     implements $PortainerStackGitConfigCopyWith<$Res> {
-  factory _$PortainerStackGitConfigCopyWith(_PortainerStackGitConfig value,
-          $Res Function(_PortainerStackGitConfig) then) =
-      __$PortainerStackGitConfigCopyWithImpl<$Res>;
+  factory _$$_PortainerStackGitConfigCopyWith(_$_PortainerStackGitConfig value,
+          $Res Function(_$_PortainerStackGitConfig) then) =
+      __$$_PortainerStackGitConfigCopyWithImpl<$Res>;
   @override
   $Res call(
       {String url,
@@ -154,16 +127,16 @@ abstract class _$PortainerStackGitConfigCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PortainerStackGitConfigCopyWithImpl<$Res>
+class __$$_PortainerStackGitConfigCopyWithImpl<$Res>
     extends _$PortainerStackGitConfigCopyWithImpl<$Res>
-    implements _$PortainerStackGitConfigCopyWith<$Res> {
-  __$PortainerStackGitConfigCopyWithImpl(_PortainerStackGitConfig _value,
-      $Res Function(_PortainerStackGitConfig) _then)
-      : super(_value, (v) => _then(v as _PortainerStackGitConfig));
+    implements _$$_PortainerStackGitConfigCopyWith<$Res> {
+  __$$_PortainerStackGitConfigCopyWithImpl(_$_PortainerStackGitConfig _value,
+      $Res Function(_$_PortainerStackGitConfig) _then)
+      : super(_value, (v) => _then(v as _$_PortainerStackGitConfig));
 
   @override
-  _PortainerStackGitConfig get _value =>
-      super._value as _PortainerStackGitConfig;
+  _$_PortainerStackGitConfig get _value =>
+      super._value as _$_PortainerStackGitConfig;
 
   @override
   $Res call({
@@ -173,7 +146,7 @@ class __$PortainerStackGitConfigCopyWithImpl<$Res>
     Object? authentication = freezed,
     Object? configHash = freezed,
   }) {
-    return _then(_PortainerStackGitConfig(
+    return _then(_$_PortainerStackGitConfig(
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -211,25 +184,24 @@ class _$_PortainerStackGitConfig implements _PortainerStackGitConfig {
   factory _$_PortainerStackGitConfig.fromJson(Map<String, dynamic> json) =>
       _$$_PortainerStackGitConfigFromJson(json);
 
-  @override
-
   /// Repository URL
-  final String url;
   @override
+  final String url;
 
   /// Repository reference used
-  final String referenceName;
   @override
+  final String referenceName;
 
   /// Stack file path in the repository
-  final String configFilePath;
   @override
+  final String configFilePath;
 
   /// Git authentication credentials
-  final PortainerStackGitAuthentication authentication;
   @override
+  final PortainerStackGitAuthentication authentication;
 
   /// Repository hash
+  @override
   final String configHash;
 
   @override
@@ -241,7 +213,7 @@ class _$_PortainerStackGitConfig implements _PortainerStackGitConfig {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PortainerStackGitConfig &&
+            other is _$_PortainerStackGitConfig &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality()
                 .equals(other.referenceName, referenceName) &&
@@ -253,6 +225,7 @@ class _$_PortainerStackGitConfig implements _PortainerStackGitConfig {
                 .equals(other.configHash, configHash));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -264,9 +237,10 @@ class _$_PortainerStackGitConfig implements _PortainerStackGitConfig {
 
   @JsonKey(ignore: true)
   @override
-  _$PortainerStackGitConfigCopyWith<_PortainerStackGitConfig> get copyWith =>
-      __$PortainerStackGitConfigCopyWithImpl<_PortainerStackGitConfig>(
-          this, _$identity);
+  _$$_PortainerStackGitConfigCopyWith<_$_PortainerStackGitConfig>
+      get copyWith =>
+          __$$_PortainerStackGitConfigCopyWithImpl<_$_PortainerStackGitConfig>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -276,11 +250,11 @@ class _$_PortainerStackGitConfig implements _PortainerStackGitConfig {
 
 abstract class _PortainerStackGitConfig implements PortainerStackGitConfig {
   const factory _PortainerStackGitConfig(
-      {required String url,
-      required String referenceName,
-      required String configFilePath,
-      required PortainerStackGitAuthentication authentication,
-      required String configHash}) = _$_PortainerStackGitConfig;
+      {required final String url,
+      required final String referenceName,
+      required final String configFilePath,
+      required final PortainerStackGitAuthentication authentication,
+      required final String configHash}) = _$_PortainerStackGitConfig;
 
   factory _PortainerStackGitConfig.fromJson(Map<String, dynamic> json) =
       _$_PortainerStackGitConfig.fromJson;
@@ -288,25 +262,26 @@ abstract class _PortainerStackGitConfig implements PortainerStackGitConfig {
   @override
 
   /// Repository URL
-  String get url;
+  String get url => throw _privateConstructorUsedError;
   @override
 
   /// Repository reference used
-  String get referenceName;
+  String get referenceName => throw _privateConstructorUsedError;
   @override
 
   /// Stack file path in the repository
-  String get configFilePath;
+  String get configFilePath => throw _privateConstructorUsedError;
   @override
 
   /// Git authentication credentials
-  PortainerStackGitAuthentication get authentication;
+  PortainerStackGitAuthentication get authentication =>
+      throw _privateConstructorUsedError;
   @override
 
   /// Repository hash
-  String get configHash;
+  String get configHash => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PortainerStackGitConfigCopyWith<_PortainerStackGitConfig> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PortainerStackGitConfigCopyWith<_$_PortainerStackGitConfig>
+      get copyWith => throw _privateConstructorUsedError;
 }
