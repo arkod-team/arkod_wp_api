@@ -3,7 +3,7 @@ version: "3.9"
 services:
   database:
     container_name: ${WEBSITE_NAME}-db
-    hostname: db.${WEBSITE_NAME}.localhost
+    hostname: db.${WEBSITE_NAME}.arkod-wp.localhost
     image: mariadb:10.7.3
     restart: always
     volumes:
@@ -28,7 +28,7 @@ services:
     depends_on:
       - database
     container_name: ${WEBSITE_NAME}-wp
-    hostname: ${WEBSITE_NAME}.localhost
+    hostname: ${WEBSITE_NAME}.arkod-wp.localhost
     image: wordpress:5.9.3
     restart: always
     volumes:
