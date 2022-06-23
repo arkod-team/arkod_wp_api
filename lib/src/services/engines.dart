@@ -147,7 +147,7 @@ class EnginesService {
     final token = await api.authenticate(username: username, password: password);
     api = PortainerAPI(host: engine.host, token: token);
 
-    final apiKey = await api.generateApiKey(userId: user.id, description: 'arkod-wp-api-key');
+    final apiKey = await api.apiKeyGenerate(userId: user.id, description: 'arkod-wp-api-key');
     api = PortainerAPI(host: engine.host, apiKey: apiKey);
 
     final updatedEngine = await _repository.updateEngine(engine.copyWith(
@@ -194,9 +194,15 @@ class EnginesService {
     final token = await api.authenticate(username: username, password: password);
     api = PortainerAPI(host: engine.host, token: token);
 
-    final users = await api.users();
-    final apiKey = await api.generateApiKey(
-      userId: users.firstWhere((u) => u.username == username).id,
+    final user = (await api.users()).firstWhere((u) => u.username == username);
+
+    final apiKeys = (await api.apiKeys(userId: user.id)).where((key) => key.description == 'arkod-wp-api-key').toList();
+    for (final key in apiKeys) {
+      await api.apiKeyDelete(userId: user.id, keyId: key.id);
+    }
+
+    final apiKey = await api.apiKeyGenerate(
+      userId: user.id,
       description: 'arkod-wp-api-key',
     );
 
