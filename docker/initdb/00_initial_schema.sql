@@ -9,6 +9,7 @@ CREATE TABLE engines (
   name varchar(128) NOT NULL,
   host varchar(256) NOT NULL,
   type engine_type DEFAULT 'portainer' NOT NULL,
+  local_endpoint_id int8,
   api_key varchar(128)
 );
 
