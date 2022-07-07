@@ -40,7 +40,7 @@ RETURNING *
   /// UPDATE engine WHERE id = @id
   static String updateEngine = '''
 UPDATE ${DatabaseTables.engines}
-SET is_initialized = @isInitialized, name = @name, host = @host, type = @type, api_key = @apiKey
+SET is_initialized = @isInitialized, name = @name, host = @host, type = @type, local_endpoint_id = @localEndpointId, api_key = @apiKey
 WHERE id = @id
 RETURNING *
 ''';
