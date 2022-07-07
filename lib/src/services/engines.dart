@@ -158,6 +158,7 @@ class EnginesService {
     final endpoint = await api.endpointCreate('local');
     final initializedEngine = updatedEngine.copyWith(
       endpoints: [endpoint.appEndpoint],
+      localEndpointId: endpoint.id,
     );
 
     return HttpResponse.ok(initializedEngine);
